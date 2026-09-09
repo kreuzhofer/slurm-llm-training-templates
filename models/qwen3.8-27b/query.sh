@@ -104,10 +104,19 @@ except Exception as e:
     print(raw[:2000], file=sys.stderr)
     sys.exit(1)
 
-# With --reasoning-parser qwen3 any thinking lands in reasoning_content, so
+# With --reasoning-parser qwen3 any thinking lands in a separate field, so
 # content is the bare SQL. Fall back to stripping tags if the parser was off.
-if msg.get('reasoning_content'):
-    print('[reasoning suppressed:', len(msg['reasoning_content']), 'chars]', file=sys.stderr)
+#
+# vLLM 0.28.0 returns that field as 'reasoning'; 'reasoning_content' is the
+# DEPRECATED name, still accepted on *input* but never emitted in a response
+# (entrypoints/openai/chat_completion/protocol.py:530 renames it). Reading only
+# the old name made this diagnostic dead code -- verified against a live 0.28.0
+# server, whose message keys are exactly
+# ['annotations','audio','content','function_call','reasoning','refusal','role'].
+# Both are read here so the line survives a version moving back or forward.
+reasoning = msg.get('reasoning') or msg.get('reasoning_content')
+if reasoning:
+    print('[reasoning suppressed:', len(reasoning), 'chars]', file=sys.stderr)
 sql = (msg.get('content') or '').strip()
 if '</think>' in sql:
     sql = sql.split('</think>')[-1].strip()

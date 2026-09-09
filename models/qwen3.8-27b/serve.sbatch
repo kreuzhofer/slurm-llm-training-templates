@@ -83,8 +83,23 @@ echo "=========================================="
 #       skips vision profiling is --skip-mm-profiling.
 #       On a MERGED checkpoint it is a no-op either way: merging writes
 #       model_type qwen3_5_text with no vision_config, so there is no vision
-#       tower to disable. It is kept because it is correct and harmless for
-#       both the base (multimodal) and merged (text-only) paths.
+#       tower to disable.
+#
+#       On the BASE checkpoint it is NOT harmless, which an earlier version of
+#       this comment got wrong. The base config.json declares its own
+#       "language_model_only": false next to
+#       architectures: ["Qwen3_5ForConditionalGeneration"], so passing the flag
+#       overrides the checkpoint's stated intent, and it is the one thing
+#       preventing this server from accepting images. It is kept here only
+#       because this script serves the SQL/text path, where images are not
+#       wanted. ANY VISUAL SERVING MUST DROP IT.
+#
+#       Measured with the flag omitted on the base model (issue #17, job 842):
+#       the tower is built (`FLASH_ATTN for vit attention`,
+#       `MMEncoderAttention`, and a 16,384-token encoder cache) and it costs
+#       almost nothing -- model load 51.1 GiB vs 50.13 GiB text-only (+0.97
+#       GiB), and GPU KV cache 1,885,605 vs 1,899,098 tokens (-0.71%).
+#       --skip-mm-profiling is confirmed present in vllm 0.28.0.
 vllm serve "$MODEL_PATH" \
     --served-model-name "$(basename "$MODEL_PATH")" \
     --host 0.0.0.0 \
