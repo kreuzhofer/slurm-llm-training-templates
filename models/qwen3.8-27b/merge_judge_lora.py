@@ -32,6 +32,119 @@ import os
 import time
 
 
+def restore_dropped_tensors(output_path, base_model_path):
+    """
+    Copy back every tensor the loading class dropped. Returns the names copied.
+
+    `Qwen3_5ForConditionalGeneration` instantiates the vision tower but NOT the
+    multi-token-prediction head: `^mtp.*` is in
+    `_keys_to_ignore_on_load_unexpected` on the shared base class
+    (modeling_qwen3_5.py:807), so it is dropped by BOTH model classes. The merge
+    therefore writes 1,184 of the checkpoint's 1,199 tensors and says nothing.
+
+    Found the hard way: rc0's first merged upload was missing all 15, and
+    vLLM's recipe runs MTP with 5 draft tokens, so the drafter failed to load
+    on the serving cluster (chat3d, 2026-09-24).
+
+    Copying verbatim is correct, and for a precise reason: the module was never
+    instantiated during training, so no LoRA adapter could attach to it. Note
+    that this is NOT because the target list excludes it -- `q_proj`, `o_proj`,
+    `gate_proj`, `up_proj` and `down_proj` all appear inside
+    `mtp.layers.0.*`, and a suffix-matched target list WOULD capture them on
+    any class that carries the head. If MTP is ever instantiated for training,
+    that hazard is live and must be excluded explicitly.
+
+    What this does not do is make the drafter match the tuned model. It is the
+    base drafter proposing for a LoRA-merged main model, so draft acceptance
+    may fall. Under verification the output is unchanged -- speculative
+    decoding is output-equivalent by construction -- so this costs throughput,
+    never correctness.
+    """
+    import json
+    import os
+    import shutil
+
+    from safetensors import safe_open
+    from safetensors.torch import save_file
+
+    base_index = os.path.join(base_model_path, "model.safetensors.index.json")
+    out_index = os.path.join(output_path, "model.safetensors.index.json")
+    with open(base_index) as handle:
+        base_map = json.load(handle)["weight_map"]
+    with open(out_index) as handle:
+        out_doc = json.load(handle)
+    out_map = out_doc["weight_map"]
+
+    missing = sorted(set(base_map) - set(out_map))
+    if not missing:
+        return []
+
+    print(f"  restoring {len(missing)} tensor(s) the model class dropped")
+    by_shard = {}
+    for name in missing:
+        by_shard.setdefault(base_map[name], []).append(name)
+
+    tensors = {}
+    for shard, names in by_shard.items():
+        with safe_open(os.path.join(base_model_path, shard), framework="pt") as f:
+            for name in names:
+                tensors[name] = f.get_tensor(name)
+
+    # Renumber the existing shards so the "of-N" suffix stays honest rather
+    # than leaving two files claiming "of-00002" beside a third.
+    existing = sorted(set(out_map.values()))
+    total = len(existing) + 1
+    rename = {
+        old: f"model-{i + 1:05d}-of-{total:05d}.safetensors"
+        for i, old in enumerate(existing)
+    }
+    for old, new in rename.items():
+        if old != new:
+            shutil.move(os.path.join(output_path, old), os.path.join(output_path, new))
+    out_map = {name: rename[shard] for name, shard in out_map.items()}
+
+    extra_shard = f"model-{total:05d}-of-{total:05d}.safetensors"
+    save_file(tensors, os.path.join(output_path, extra_shard), metadata={"format": "pt"})
+    for name in missing:
+        out_map[name] = extra_shard
+
+    out_doc["weight_map"] = dict(sorted(out_map.items()))
+    out_doc.setdefault("metadata", {})["total_size"] = sum(
+        os.path.getsize(os.path.join(output_path, f))
+        for f in set(out_map.values())
+    )
+    with open(out_index, "w") as handle:
+        json.dump(out_doc, handle, indent=1)
+    return missing
+
+
+def assert_tensor_parity(output_path, base_model_path):
+    """
+    The merged checkpoint must hold exactly the base's tensor NAMES.
+
+    By name set, not by count and not by category. The first rc0 merge was
+    verified on the vision tower alone -- 333 of 333, correct -- and shipped
+    anyway missing 15 MTP tensors, because a check that asks "is the part I
+    was worried about present?" cannot find the part nobody was worried about.
+    A set difference has no such blind spot.
+    """
+    import json
+    import os
+
+    with open(os.path.join(base_model_path, "model.safetensors.index.json")) as handle:
+        base = set(json.load(handle)["weight_map"])
+    with open(os.path.join(output_path, "model.safetensors.index.json")) as handle:
+        out = set(json.load(handle)["weight_map"])
+
+    missing, extra = sorted(base - out), sorted(out - base)
+    assert not missing and not extra, (
+        f"tensor parity failed against {base_model_path}:\n"
+        f"  {len(missing)} missing: {missing[:8]}\n"
+        f"  {len(extra)} unexpected: {extra[:8]}"
+    )
+    return len(base)
+
+
 def verify_multimodal(output_path):
     """
     Prove the written checkpoint can still see. Raises if it cannot.
@@ -114,8 +227,14 @@ def main():
     # train_judge_lora.py saved it beside the adapter.
     AutoProcessor.from_pretrained(args.adapter_path).save_pretrained(args.output_path)
 
+    restored = restore_dropped_tensors(args.output_path, args.base_model_path)
+    n_tensors = assert_tensor_parity(args.output_path, args.base_model_path)
+    print(f"  tensor parity: {n_tensors} names, exactly matching the base")
+
     t_total = time.perf_counter() - t0
     facts = verify_multimodal(args.output_path)
+    facts["restored_tensors"] = restored
+    facts["tensor_parity"] = n_tensors
     size = sum(
         os.path.getsize(os.path.join(args.output_path, f))
         for f in os.listdir(args.output_path)
