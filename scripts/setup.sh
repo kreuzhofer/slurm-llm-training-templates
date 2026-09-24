@@ -70,7 +70,10 @@ echo "Syncing repo to $DEMO_DIR/repo ..."
 # only by case. Keeping the repo under its own prefix keeps code and data apart
 # and makes "what do the Slurm jobs actually execute" answerable with one path.
 mkdir -p "$DEMO_DIR/repo"
-for d in common models scripts; do
+# `tasks` joined the list when the judge task landed (#21/#22/#23): the Slurm
+# jobs import tasks.judge.*, and a sync that omits it fails on the worker with
+# ModuleNotFoundError long after submission.
+for d in common models scripts tasks; do
     rsync -a --delete --exclude='__pycache__' \
         "$REPO_DIR/$d/" "$DEMO_DIR/repo/$d/"
 done

@@ -138,7 +138,7 @@ bash models/qwen3.8-27b/query.sh
 ```
 
 Re-run `bash scripts/setup.sh` after editing anything in the repo — it re-syncs
-`common/`, `models/` and `scripts/` to `/mnt/data/qwen38-demo/repo/`, which is
+`common/`, `models/`, `scripts/` and `tasks/` to `/mnt/data/qwen38-demo/repo/`, which is
 what the Slurm jobs actually execute. The sync is `rsync -a --delete`, so
 renamed and deleted files are pruned rather than left behind as stale copies.
 It syncs under `repo/` rather than into `$DEMO_DIR` directly because the model
