@@ -114,6 +114,59 @@ def load_images(row, dataset_dir=DEFAULT_DATASET_DIR):
     return images
 
 
+# The drift-guard carve is defined exactly once, here, so a training run and
+# anything that later inspects the split cannot disagree about which rows were
+# held back.
+SPLIT_SEED = 42
+DEFAULT_N_EVAL = 10
+
+
+def agreed_only_ids(dataset_dir=DEFAULT_DATASET_DIR):
+    """
+    Rows whose every checklist item is `agreed` -- 314 of the 402.
+
+    These are the only rows that may be held out. A row carrying an
+    `adjudicated` or `auto-C` item is one where a human (or #108's rule)
+    overturned or confirmed the incumbent, and those 136 items ARE the training
+    signal: 68 of them overturn it. Holding one back spends correction signal
+    to measure something a held-out loss cannot see anyway.
+
+    An all-agreed row costs nothing to hold back, which is exactly why the
+    recipe specifies agreed-only.
+    """
+    with open(os.path.join(dataset_dir, "manifest.json")) as handle:
+        manifest = json.load(handle)
+    return [
+        s["id"]
+        for s in manifest["samples"]
+        if s.get("items") and all(i.get("source") == "agreed" for i in s["items"])
+    ]
+
+
+def train_eval_split(rows, dataset_dir=DEFAULT_DATASET_DIR, n_eval=DEFAULT_N_EVAL):
+    """
+    (train_rows, eval_rows) -- every row trains except a small agreed-only carve.
+
+    This is a DRIFT GUARD, not a holdout, and the difference matters enough to
+    say twice. The real evaluation of rc0 is the qualification screen on the
+    held-out 125, which lives on chat3d's side and is disjoint from this export
+    by example id and by prompt. Nothing measured here is an accuracy, and a
+    loss computed on agreed-only rows measures PRESERVATION: it should sit
+    near-flat, and a rise means the adapter is drifting off what the base
+    already agreed with. The per-epoch TRAIN loss is the one expected to move.
+
+    Deterministic: sorted ids, then a seeded shuffle, so two runs of the same
+    export carve the same rows without writing a split file.
+    """
+    import random
+
+    eligible = sorted(agreed_only_ids(dataset_dir))
+    picked = set(random.Random(SPLIT_SEED).sample(eligible, min(n_eval, len(eligible))))
+    train = [r for r in rows if r["id"] not in picked]
+    evaluation = [r for r in rows if r["id"] in picked]
+    return train, evaluation
+
+
 def load_processor(model_path=DEFAULT_MODEL_PATH):
     from transformers import AutoProcessor
 

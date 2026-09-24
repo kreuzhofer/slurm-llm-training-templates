@@ -59,6 +59,34 @@ def build_feature(processor, row, dataset_dir=None):
     }
 
 
+class JudgeDataset:
+    """
+    Rows -> features, built lazily in __getitem__.
+
+    Lazily because the vision tensors are enormous in aggregate: a single row
+    of eight 768x768 renders carries 18,432 x 1,536 float32 patches, ~113 MB.
+    Materialising all 402 rows up front would be ~33 GB of host RAM per rank
+    to hold a dataset whose JSON is 1.9 MB. The processor call that rebuilds
+    them costs ~0.27 s per row, which dataloader workers hide behind a ~3 s
+    step.
+
+    Rows are never mutated by this -- see the deep-copy note in
+    dataset.render_prompt(). That matters here specifically: the same row is
+    rendered again on every epoch.
+    """
+
+    def __init__(self, processor, rows, dataset_dir=None):
+        self.processor = processor
+        self.rows = rows
+        self.dataset_dir = dataset_dir
+
+    def __len__(self):
+        return len(self.rows)
+
+    def __getitem__(self, i):
+        return build_feature(self.processor, self.rows[i], self.dataset_dir)
+
+
 class JudgeCollator:
     """
     Right-pad the token streams, concatenate the vision streams.
