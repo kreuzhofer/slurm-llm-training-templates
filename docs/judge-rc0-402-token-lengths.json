@@ -1,0 +1,11286 @@
+{
+ "summary": {
+  "total_tokens": {
+   "min": 4621,
+   "median": 6960,
+   "p95": 7740,
+   "max": 8496
+  },
+  "visual_tokens": {
+   "min": 2048,
+   "median": 4608,
+   "p95": 4608,
+   "max": 4608
+  },
+  "text_tokens": {
+   "min": 2020,
+   "median": 2356,
+   "p95": 3135,
+   "max": 3888
+  },
+  "answer_tokens": {
+   "min": 55,
+   "median": 110,
+   "p95": 356,
+   "max": 592
+  }
+ },
+ "rows": [
+  {
+   "id": "00f589a5-7275-4aa5-83d7-31cba4ecff28",
+   "total_tokens": 6877,
+   "visual_tokens": 4608,
+   "text_tokens": 2269,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "01a27016-45c6-4ac3-88f5-e23338a2d936",
+   "total_tokens": 7127,
+   "visual_tokens": 4608,
+   "text_tokens": 2519,
+   "answer_tokens": 144,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "024ffd52-d92f-45ac-b483-9633cd748604",
+   "total_tokens": 7652,
+   "visual_tokens": 4608,
+   "text_tokens": 3044,
+   "answer_tokens": 255,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "02516622-3a09-44fc-8049-e01c30a90e3e",
+   "total_tokens": 7320,
+   "visual_tokens": 4608,
+   "text_tokens": 2712,
+   "answer_tokens": 129,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "027f1fea-90b9-4f6f-bc74-89c407e4f6ab",
+   "total_tokens": 6821,
+   "visual_tokens": 4608,
+   "text_tokens": 2213,
+   "answer_tokens": 79,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "038148f1-c7cf-4208-93db-2779d5178df6",
+   "total_tokens": 7212,
+   "visual_tokens": 4608,
+   "text_tokens": 2604,
+   "answer_tokens": 142,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "05076d31-f483-4606-97a3-ed65ea6e84a0",
+   "total_tokens": 6928,
+   "visual_tokens": 4608,
+   "text_tokens": 2320,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0592ecc5-52d9-4a8b-a534-9a849ebe2a2f",
+   "total_tokens": 7265,
+   "visual_tokens": 4608,
+   "text_tokens": 2657,
+   "answer_tokens": 251,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "06115f11-17f8-4dcb-be9f-3e970522ca06",
+   "total_tokens": 6936,
+   "visual_tokens": 4608,
+   "text_tokens": 2328,
+   "answer_tokens": 149,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "075ce244-196a-4a54-8c0a-3df51c91ad68",
+   "total_tokens": 7607,
+   "visual_tokens": 4608,
+   "text_tokens": 2999,
+   "answer_tokens": 249,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "08cb0999-dc22-439d-a784-00a98e5c9b21",
+   "total_tokens": 6951,
+   "visual_tokens": 4608,
+   "text_tokens": 2343,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "08e5341b-c183-4008-ba2b-494d4b5c5ab3",
+   "total_tokens": 6890,
+   "visual_tokens": 4608,
+   "text_tokens": 2282,
+   "answer_tokens": 141,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "09063a43-1cfe-4898-b02d-671d3726e7ec",
+   "total_tokens": 7064,
+   "visual_tokens": 4608,
+   "text_tokens": 2456,
+   "answer_tokens": 84,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0a0b45a8-ce4b-4706-b96e-342589715972",
+   "total_tokens": 7288,
+   "visual_tokens": 4608,
+   "text_tokens": 2680,
+   "answer_tokens": 111,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0ae7016a-cd01-49e6-8321-b9b2069f8f76",
+   "total_tokens": 7233,
+   "visual_tokens": 4608,
+   "text_tokens": 2625,
+   "answer_tokens": 258,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0afbc016-aff7-4533-a371-172038018eb7",
+   "total_tokens": 6819,
+   "visual_tokens": 4608,
+   "text_tokens": 2211,
+   "answer_tokens": 70,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0b92b777-b7ee-464d-94de-6393b3b51a12",
+   "total_tokens": 7130,
+   "visual_tokens": 4608,
+   "text_tokens": 2522,
+   "answer_tokens": 80,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0cd3b1b1-3042-469b-adfa-6b55b3cbc050",
+   "total_tokens": 7116,
+   "visual_tokens": 4608,
+   "text_tokens": 2508,
+   "answer_tokens": 132,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0de32d7f-5881-4fe3-bd7e-8b81732d073a",
+   "total_tokens": 7276,
+   "visual_tokens": 4608,
+   "text_tokens": 2668,
+   "answer_tokens": 126,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0e3c4716-ac45-4b7f-8cdc-f9820d0cfe86",
+   "total_tokens": 7568,
+   "visual_tokens": 4608,
+   "text_tokens": 2960,
+   "answer_tokens": 398,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "0f0adf5f-d24c-43c1-863a-6268ec7a2157",
+   "total_tokens": 7127,
+   "visual_tokens": 4608,
+   "text_tokens": 2519,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1039dd70-7405-4e62-81dc-73d25185c816",
+   "total_tokens": 6823,
+   "visual_tokens": 4608,
+   "text_tokens": 2215,
+   "answer_tokens": 132,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "12d514b0-71dd-4da5-8656-5e65bf1fae60",
+   "total_tokens": 6876,
+   "visual_tokens": 4608,
+   "text_tokens": 2268,
+   "answer_tokens": 97,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "12ef823f-998d-4c03-82d8-e0711a098a7f",
+   "total_tokens": 8200,
+   "visual_tokens": 4608,
+   "text_tokens": 3592,
+   "answer_tokens": 134,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "13db4474-753d-40c8-a897-901359c5b298",
+   "total_tokens": 6940,
+   "visual_tokens": 4608,
+   "text_tokens": 2332,
+   "answer_tokens": 159,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1478eb75-d94e-47dc-a677-237156191215",
+   "total_tokens": 7018,
+   "visual_tokens": 4608,
+   "text_tokens": 2410,
+   "answer_tokens": 86,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "152092ff-3685-475d-8581-7079da09f4b5",
+   "total_tokens": 7833,
+   "visual_tokens": 4608,
+   "text_tokens": 3225,
+   "answer_tokens": 246,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1529b88a-6181-4a2f-9c67-e3bd821404f1",
+   "total_tokens": 6951,
+   "visual_tokens": 4608,
+   "text_tokens": 2343,
+   "answer_tokens": 101,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "16663285-92f5-445b-9be9-55ac3317096a",
+   "total_tokens": 6796,
+   "visual_tokens": 4608,
+   "text_tokens": 2188,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "16c00265-c152-433d-95b9-1f9b47c21649",
+   "total_tokens": 6835,
+   "visual_tokens": 4608,
+   "text_tokens": 2227,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1854d508-4dc6-4548-8ab3-62c87886c938",
+   "total_tokens": 7227,
+   "visual_tokens": 4608,
+   "text_tokens": 2619,
+   "answer_tokens": 145,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "18f3a09f-8428-429e-b113-0561660e14db",
+   "total_tokens": 7178,
+   "visual_tokens": 4608,
+   "text_tokens": 2570,
+   "answer_tokens": 149,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "191ffd23-4ade-4310-a1ab-c711aae1bfd3",
+   "total_tokens": 6806,
+   "visual_tokens": 4608,
+   "text_tokens": 2198,
+   "answer_tokens": 80,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1943510c-6613-4ccb-9bdf-4fab00a1b45c",
+   "total_tokens": 7631,
+   "visual_tokens": 4608,
+   "text_tokens": 3023,
+   "answer_tokens": 298,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "19f9f476-47f6-41f0-98d3-6c1bbe1a287f",
+   "total_tokens": 6991,
+   "visual_tokens": 4608,
+   "text_tokens": 2383,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1aab9bcf-0ff7-417d-b924-901a28cc6404",
+   "total_tokens": 7924,
+   "visual_tokens": 4608,
+   "text_tokens": 3316,
+   "answer_tokens": 332,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1bd07a18-e31f-470d-a3ce-95bde97d570e",
+   "total_tokens": 7316,
+   "visual_tokens": 4608,
+   "text_tokens": 2708,
+   "answer_tokens": 306,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1c9a1b02-4bc9-4400-b11b-30e561a71e1c",
+   "total_tokens": 6890,
+   "visual_tokens": 4608,
+   "text_tokens": 2282,
+   "answer_tokens": 137,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1d18e907-0a66-40fa-9cfa-774970f790ee",
+   "total_tokens": 6790,
+   "visual_tokens": 4608,
+   "text_tokens": 2182,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1d4d703f-7e64-4339-99c6-4cad0e6b60da",
+   "total_tokens": 6783,
+   "visual_tokens": 4608,
+   "text_tokens": 2175,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1ddb91b0-979e-4f2d-86d4-8810bfa913d5",
+   "total_tokens": 7092,
+   "visual_tokens": 4608,
+   "text_tokens": 2484,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1e0365d3-a719-447c-ab5d-f404eab8ccd1",
+   "total_tokens": 6951,
+   "visual_tokens": 4608,
+   "text_tokens": 2343,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1e0d62e1-610e-44fa-8c7a-5faaade6897b",
+   "total_tokens": 6804,
+   "visual_tokens": 4608,
+   "text_tokens": 2196,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1eaed6fc-ce43-4344-ac47-9f8cc094873f",
+   "total_tokens": 7323,
+   "visual_tokens": 4608,
+   "text_tokens": 2715,
+   "answer_tokens": 90,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "1fb164a4-b37c-43d3-881a-d3d1bd7fa6cf",
+   "total_tokens": 7127,
+   "visual_tokens": 4608,
+   "text_tokens": 2519,
+   "answer_tokens": 206,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "212931c3-9260-467b-88f6-2db22e5ce781",
+   "total_tokens": 6705,
+   "visual_tokens": 4608,
+   "text_tokens": 2097,
+   "answer_tokens": 95,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "219e53f6-cc31-45f5-b2c3-e0c090699ae5",
+   "total_tokens": 6748,
+   "visual_tokens": 4608,
+   "text_tokens": 2140,
+   "answer_tokens": 63,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "21e9fdba-bb57-4709-ad42-26416eb387f2",
+   "total_tokens": 6805,
+   "visual_tokens": 4608,
+   "text_tokens": 2197,
+   "answer_tokens": 100,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "222088c5-1973-4741-ba52-89442a08e915",
+   "total_tokens": 6697,
+   "visual_tokens": 4608,
+   "text_tokens": 2089,
+   "answer_tokens": 84,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "22d2b6d1-b8f3-453d-b916-db94cb7613c6",
+   "total_tokens": 6876,
+   "visual_tokens": 4608,
+   "text_tokens": 2268,
+   "answer_tokens": 134,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "235d529b-8a11-421b-90a7-162d34180cde",
+   "total_tokens": 6963,
+   "visual_tokens": 4608,
+   "text_tokens": 2355,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "24094ee2-9555-416b-b1fb-b783642dc587",
+   "total_tokens": 7009,
+   "visual_tokens": 4608,
+   "text_tokens": 2401,
+   "answer_tokens": 258,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2519b730-8abe-41e5-b9af-665cba0d51a9",
+   "total_tokens": 6874,
+   "visual_tokens": 4608,
+   "text_tokens": 2266,
+   "answer_tokens": 122,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "253366d5-22ca-4952-934a-4bbeba3aa13a",
+   "total_tokens": 7486,
+   "visual_tokens": 4608,
+   "text_tokens": 2878,
+   "answer_tokens": 117,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "25d101bd-418b-47f6-a9dc-dde4fae547c4",
+   "total_tokens": 6929,
+   "visual_tokens": 4608,
+   "text_tokens": 2321,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "25e4aabe-f7fb-4e92-ba04-3090092676a5",
+   "total_tokens": 6818,
+   "visual_tokens": 4608,
+   "text_tokens": 2210,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "25f8dc0b-0563-470c-a95c-f8c80b8a9c51",
+   "total_tokens": 6885,
+   "visual_tokens": 4608,
+   "text_tokens": 2277,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2632b6d1-eae7-4daa-b786-4b0641a12995",
+   "total_tokens": 7065,
+   "visual_tokens": 4608,
+   "text_tokens": 2457,
+   "answer_tokens": 184,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "264c153d-5cee-48f0-bacb-aceaaa1931dc",
+   "total_tokens": 6681,
+   "visual_tokens": 4608,
+   "text_tokens": 2073,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "269dfc0c-e779-4322-be47-ccb80bc4d096",
+   "total_tokens": 7206,
+   "visual_tokens": 4608,
+   "text_tokens": 2598,
+   "answer_tokens": 372,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "26d17975-ae71-448d-b29e-884ded8e134d",
+   "total_tokens": 6834,
+   "visual_tokens": 4608,
+   "text_tokens": 2226,
+   "answer_tokens": 76,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "27849dfa-8c44-4201-9bd6-c675c6178415",
+   "total_tokens": 6839,
+   "visual_tokens": 4608,
+   "text_tokens": 2231,
+   "answer_tokens": 92,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "27891669-b04e-40f7-bd32-fe7ab94d332e",
+   "total_tokens": 7166,
+   "visual_tokens": 4608,
+   "text_tokens": 2558,
+   "answer_tokens": 141,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "28578919-98be-47df-a4cb-caa61c21bdf2",
+   "total_tokens": 6895,
+   "visual_tokens": 4608,
+   "text_tokens": 2287,
+   "answer_tokens": 73,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "29710e68-67ea-415a-9c35-28055f99df91",
+   "total_tokens": 7207,
+   "visual_tokens": 4608,
+   "text_tokens": 2599,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2a41015e-24cf-4b7e-8820-e4ffe8b55874",
+   "total_tokens": 6817,
+   "visual_tokens": 4608,
+   "text_tokens": 2209,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2b014add-f3c1-47b2-853c-faee9fca7636",
+   "total_tokens": 7012,
+   "visual_tokens": 4608,
+   "text_tokens": 2404,
+   "answer_tokens": 163,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2e2db0c9-f18c-4ca8-b862-e928c19751a3",
+   "total_tokens": 7004,
+   "visual_tokens": 4608,
+   "text_tokens": 2396,
+   "answer_tokens": 103,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2ecf65af-8e36-46fd-9f8b-7374a7054994",
+   "total_tokens": 6975,
+   "visual_tokens": 4608,
+   "text_tokens": 2367,
+   "answer_tokens": 122,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "2f7dc6c4-0c15-44a5-bc00-94b5a8b1b2a1",
+   "total_tokens": 7280,
+   "visual_tokens": 4608,
+   "text_tokens": 2672,
+   "answer_tokens": 123,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3017f307-95fd-4283-85ed-7fc8687cc3ab",
+   "total_tokens": 6868,
+   "visual_tokens": 4608,
+   "text_tokens": 2260,
+   "answer_tokens": 133,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "30afadb0-8558-4be0-ab3d-749ad0001185",
+   "total_tokens": 7229,
+   "visual_tokens": 4608,
+   "text_tokens": 2621,
+   "answer_tokens": 125,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "312bb9f6-7868-419d-90da-c3fc144a548f",
+   "total_tokens": 7160,
+   "visual_tokens": 4608,
+   "text_tokens": 2552,
+   "answer_tokens": 126,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "31a7e617-f78c-4059-a6df-90c842c226db",
+   "total_tokens": 7170,
+   "visual_tokens": 4608,
+   "text_tokens": 2562,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3268bdca-53f3-4d3d-866d-fc05e1af2ec7",
+   "total_tokens": 7332,
+   "visual_tokens": 4608,
+   "text_tokens": 2724,
+   "answer_tokens": 432,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "332cdb78-d833-491c-bae1-c5dbb989801a",
+   "total_tokens": 6950,
+   "visual_tokens": 4608,
+   "text_tokens": 2342,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "33e6164d-e1c9-4410-b365-4ec6f9153c2f",
+   "total_tokens": 7543,
+   "visual_tokens": 4608,
+   "text_tokens": 2935,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "33ee4e71-a223-4762-90b1-808d2ed6f3d1",
+   "total_tokens": 7093,
+   "visual_tokens": 4608,
+   "text_tokens": 2485,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "34f748ab-44d7-49ef-8d17-3c175674d93a",
+   "total_tokens": 6909,
+   "visual_tokens": 4608,
+   "text_tokens": 2301,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3784e3fb-a69b-41c7-bc32-ed78d129170b",
+   "total_tokens": 7397,
+   "visual_tokens": 4608,
+   "text_tokens": 2789,
+   "answer_tokens": 241,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "379cf4df-7c90-4656-9d18-70d290904d6d",
+   "total_tokens": 6985,
+   "visual_tokens": 4608,
+   "text_tokens": 2377,
+   "answer_tokens": 241,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "39001e1c-7f68-4552-b67e-e33e5be80ff6",
+   "total_tokens": 7047,
+   "visual_tokens": 4608,
+   "text_tokens": 2439,
+   "answer_tokens": 200,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3929ca3e-5743-459d-a560-1f8ed4f462ff",
+   "total_tokens": 7169,
+   "visual_tokens": 4608,
+   "text_tokens": 2561,
+   "answer_tokens": 224,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "39409255-defa-408d-ab7d-f1826c932b2d",
+   "total_tokens": 4944,
+   "visual_tokens": 2048,
+   "text_tokens": 2896,
+   "answer_tokens": 417,
+   "n_images": 8,
+   "image_sizes": [
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512"
+   ],
+   "tokens_per_image": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  {
+   "id": "396191ff-f66e-4e37-a110-ea6bc7a8275d",
+   "total_tokens": 7968,
+   "visual_tokens": 4608,
+   "text_tokens": 3360,
+   "answer_tokens": 142,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "39772fe5-2174-416d-82d9-c347c294c8a5",
+   "total_tokens": 6959,
+   "visual_tokens": 4608,
+   "text_tokens": 2351,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3a52a183-1546-4051-9570-7a6ee34150d4",
+   "total_tokens": 6821,
+   "visual_tokens": 4608,
+   "text_tokens": 2213,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3b674d3c-868b-4ec7-a689-f331235ae0be",
+   "total_tokens": 6897,
+   "visual_tokens": 4608,
+   "text_tokens": 2289,
+   "answer_tokens": 63,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3ba515d4-d956-4be0-9fbc-4119b44e64e0",
+   "total_tokens": 7289,
+   "visual_tokens": 4608,
+   "text_tokens": 2681,
+   "answer_tokens": 215,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3bf7fd60-8153-434d-bd35-7a48b7b7ab12",
+   "total_tokens": 7963,
+   "visual_tokens": 4608,
+   "text_tokens": 3355,
+   "answer_tokens": 472,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3c432cd7-ddc3-45ba-8431-15a85ef454e3",
+   "total_tokens": 6839,
+   "visual_tokens": 4608,
+   "text_tokens": 2231,
+   "answer_tokens": 89,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3df30fa3-b1ae-4992-a4bd-2ae782fec689",
+   "total_tokens": 6777,
+   "visual_tokens": 4608,
+   "text_tokens": 2169,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3ec8430f-5e49-4cb1-a97b-32c86daa611f",
+   "total_tokens": 6836,
+   "visual_tokens": 4608,
+   "text_tokens": 2228,
+   "answer_tokens": 66,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3f3e7fc7-415d-456a-a3d7-99c46011a05b",
+   "total_tokens": 6957,
+   "visual_tokens": 4608,
+   "text_tokens": 2349,
+   "answer_tokens": 76,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3f5e4297-7178-477d-8e3b-50f13a3abc85",
+   "total_tokens": 6844,
+   "visual_tokens": 4608,
+   "text_tokens": 2236,
+   "answer_tokens": 77,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3fa0d012-9049-4d73-b71d-69966ffa4366",
+   "total_tokens": 7172,
+   "visual_tokens": 4608,
+   "text_tokens": 2564,
+   "answer_tokens": 127,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "3fd2cb09-b4d7-41e9-ba23-f25aa0b5f251",
+   "total_tokens": 6961,
+   "visual_tokens": 4608,
+   "text_tokens": 2353,
+   "answer_tokens": 112,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4073eb23-d28d-4d2d-80c5-fe33022f851b",
+   "total_tokens": 6842,
+   "visual_tokens": 4608,
+   "text_tokens": 2234,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "40dfe036-9536-49d5-8407-3677e33ca673",
+   "total_tokens": 6833,
+   "visual_tokens": 4608,
+   "text_tokens": 2225,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "40e15d25-3228-4a89-905b-13066ffe5572",
+   "total_tokens": 6979,
+   "visual_tokens": 4608,
+   "text_tokens": 2371,
+   "answer_tokens": 201,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4156e22f-3012-457f-bc11-179b733ccf42",
+   "total_tokens": 6997,
+   "visual_tokens": 4608,
+   "text_tokens": 2389,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "41a768c5-a0dc-4a44-a854-133372c5221b",
+   "total_tokens": 6987,
+   "visual_tokens": 4608,
+   "text_tokens": 2379,
+   "answer_tokens": 117,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "41c25af7-e627-4f38-93d5-55d6f23ebc69",
+   "total_tokens": 7000,
+   "visual_tokens": 4608,
+   "text_tokens": 2392,
+   "answer_tokens": 159,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "43172542-2321-44ed-b634-8258900b2432",
+   "total_tokens": 7036,
+   "visual_tokens": 4608,
+   "text_tokens": 2428,
+   "answer_tokens": 121,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "44bac0df-e729-4462-8e55-0adee6ccdd07",
+   "total_tokens": 7247,
+   "visual_tokens": 4608,
+   "text_tokens": 2639,
+   "answer_tokens": 164,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "44e65a47-7d7f-4f37-ac97-3fec3248bdc8",
+   "total_tokens": 6696,
+   "visual_tokens": 4608,
+   "text_tokens": 2088,
+   "answer_tokens": 65,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "457ad3f6-c817-4222-84de-2117ec2c97b0",
+   "total_tokens": 6903,
+   "visual_tokens": 4608,
+   "text_tokens": 2295,
+   "answer_tokens": 88,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4595483e-5b30-4509-b142-e8bdce7f2d7c",
+   "total_tokens": 6830,
+   "visual_tokens": 4608,
+   "text_tokens": 2222,
+   "answer_tokens": 153,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "45ea1b0e-5670-47ca-a48e-22b273971ec0",
+   "total_tokens": 7097,
+   "visual_tokens": 4608,
+   "text_tokens": 2489,
+   "answer_tokens": 246,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "461698bc-a624-4661-bd65-bde72c05aa2b",
+   "total_tokens": 7057,
+   "visual_tokens": 4608,
+   "text_tokens": 2449,
+   "answer_tokens": 128,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "461e0e48-a1e5-41f6-8afd-02d0bab697ec",
+   "total_tokens": 6964,
+   "visual_tokens": 4608,
+   "text_tokens": 2356,
+   "answer_tokens": 146,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4635e172-5414-4196-9814-932bb9bca70d",
+   "total_tokens": 6805,
+   "visual_tokens": 4608,
+   "text_tokens": 2197,
+   "answer_tokens": 117,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "46409fa2-0b1e-4c57-868e-2f14be274ef0",
+   "total_tokens": 6954,
+   "visual_tokens": 4608,
+   "text_tokens": 2346,
+   "answer_tokens": 191,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4664d935-0fbc-4c91-a8e1-ea5635f111ae",
+   "total_tokens": 6690,
+   "visual_tokens": 4608,
+   "text_tokens": 2082,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "46cf6283-fc45-4474-97f6-fab9c7b2434b",
+   "total_tokens": 7167,
+   "visual_tokens": 4608,
+   "text_tokens": 2559,
+   "answer_tokens": 107,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4824c2d3-8c8a-4976-a46d-bd8840cdb602",
+   "total_tokens": 7624,
+   "visual_tokens": 4608,
+   "text_tokens": 3016,
+   "answer_tokens": 333,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "48482731-e4eb-4116-8015-535305d328a5",
+   "total_tokens": 6893,
+   "visual_tokens": 4608,
+   "text_tokens": 2285,
+   "answer_tokens": 186,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4912e151-9ed9-4458-81cc-cbb8cd3df98d",
+   "total_tokens": 6855,
+   "visual_tokens": 4608,
+   "text_tokens": 2247,
+   "answer_tokens": 126,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "492526b0-a506-4a45-9de4-e045e4d1bf28",
+   "total_tokens": 7052,
+   "visual_tokens": 4608,
+   "text_tokens": 2444,
+   "answer_tokens": 126,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "49315962-2853-4adc-8825-8ee3f2b8400d",
+   "total_tokens": 6853,
+   "visual_tokens": 4608,
+   "text_tokens": 2245,
+   "answer_tokens": 162,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "49a58858-9192-4685-a22e-e31985a793f3",
+   "total_tokens": 6968,
+   "visual_tokens": 4608,
+   "text_tokens": 2360,
+   "answer_tokens": 142,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "49d4d6ff-428a-4f7e-bc0f-e1df1e4a596e",
+   "total_tokens": 6984,
+   "visual_tokens": 4608,
+   "text_tokens": 2376,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "49d83466-f6ee-4936-8236-e5e3fae5fd7e",
+   "total_tokens": 7362,
+   "visual_tokens": 4608,
+   "text_tokens": 2754,
+   "answer_tokens": 104,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4a21e80a-1917-4ea2-9969-2ef345e47a44",
+   "total_tokens": 6762,
+   "visual_tokens": 4608,
+   "text_tokens": 2154,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4a4df5bb-a44a-4fb2-8ac8-6c388d0d14ec",
+   "total_tokens": 7359,
+   "visual_tokens": 4608,
+   "text_tokens": 2751,
+   "answer_tokens": 330,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4df92ccd-2d46-41e2-9f32-4d288891fcc7",
+   "total_tokens": 6790,
+   "visual_tokens": 4608,
+   "text_tokens": 2182,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "4f8af022-736f-4a55-a231-8725e4c24c78",
+   "total_tokens": 6821,
+   "visual_tokens": 4608,
+   "text_tokens": 2213,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "515de8fa-e498-41ed-9e37-6550f4cf9130",
+   "total_tokens": 6766,
+   "visual_tokens": 4608,
+   "text_tokens": 2158,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "51cd4309-fc29-47e3-8b0f-e7a5fade7f76",
+   "total_tokens": 7199,
+   "visual_tokens": 4608,
+   "text_tokens": 2591,
+   "answer_tokens": 114,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "535e08ac-aa61-439b-ae0d-10885e4109ac",
+   "total_tokens": 6839,
+   "visual_tokens": 4608,
+   "text_tokens": 2231,
+   "answer_tokens": 91,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "54404973-fe69-435e-b925-30d9e53cfb5f",
+   "total_tokens": 6951,
+   "visual_tokens": 4608,
+   "text_tokens": 2343,
+   "answer_tokens": 143,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "547b115e-7749-41be-bd25-2b35554804f5",
+   "total_tokens": 7092,
+   "visual_tokens": 4608,
+   "text_tokens": 2484,
+   "answer_tokens": 164,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "55516723-ef22-42e7-8429-f582bb6e53f2",
+   "total_tokens": 6775,
+   "visual_tokens": 4608,
+   "text_tokens": 2167,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5596d176-1b18-45eb-89b2-a4bd93bd05bb",
+   "total_tokens": 6873,
+   "visual_tokens": 4608,
+   "text_tokens": 2265,
+   "answer_tokens": 150,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "559ac80c-3852-46b9-b264-68e75a9fbc00",
+   "total_tokens": 7760,
+   "visual_tokens": 4608,
+   "text_tokens": 3152,
+   "answer_tokens": 338,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "56284678-5569-4c92-836a-0200eadc3507",
+   "total_tokens": 6772,
+   "visual_tokens": 4608,
+   "text_tokens": 2164,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "562f484e-cab3-4ec8-8a80-657bcf6be5f4",
+   "total_tokens": 6830,
+   "visual_tokens": 4608,
+   "text_tokens": 2222,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "56c31e2a-b3a2-4ceb-a057-98bb4510295c",
+   "total_tokens": 6724,
+   "visual_tokens": 4608,
+   "text_tokens": 2116,
+   "answer_tokens": 73,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "56ebc40a-b823-4d63-9fb5-da3973be9564",
+   "total_tokens": 6768,
+   "visual_tokens": 4608,
+   "text_tokens": 2160,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "575fb89d-8ce7-480b-9272-3447382ac3cb",
+   "total_tokens": 6776,
+   "visual_tokens": 4608,
+   "text_tokens": 2168,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "576218d8-f1ac-4605-b8c3-9a50677ba71f",
+   "total_tokens": 7286,
+   "visual_tokens": 4608,
+   "text_tokens": 2678,
+   "answer_tokens": 326,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "580619d0-4202-4286-b121-22f4abbfe05a",
+   "total_tokens": 6859,
+   "visual_tokens": 4608,
+   "text_tokens": 2251,
+   "answer_tokens": 112,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "58117955-71a6-4522-9aa9-5771fc4c1e92",
+   "total_tokens": 6869,
+   "visual_tokens": 4608,
+   "text_tokens": 2261,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5874a45c-772d-40a6-a6ab-64cc750f0a65",
+   "total_tokens": 7743,
+   "visual_tokens": 4608,
+   "text_tokens": 3135,
+   "answer_tokens": 334,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "58e2ea54-3e2d-4979-8709-31b460f2031a",
+   "total_tokens": 7522,
+   "visual_tokens": 4608,
+   "text_tokens": 2914,
+   "answer_tokens": 155,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "591d073f-9d1d-4e59-93f3-4ed84e335858",
+   "total_tokens": 7087,
+   "visual_tokens": 4608,
+   "text_tokens": 2479,
+   "answer_tokens": 136,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "592b9be8-b1c0-452a-b848-ace3d8047db7",
+   "total_tokens": 7270,
+   "visual_tokens": 4608,
+   "text_tokens": 2662,
+   "answer_tokens": 239,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "59f26443-b586-4927-8481-36b4386af3d9",
+   "total_tokens": 6735,
+   "visual_tokens": 4608,
+   "text_tokens": 2127,
+   "answer_tokens": 86,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5a048462-19bb-4029-b869-a284879610cd",
+   "total_tokens": 7282,
+   "visual_tokens": 4608,
+   "text_tokens": 2674,
+   "answer_tokens": 124,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5a719980-57ee-4573-bd3e-a0fe040962e1",
+   "total_tokens": 6923,
+   "visual_tokens": 4608,
+   "text_tokens": 2315,
+   "answer_tokens": 114,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5b3d6e29-380e-4727-aa9a-51f7abe6187e",
+   "total_tokens": 6751,
+   "visual_tokens": 4608,
+   "text_tokens": 2143,
+   "answer_tokens": 62,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5baa9037-602c-42aa-9407-ae0f52bae91e",
+   "total_tokens": 7315,
+   "visual_tokens": 4608,
+   "text_tokens": 2707,
+   "answer_tokens": 221,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5bae8b95-66d4-49c3-9411-959b20364bf2",
+   "total_tokens": 6842,
+   "visual_tokens": 4608,
+   "text_tokens": 2234,
+   "answer_tokens": 163,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5bf39c0c-c340-4c51-94fc-6866dead26c5",
+   "total_tokens": 7215,
+   "visual_tokens": 4608,
+   "text_tokens": 2607,
+   "answer_tokens": 120,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5cdfd84b-61b8-46ae-89ee-296d4142ae1f",
+   "total_tokens": 6686,
+   "visual_tokens": 4608,
+   "text_tokens": 2078,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5daa3a57-78e0-46cb-bf49-9c435cafc396",
+   "total_tokens": 6944,
+   "visual_tokens": 4608,
+   "text_tokens": 2336,
+   "answer_tokens": 136,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "5f779804-24a5-4802-b31a-0c7a4862d919",
+   "total_tokens": 7552,
+   "visual_tokens": 4608,
+   "text_tokens": 2944,
+   "answer_tokens": 127,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "60026471-9b3c-4073-b3e2-1cddcd9860ba",
+   "total_tokens": 7862,
+   "visual_tokens": 4608,
+   "text_tokens": 3254,
+   "answer_tokens": 127,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "601bf5a8-63ec-4435-8fcb-d12157f7daee",
+   "total_tokens": 7046,
+   "visual_tokens": 4608,
+   "text_tokens": 2438,
+   "answer_tokens": 145,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "60249da0-c99e-46fe-8a94-0eb74af79ccb",
+   "total_tokens": 6987,
+   "visual_tokens": 4608,
+   "text_tokens": 2379,
+   "answer_tokens": 134,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "60d16b50-17cf-4fe8-a02f-5b6af6b5ad72",
+   "total_tokens": 7460,
+   "visual_tokens": 4608,
+   "text_tokens": 2852,
+   "answer_tokens": 184,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "60f9a22e-e951-493e-8e5f-7afe8dff65da",
+   "total_tokens": 6798,
+   "visual_tokens": 4608,
+   "text_tokens": 2190,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "611de537-7e7d-4d5e-b711-96d04f18a740",
+   "total_tokens": 7026,
+   "visual_tokens": 4608,
+   "text_tokens": 2418,
+   "answer_tokens": 114,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "628f605c-4ce8-4276-9d81-59ccb00ae430",
+   "total_tokens": 6754,
+   "visual_tokens": 4608,
+   "text_tokens": 2146,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "62ad4316-5479-416b-a559-44f98b37f920",
+   "total_tokens": 6851,
+   "visual_tokens": 4608,
+   "text_tokens": 2243,
+   "answer_tokens": 125,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "639aa137-83b4-41d7-8497-4b3671a1fb5b",
+   "total_tokens": 7045,
+   "visual_tokens": 4608,
+   "text_tokens": 2437,
+   "answer_tokens": 90,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "63fc0c83-3da2-4348-aa55-bc944d634983",
+   "total_tokens": 6910,
+   "visual_tokens": 4608,
+   "text_tokens": 2302,
+   "answer_tokens": 143,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "65c69f3e-a33c-4ff7-b6e8-fde671cde56d",
+   "total_tokens": 6864,
+   "visual_tokens": 4608,
+   "text_tokens": 2256,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "66278e1d-cf1c-4e81-86fb-5936caef67bf",
+   "total_tokens": 6971,
+   "visual_tokens": 4608,
+   "text_tokens": 2363,
+   "answer_tokens": 212,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6645698a-52d9-40ad-983e-df927eb9f286",
+   "total_tokens": 7477,
+   "visual_tokens": 4608,
+   "text_tokens": 2869,
+   "answer_tokens": 356,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "667db410-50cc-4334-9109-dbcfd6b19eb6",
+   "total_tokens": 6691,
+   "visual_tokens": 4608,
+   "text_tokens": 2083,
+   "answer_tokens": 95,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "670933a2-8c20-4cd3-8771-bad7155c73a6",
+   "total_tokens": 7273,
+   "visual_tokens": 4608,
+   "text_tokens": 2665,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "67b4fee3-1782-4cc2-a92a-4c041d8b2fdb",
+   "total_tokens": 6908,
+   "visual_tokens": 4608,
+   "text_tokens": 2300,
+   "answer_tokens": 140,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "68ed8d0b-cdba-4813-b00e-68c31a699a6f",
+   "total_tokens": 6702,
+   "visual_tokens": 4608,
+   "text_tokens": 2094,
+   "answer_tokens": 97,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "68fd112d-f4bc-44bd-b592-08136b25e314",
+   "total_tokens": 6911,
+   "visual_tokens": 4608,
+   "text_tokens": 2303,
+   "answer_tokens": 79,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "69d437de-8a54-469a-ab43-26cc2aae30db",
+   "total_tokens": 6732,
+   "visual_tokens": 4608,
+   "text_tokens": 2124,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6a45e3c5-9546-46f6-863b-a28f23af7586",
+   "total_tokens": 7047,
+   "visual_tokens": 4608,
+   "text_tokens": 2439,
+   "answer_tokens": 152,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6a78269a-ce20-4bbd-8198-c1e94a7b4cc4",
+   "total_tokens": 6939,
+   "visual_tokens": 4608,
+   "text_tokens": 2331,
+   "answer_tokens": 140,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6a9a7386-a7f0-4aa0-88c8-2f43ab4cc0e6",
+   "total_tokens": 6828,
+   "visual_tokens": 4608,
+   "text_tokens": 2220,
+   "answer_tokens": 88,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6aad640b-273e-4455-8bfd-b4faceeeba61",
+   "total_tokens": 6840,
+   "visual_tokens": 4608,
+   "text_tokens": 2232,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6b121c2f-dcaf-4169-bbf0-ca2f7e9cfce0",
+   "total_tokens": 7909,
+   "visual_tokens": 4608,
+   "text_tokens": 3301,
+   "answer_tokens": 558,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6b2a3eb6-f03c-4953-a031-b690d21e33ac",
+   "total_tokens": 7422,
+   "visual_tokens": 4608,
+   "text_tokens": 2814,
+   "answer_tokens": 134,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6bb755d6-b3cf-4e9e-a4b3-c8cbd8d7733c",
+   "total_tokens": 6968,
+   "visual_tokens": 4608,
+   "text_tokens": 2360,
+   "answer_tokens": 195,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6d8560ba-3ee3-46d4-80d8-234cc217c1a3",
+   "total_tokens": 7208,
+   "visual_tokens": 4608,
+   "text_tokens": 2600,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6e1a1584-b172-434d-97dd-a4c8c902f545",
+   "total_tokens": 6825,
+   "visual_tokens": 4608,
+   "text_tokens": 2217,
+   "answer_tokens": 110,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6e76cf22-2cd4-4cce-9dfe-6d1fd7977769",
+   "total_tokens": 7517,
+   "visual_tokens": 4608,
+   "text_tokens": 2909,
+   "answer_tokens": 229,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "6ef381a3-0cc6-4b1c-a047-4b23ad1a935c",
+   "total_tokens": 7174,
+   "visual_tokens": 4608,
+   "text_tokens": 2566,
+   "answer_tokens": 110,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "71e8daf0-3ebd-49ee-86dd-ef9588ccf660",
+   "total_tokens": 6895,
+   "visual_tokens": 4608,
+   "text_tokens": 2287,
+   "answer_tokens": 156,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "72435679-f212-460a-ab3d-f92621fb1d83",
+   "total_tokens": 7078,
+   "visual_tokens": 4608,
+   "text_tokens": 2470,
+   "answer_tokens": 222,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7306e36f-fb3d-451d-8efd-fc322f1d0b1e",
+   "total_tokens": 6922,
+   "visual_tokens": 4608,
+   "text_tokens": 2314,
+   "answer_tokens": 173,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "73814638-ec6c-4c1c-b51d-671360ae04a1",
+   "total_tokens": 7261,
+   "visual_tokens": 4608,
+   "text_tokens": 2653,
+   "answer_tokens": 201,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "739b6b4b-e612-4766-ba97-bf896b872bbe",
+   "total_tokens": 6774,
+   "visual_tokens": 4608,
+   "text_tokens": 2166,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "73e6d0ca-a6d3-43fb-bad8-030bf384be11",
+   "total_tokens": 7672,
+   "visual_tokens": 4608,
+   "text_tokens": 3064,
+   "answer_tokens": 58,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "76cea6bc-6ec7-4aeb-85ae-481fbb2248c1",
+   "total_tokens": 6760,
+   "visual_tokens": 4608,
+   "text_tokens": 2152,
+   "answer_tokens": 76,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "77943ca2-c525-4edc-a958-6419b75f0154",
+   "total_tokens": 6693,
+   "visual_tokens": 4608,
+   "text_tokens": 2085,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "77f6ba95-04e3-4489-aca3-693fbde1c7e2",
+   "total_tokens": 7374,
+   "visual_tokens": 4608,
+   "text_tokens": 2766,
+   "answer_tokens": 110,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7a65d088-25e0-4261-9a14-2287874929ec",
+   "total_tokens": 6875,
+   "visual_tokens": 4608,
+   "text_tokens": 2267,
+   "answer_tokens": 103,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7b18ad74-3ac2-4bef-935c-9929ea8bbba3",
+   "total_tokens": 6777,
+   "visual_tokens": 4608,
+   "text_tokens": 2169,
+   "answer_tokens": 73,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7c3df8c5-40d3-4184-aa3b-080cea7dfd8b",
+   "total_tokens": 6925,
+   "visual_tokens": 4608,
+   "text_tokens": 2317,
+   "answer_tokens": 131,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7c5849d0-943a-40fc-9d56-13310ff5ea2e",
+   "total_tokens": 6852,
+   "visual_tokens": 4608,
+   "text_tokens": 2244,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7cce0e53-4435-4ea9-affe-54dad5a1855b",
+   "total_tokens": 6901,
+   "visual_tokens": 4608,
+   "text_tokens": 2293,
+   "answer_tokens": 256,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7e25ff72-1ca6-432b-8a4b-0f61be15bc44",
+   "total_tokens": 6846,
+   "visual_tokens": 4608,
+   "text_tokens": 2238,
+   "answer_tokens": 155,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7ef30c5c-7984-41e0-9cb0-39f9edb03f4d",
+   "total_tokens": 7636,
+   "visual_tokens": 4608,
+   "text_tokens": 3028,
+   "answer_tokens": 335,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "7f11db79-97bb-4239-be5f-935bc5b8f7c4",
+   "total_tokens": 7018,
+   "visual_tokens": 4608,
+   "text_tokens": 2410,
+   "answer_tokens": 148,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8044cc98-ba4c-4264-8a20-e056bb0554b5",
+   "total_tokens": 6747,
+   "visual_tokens": 4608,
+   "text_tokens": 2139,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8109931e-d7ed-48bd-8f44-6c913fda7bbd",
+   "total_tokens": 6923,
+   "visual_tokens": 4608,
+   "text_tokens": 2315,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "81553eaf-ae35-4dec-b823-b7cc04c55d8b",
+   "total_tokens": 8009,
+   "visual_tokens": 4608,
+   "text_tokens": 3401,
+   "answer_tokens": 306,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "81cd4904-451a-4585-b848-9db5184e7e0a",
+   "total_tokens": 6922,
+   "visual_tokens": 4608,
+   "text_tokens": 2314,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "824a0fea-4eca-4d69-9619-e106fe3e5659",
+   "total_tokens": 7306,
+   "visual_tokens": 4608,
+   "text_tokens": 2698,
+   "answer_tokens": 150,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "82fbf35e-8cce-4909-9a52-08a7d38f8982",
+   "total_tokens": 6858,
+   "visual_tokens": 4608,
+   "text_tokens": 2250,
+   "answer_tokens": 104,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "839c2ace-184a-4184-b706-4a5abc3c23ae",
+   "total_tokens": 7840,
+   "visual_tokens": 4608,
+   "text_tokens": 3232,
+   "answer_tokens": 390,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "841041b6-4979-4f9f-bb78-39d35d2df285",
+   "total_tokens": 6752,
+   "visual_tokens": 4608,
+   "text_tokens": 2144,
+   "answer_tokens": 80,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "85731bda-64d9-4438-ad0e-2298633f4f53",
+   "total_tokens": 6939,
+   "visual_tokens": 4608,
+   "text_tokens": 2331,
+   "answer_tokens": 63,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "863366e6-6dc2-404e-aae8-c1809be21851",
+   "total_tokens": 7197,
+   "visual_tokens": 4608,
+   "text_tokens": 2589,
+   "answer_tokens": 115,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8782a94b-96cd-4d31-b4e2-3d6d21f13a68",
+   "total_tokens": 6974,
+   "visual_tokens": 4608,
+   "text_tokens": 2366,
+   "answer_tokens": 86,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "87b7ceef-dd6a-4f0c-adc6-c06d0b940905",
+   "total_tokens": 6757,
+   "visual_tokens": 4608,
+   "text_tokens": 2149,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "87b9c315-3575-4bec-9c0e-ff430fe2a358",
+   "total_tokens": 6779,
+   "visual_tokens": 4608,
+   "text_tokens": 2171,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "88fb2a15-895d-4d01-9cff-2a8baa863f3c",
+   "total_tokens": 7237,
+   "visual_tokens": 4608,
+   "text_tokens": 2629,
+   "answer_tokens": 70,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "89809e77-50e4-4201-a583-cedd1f60fc50",
+   "total_tokens": 7420,
+   "visual_tokens": 4608,
+   "text_tokens": 2812,
+   "answer_tokens": 117,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8b1b1006-12b5-4140-9964-c5b7ca57099b",
+   "total_tokens": 6784,
+   "visual_tokens": 4608,
+   "text_tokens": 2176,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8db0cbf9-d4a1-4a0b-9c17-e08f686815ba",
+   "total_tokens": 7870,
+   "visual_tokens": 4608,
+   "text_tokens": 3262,
+   "answer_tokens": 512,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8e91dd9a-373f-4e5f-8ad4-1de72c825dea",
+   "total_tokens": 7134,
+   "visual_tokens": 4608,
+   "text_tokens": 2526,
+   "answer_tokens": 90,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "8facba3c-650f-4022-8458-9eeb56091947",
+   "total_tokens": 7416,
+   "visual_tokens": 4608,
+   "text_tokens": 2808,
+   "answer_tokens": 477,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "905e48f4-1355-4b24-91db-a16c6aaee11e",
+   "total_tokens": 7209,
+   "visual_tokens": 4608,
+   "text_tokens": 2601,
+   "answer_tokens": 147,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9191071e-33d4-468b-a3a4-54a4ee2ca7a6",
+   "total_tokens": 7728,
+   "visual_tokens": 4608,
+   "text_tokens": 3120,
+   "answer_tokens": 302,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9237f8de-274a-4ad4-8639-2f92e7b8854a",
+   "total_tokens": 6754,
+   "visual_tokens": 4608,
+   "text_tokens": 2146,
+   "answer_tokens": 82,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "92ae926a-5ef5-45b6-80b2-cd7b867f0706",
+   "total_tokens": 6783,
+   "visual_tokens": 4608,
+   "text_tokens": 2175,
+   "answer_tokens": 65,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "92cf47a7-2e5c-4ed0-9a85-08a9a2a3ccb6",
+   "total_tokens": 7137,
+   "visual_tokens": 4608,
+   "text_tokens": 2529,
+   "answer_tokens": 178,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "949944b5-fb97-48b2-ae4d-3aff0ea95673",
+   "total_tokens": 6678,
+   "visual_tokens": 4608,
+   "text_tokens": 2070,
+   "answer_tokens": 65,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "94b4cef5-c9ec-40ab-8481-b62947521a62",
+   "total_tokens": 7954,
+   "visual_tokens": 4608,
+   "text_tokens": 3346,
+   "answer_tokens": 98,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "95055719-cf74-4340-949c-03af10583236",
+   "total_tokens": 7942,
+   "visual_tokens": 4608,
+   "text_tokens": 3334,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "97a9d767-7d33-440b-ab29-ff6a2ab01721",
+   "total_tokens": 6777,
+   "visual_tokens": 4608,
+   "text_tokens": 2169,
+   "answer_tokens": 93,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "98dbd9f4-9d63-481c-beb2-026f0490c3f8",
+   "total_tokens": 6884,
+   "visual_tokens": 4608,
+   "text_tokens": 2276,
+   "answer_tokens": 105,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9970104c-c1fe-4ac1-8527-c31b24f62f90",
+   "total_tokens": 6802,
+   "visual_tokens": 4608,
+   "text_tokens": 2194,
+   "answer_tokens": 77,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "999773fe-ef89-4456-acec-3b7ca07cbad5",
+   "total_tokens": 6846,
+   "visual_tokens": 4608,
+   "text_tokens": 2238,
+   "answer_tokens": 82,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9a96d1f4-e4d9-4206-ae56-589479f65bbc",
+   "total_tokens": 7649,
+   "visual_tokens": 4608,
+   "text_tokens": 3041,
+   "answer_tokens": 238,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9ad308b4-d1bf-46cc-9464-003e5640730d",
+   "total_tokens": 7304,
+   "visual_tokens": 4608,
+   "text_tokens": 2696,
+   "answer_tokens": 198,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9bcc2861-2944-4a51-8df0-d4ee901dc2bb",
+   "total_tokens": 7016,
+   "visual_tokens": 4608,
+   "text_tokens": 2408,
+   "answer_tokens": 84,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9be56c43-b860-435b-b2f3-a19fe615ecff",
+   "total_tokens": 6706,
+   "visual_tokens": 4608,
+   "text_tokens": 2098,
+   "answer_tokens": 70,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9c317985-b142-4664-b702-fe9655004184",
+   "total_tokens": 6844,
+   "visual_tokens": 4608,
+   "text_tokens": 2236,
+   "answer_tokens": 170,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9cc188c7-fc20-4d74-8268-790a36b8b313",
+   "total_tokens": 6876,
+   "visual_tokens": 4608,
+   "text_tokens": 2268,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9cc57983-502a-4b2b-87ab-3bb4b060f06e",
+   "total_tokens": 7153,
+   "visual_tokens": 4608,
+   "text_tokens": 2545,
+   "answer_tokens": 295,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9d89216d-9546-460b-93c3-08047b2a5896",
+   "total_tokens": 7241,
+   "visual_tokens": 4608,
+   "text_tokens": 2633,
+   "answer_tokens": 181,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9e63e72c-db05-4f51-98aa-0b8f2343fc03",
+   "total_tokens": 6964,
+   "visual_tokens": 4608,
+   "text_tokens": 2356,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9e6b186f-54a7-4be5-a835-cc45ea691e02",
+   "total_tokens": 6776,
+   "visual_tokens": 4608,
+   "text_tokens": 2168,
+   "answer_tokens": 93,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9e75c271-7dd5-4c9b-b926-5bcee394c218",
+   "total_tokens": 7136,
+   "visual_tokens": 4608,
+   "text_tokens": 2528,
+   "answer_tokens": 384,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9f0fa6b0-7a5e-48c2-aa93-69dccfdd0dea",
+   "total_tokens": 6975,
+   "visual_tokens": 4608,
+   "text_tokens": 2367,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "9f69941e-c7de-4436-a911-8041ce91317e",
+   "total_tokens": 6690,
+   "visual_tokens": 4608,
+   "text_tokens": 2082,
+   "answer_tokens": 55,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a077cd82-a995-4665-a49c-1cfcc635b78e",
+   "total_tokens": 6839,
+   "visual_tokens": 4608,
+   "text_tokens": 2231,
+   "answer_tokens": 113,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a083e9e5-174c-459a-9bf4-064d8a95c2c0",
+   "total_tokens": 7054,
+   "visual_tokens": 4608,
+   "text_tokens": 2446,
+   "answer_tokens": 289,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a1ac6569-6d0f-4a89-9f48-fdb580782e21",
+   "total_tokens": 6676,
+   "visual_tokens": 4608,
+   "text_tokens": 2068,
+   "answer_tokens": 76,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a4bda93b-a39e-4df7-9cb8-6472f11ac6df",
+   "total_tokens": 7591,
+   "visual_tokens": 4608,
+   "text_tokens": 2983,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a58bf147-8fdb-4c23-ad99-ce9af2e70f6a",
+   "total_tokens": 6808,
+   "visual_tokens": 4608,
+   "text_tokens": 2200,
+   "answer_tokens": 92,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a6ec7463-da4c-43c2-a665-64a2b1d57526",
+   "total_tokens": 6767,
+   "visual_tokens": 4608,
+   "text_tokens": 2159,
+   "answer_tokens": 77,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a73edd19-4358-403f-940d-e7954e9db5fa",
+   "total_tokens": 7016,
+   "visual_tokens": 4608,
+   "text_tokens": 2408,
+   "answer_tokens": 63,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a9641e7d-5bce-47f2-b49f-7e5ddcaaf9d4",
+   "total_tokens": 6898,
+   "visual_tokens": 4608,
+   "text_tokens": 2290,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a9ac4021-b5b6-4449-9570-2d43973cb395",
+   "total_tokens": 6882,
+   "visual_tokens": 4608,
+   "text_tokens": 2274,
+   "answer_tokens": 156,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "a9b6f7e4-1392-46e3-bc3a-270de69fe765",
+   "total_tokens": 6958,
+   "visual_tokens": 4608,
+   "text_tokens": 2350,
+   "answer_tokens": 169,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "aa079879-cbf0-487e-bb72-c124ee86cc15",
+   "total_tokens": 7676,
+   "visual_tokens": 4608,
+   "text_tokens": 3068,
+   "answer_tokens": 325,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "aa1e62c9-9537-41ee-bdef-ca23e6dc278b",
+   "total_tokens": 7086,
+   "visual_tokens": 4608,
+   "text_tokens": 2478,
+   "answer_tokens": 135,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "aa9f268c-a8ca-4886-8646-cfc6489f7a45",
+   "total_tokens": 6729,
+   "visual_tokens": 4608,
+   "text_tokens": 2121,
+   "answer_tokens": 84,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "aab35079-697c-4a94-a12b-7cbbdad303ee",
+   "total_tokens": 7475,
+   "visual_tokens": 4608,
+   "text_tokens": 2867,
+   "answer_tokens": 413,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ab397d2f-f04e-49a2-9ae8-cbb90604d7ad",
+   "total_tokens": 6892,
+   "visual_tokens": 4608,
+   "text_tokens": 2284,
+   "answer_tokens": 115,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ade51266-a466-4f6f-8c2f-d68986f823a2",
+   "total_tokens": 6776,
+   "visual_tokens": 4608,
+   "text_tokens": 2168,
+   "answer_tokens": 163,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ae693528-2ca6-473e-8291-0bd1c0b13065",
+   "total_tokens": 6692,
+   "visual_tokens": 4608,
+   "text_tokens": 2084,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "aed5ca1c-3dd0-4721-98b7-70e628a89fb1",
+   "total_tokens": 6826,
+   "visual_tokens": 4608,
+   "text_tokens": 2218,
+   "answer_tokens": 122,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b0bb803e-e78d-4938-bc46-f5e6c91a4d37",
+   "total_tokens": 7484,
+   "visual_tokens": 4608,
+   "text_tokens": 2876,
+   "answer_tokens": 223,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b163645d-2631-4f5f-8d03-a72c255b2da8",
+   "total_tokens": 6798,
+   "visual_tokens": 4608,
+   "text_tokens": 2190,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b21c2dcd-c322-43bc-ac21-edac59b7646c",
+   "total_tokens": 6968,
+   "visual_tokens": 4608,
+   "text_tokens": 2360,
+   "answer_tokens": 267,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b224ca54-6396-42d7-95fb-20102aed8ad6",
+   "total_tokens": 8051,
+   "visual_tokens": 4608,
+   "text_tokens": 3443,
+   "answer_tokens": 317,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b23abeaf-2d05-4ce4-9baa-6cd855dc3a8c",
+   "total_tokens": 7155,
+   "visual_tokens": 4608,
+   "text_tokens": 2547,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b2a66052-2839-4a2b-b788-4bce9eddc89a",
+   "total_tokens": 6781,
+   "visual_tokens": 4608,
+   "text_tokens": 2173,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b2c5e1b9-b40d-4bbb-8883-2d6da692a374",
+   "total_tokens": 7137,
+   "visual_tokens": 4608,
+   "text_tokens": 2529,
+   "answer_tokens": 70,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b2f27124-95b5-41c0-9b11-6a3f141602ec",
+   "total_tokens": 6977,
+   "visual_tokens": 4608,
+   "text_tokens": 2369,
+   "answer_tokens": 223,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b45a8277-9386-4310-b977-866b73e06e00",
+   "total_tokens": 7568,
+   "visual_tokens": 4608,
+   "text_tokens": 2960,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b49824b7-9dfc-4135-b403-bea5788dd526",
+   "total_tokens": 7153,
+   "visual_tokens": 4608,
+   "text_tokens": 2545,
+   "answer_tokens": 149,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b4abb034-5281-46f8-8eab-4c71133b5981",
+   "total_tokens": 6910,
+   "visual_tokens": 4608,
+   "text_tokens": 2302,
+   "answer_tokens": 92,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b4e6c30e-dbc5-4767-82e3-2c5f6a41a69f",
+   "total_tokens": 6816,
+   "visual_tokens": 4608,
+   "text_tokens": 2208,
+   "answer_tokens": 144,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b50ed63a-43e7-43a4-aa0d-dfecf811874f",
+   "total_tokens": 7525,
+   "visual_tokens": 4608,
+   "text_tokens": 2917,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b5dd11e8-7e6b-4177-bbd2-f698e009d551",
+   "total_tokens": 6756,
+   "visual_tokens": 4608,
+   "text_tokens": 2148,
+   "answer_tokens": 62,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b5fadd4d-f8ff-42a8-bbca-7718c8c51afc",
+   "total_tokens": 6937,
+   "visual_tokens": 4608,
+   "text_tokens": 2329,
+   "answer_tokens": 252,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b7b6d490-82d5-40f8-a058-79cdb46a9fd2",
+   "total_tokens": 6957,
+   "visual_tokens": 4608,
+   "text_tokens": 2349,
+   "answer_tokens": 91,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b89e710c-1d2c-41fe-a95f-802480f430ca",
+   "total_tokens": 6965,
+   "visual_tokens": 4608,
+   "text_tokens": 2357,
+   "answer_tokens": 65,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b8f34911-02d4-47b0-aae2-76ab18a33d3b",
+   "total_tokens": 7764,
+   "visual_tokens": 4608,
+   "text_tokens": 3156,
+   "answer_tokens": 116,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b993c475-6436-4a66-b2cf-d77bf72ad6b5",
+   "total_tokens": 7015,
+   "visual_tokens": 4608,
+   "text_tokens": 2407,
+   "answer_tokens": 86,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "b9f578af-d83e-4d1c-8b9b-3cdec94e818c",
+   "total_tokens": 7495,
+   "visual_tokens": 4608,
+   "text_tokens": 2887,
+   "answer_tokens": 79,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bac8391a-0c81-4f2f-8b02-6dd835771b1e",
+   "total_tokens": 6975,
+   "visual_tokens": 4608,
+   "text_tokens": 2367,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bb4a292f-251d-4da5-a1b0-18ce22a392d4",
+   "total_tokens": 6874,
+   "visual_tokens": 4608,
+   "text_tokens": 2266,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bb93a7a6-2f70-4805-89fb-8e7992d38f22",
+   "total_tokens": 6997,
+   "visual_tokens": 4608,
+   "text_tokens": 2389,
+   "answer_tokens": 131,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bc0a0e0d-61dd-4d26-a3e4-9c7a46d97580",
+   "total_tokens": 7114,
+   "visual_tokens": 4608,
+   "text_tokens": 2506,
+   "answer_tokens": 254,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bd1d1d45-5bb7-4a39-a746-6eb9b71084d1",
+   "total_tokens": 6740,
+   "visual_tokens": 4608,
+   "text_tokens": 2132,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bd82a16a-e01e-4b1d-90c4-b445abf12e74",
+   "total_tokens": 6972,
+   "visual_tokens": 4608,
+   "text_tokens": 2364,
+   "answer_tokens": 77,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "bdb5753e-40b6-41d7-9ac6-944bb1f0496b",
+   "total_tokens": 6900,
+   "visual_tokens": 4608,
+   "text_tokens": 2292,
+   "answer_tokens": 144,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "be3f5b70-69fb-44df-8a33-4f95ec1f8a7e",
+   "total_tokens": 7269,
+   "visual_tokens": 4608,
+   "text_tokens": 2661,
+   "answer_tokens": 417,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c07fde9c-82e1-475d-bc21-540b6b4f9149",
+   "total_tokens": 6779,
+   "visual_tokens": 4608,
+   "text_tokens": 2171,
+   "answer_tokens": 91,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c0cb97a7-c7cf-4f9c-aa2b-9be45e573c88",
+   "total_tokens": 6839,
+   "visual_tokens": 4608,
+   "text_tokens": 2231,
+   "answer_tokens": 88,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c0d8166e-1de5-4b9f-8a02-be4f466fe90e",
+   "total_tokens": 6779,
+   "visual_tokens": 4608,
+   "text_tokens": 2171,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c1b2a780-9faa-4daa-a261-1c9ee729b53f",
+   "total_tokens": 6827,
+   "visual_tokens": 4608,
+   "text_tokens": 2219,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c23ee520-a812-46be-8931-e4a271cab2ed",
+   "total_tokens": 6996,
+   "visual_tokens": 4608,
+   "text_tokens": 2388,
+   "answer_tokens": 237,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c3713ab8-33db-4c29-9bbd-c1d27121209b",
+   "total_tokens": 6698,
+   "visual_tokens": 4608,
+   "text_tokens": 2090,
+   "answer_tokens": 85,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c3cf5235-47b8-4350-8725-c88ad311f9c9",
+   "total_tokens": 6827,
+   "visual_tokens": 4608,
+   "text_tokens": 2219,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c3d390eb-7f09-47a5-90ab-1ed999a62f11",
+   "total_tokens": 7700,
+   "visual_tokens": 4608,
+   "text_tokens": 3092,
+   "answer_tokens": 339,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c4559ad0-f18c-4dcd-8095-ceb6b9d94f47",
+   "total_tokens": 6988,
+   "visual_tokens": 4608,
+   "text_tokens": 2380,
+   "answer_tokens": 117,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c591f8d0-fd3b-4a99-936d-ea56dae0f653",
+   "total_tokens": 6925,
+   "visual_tokens": 4608,
+   "text_tokens": 2317,
+   "answer_tokens": 201,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c5aecad6-4492-4125-9748-87528820e62a",
+   "total_tokens": 7611,
+   "visual_tokens": 4608,
+   "text_tokens": 3003,
+   "answer_tokens": 257,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c6278717-9d3b-4476-8d68-4bc369c862ea",
+   "total_tokens": 7740,
+   "visual_tokens": 4608,
+   "text_tokens": 3132,
+   "answer_tokens": 383,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c6427b7d-bc90-4234-b4dd-47214ff4c0b6",
+   "total_tokens": 7498,
+   "visual_tokens": 4608,
+   "text_tokens": 2890,
+   "answer_tokens": 290,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c65a9767-7613-4ce3-91a5-77911412603d",
+   "total_tokens": 7010,
+   "visual_tokens": 4608,
+   "text_tokens": 2402,
+   "answer_tokens": 129,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "c68a31b6-dcbe-4131-b15e-a771d161e4e4",
+   "total_tokens": 6760,
+   "visual_tokens": 4608,
+   "text_tokens": 2152,
+   "answer_tokens": 61,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ca4ba2df-a198-4b38-bb91-16e897e01235",
+   "total_tokens": 6767,
+   "visual_tokens": 4608,
+   "text_tokens": 2159,
+   "answer_tokens": 79,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ca56944c-515d-4c2e-9912-bfd875b6660c",
+   "total_tokens": 7129,
+   "visual_tokens": 4608,
+   "text_tokens": 2521,
+   "answer_tokens": 125,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "cb78c6b3-0005-48db-a77a-c85da982a2c7",
+   "total_tokens": 6790,
+   "visual_tokens": 4608,
+   "text_tokens": 2182,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "cbcaac2c-1589-44af-bffd-f942af40d8f1",
+   "total_tokens": 7375,
+   "visual_tokens": 4608,
+   "text_tokens": 2767,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "cc2f0c0d-8eb7-484c-a871-cec3b8149fcd",
+   "total_tokens": 5006,
+   "visual_tokens": 2048,
+   "text_tokens": 2958,
+   "answer_tokens": 326,
+   "n_images": 8,
+   "image_sizes": [
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512"
+   ],
+   "tokens_per_image": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  {
+   "id": "cde5ef22-6c21-49c0-a0c8-524dc948ee41",
+   "total_tokens": 7518,
+   "visual_tokens": 4608,
+   "text_tokens": 2910,
+   "answer_tokens": 273,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d0450338-cc82-42f7-8a57-66507c938f40",
+   "total_tokens": 6825,
+   "visual_tokens": 4608,
+   "text_tokens": 2217,
+   "answer_tokens": 74,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d12e15af-ac72-467f-96df-e7b31c9f77e6",
+   "total_tokens": 7439,
+   "visual_tokens": 4608,
+   "text_tokens": 2831,
+   "answer_tokens": 184,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d14cd3a2-eafd-438d-87a7-a25301b375ac",
+   "total_tokens": 6778,
+   "visual_tokens": 4608,
+   "text_tokens": 2170,
+   "answer_tokens": 125,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d19fd3cf-8fe9-47fb-b11f-44ead670652e",
+   "total_tokens": 6999,
+   "visual_tokens": 4608,
+   "text_tokens": 2391,
+   "answer_tokens": 130,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d2b36f40-30f2-4583-b742-b01c9a3aa52f",
+   "total_tokens": 7036,
+   "visual_tokens": 4608,
+   "text_tokens": 2428,
+   "answer_tokens": 105,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d2e5d953-0a29-4025-9247-ab51a9e0b0dc",
+   "total_tokens": 7871,
+   "visual_tokens": 4608,
+   "text_tokens": 3263,
+   "answer_tokens": 480,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d343b412-7185-49eb-95c2-043bcb184b5d",
+   "total_tokens": 7499,
+   "visual_tokens": 4608,
+   "text_tokens": 2891,
+   "answer_tokens": 331,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d3ca1d02-faab-4c03-a0af-a23669b62b35",
+   "total_tokens": 7065,
+   "visual_tokens": 4608,
+   "text_tokens": 2457,
+   "answer_tokens": 186,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d428a870-608d-4252-ab90-e363b8618489",
+   "total_tokens": 6687,
+   "visual_tokens": 4608,
+   "text_tokens": 2079,
+   "answer_tokens": 82,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d497899c-8427-4fc3-bb56-7fe1f46aaf02",
+   "total_tokens": 7195,
+   "visual_tokens": 4608,
+   "text_tokens": 2587,
+   "answer_tokens": 296,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d4bea35c-cf04-44a9-9519-d63eb2be2d27",
+   "total_tokens": 7130,
+   "visual_tokens": 4608,
+   "text_tokens": 2522,
+   "answer_tokens": 80,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d61f6246-03d7-427f-87d6-69bfcdfa6df2",
+   "total_tokens": 6867,
+   "visual_tokens": 4608,
+   "text_tokens": 2259,
+   "answer_tokens": 162,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d6fff206-cb78-4d5b-b177-464118253d91",
+   "total_tokens": 7158,
+   "visual_tokens": 4608,
+   "text_tokens": 2550,
+   "answer_tokens": 380,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d78892bf-c183-459b-85c5-813f4ed11abe",
+   "total_tokens": 7383,
+   "visual_tokens": 4608,
+   "text_tokens": 2775,
+   "answer_tokens": 135,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d839c50b-c45b-4a4d-8672-e8eb6e545fd0",
+   "total_tokens": 7299,
+   "visual_tokens": 4608,
+   "text_tokens": 2691,
+   "answer_tokens": 76,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "d8bc0164-71c7-40ce-a1ac-e1c72f9feed7",
+   "total_tokens": 6750,
+   "visual_tokens": 4608,
+   "text_tokens": 2142,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "da20d169-5dfd-4d0d-9eb9-0b3730e94b29",
+   "total_tokens": 7698,
+   "visual_tokens": 4608,
+   "text_tokens": 3090,
+   "answer_tokens": 350,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "dac780aa-958f-47e6-a587-8de92ad7913e",
+   "total_tokens": 4621,
+   "visual_tokens": 2048,
+   "text_tokens": 2573,
+   "answer_tokens": 106,
+   "n_images": 8,
+   "image_sizes": [
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512"
+   ],
+   "tokens_per_image": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  {
+   "id": "dbc36682-c90c-4d5f-9350-2e489d069b84",
+   "total_tokens": 6948,
+   "visual_tokens": 4608,
+   "text_tokens": 2340,
+   "answer_tokens": 142,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "dbcd399f-4e4a-453e-9764-d6f6b087e84e",
+   "total_tokens": 7612,
+   "visual_tokens": 4608,
+   "text_tokens": 3004,
+   "answer_tokens": 269,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "dc65e2ec-c69d-433e-b2b8-2e9cf9b30681",
+   "total_tokens": 6628,
+   "visual_tokens": 4608,
+   "text_tokens": 2020,
+   "answer_tokens": 106,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "dd2e088f-ccb6-4980-b73b-e51997ea239c",
+   "total_tokens": 6834,
+   "visual_tokens": 4608,
+   "text_tokens": 2226,
+   "answer_tokens": 79,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ddf1babb-9778-4f5a-bfae-5332aeaed4ed",
+   "total_tokens": 7077,
+   "visual_tokens": 4608,
+   "text_tokens": 2469,
+   "answer_tokens": 359,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ded32acb-9d80-40a0-b443-67171062edb0",
+   "total_tokens": 6847,
+   "visual_tokens": 4608,
+   "text_tokens": 2239,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "df5ad418-4d49-4741-b948-53cf2c95d34d",
+   "total_tokens": 7382,
+   "visual_tokens": 4608,
+   "text_tokens": 2774,
+   "answer_tokens": 138,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e06032af-3fc3-495f-be5f-2da6d1b0a0fb",
+   "total_tokens": 6908,
+   "visual_tokens": 4608,
+   "text_tokens": 2300,
+   "answer_tokens": 153,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e12ef3a3-6809-4ba9-b71a-8f0d54115e02",
+   "total_tokens": 6753,
+   "visual_tokens": 4608,
+   "text_tokens": 2145,
+   "answer_tokens": 89,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e188c907-b4db-406b-83fc-1a3e34c31782",
+   "total_tokens": 7884,
+   "visual_tokens": 4608,
+   "text_tokens": 3276,
+   "answer_tokens": 324,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e1e88b1b-593c-4282-b24e-62da52835b31",
+   "total_tokens": 6747,
+   "visual_tokens": 4608,
+   "text_tokens": 2139,
+   "answer_tokens": 73,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e1f04893-a9c2-4ac7-a326-6c0f04c261f2",
+   "total_tokens": 7335,
+   "visual_tokens": 4608,
+   "text_tokens": 2727,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e21f49f3-c24f-4c36-aa15-4bf8d3ce49c4",
+   "total_tokens": 6828,
+   "visual_tokens": 4608,
+   "text_tokens": 2220,
+   "answer_tokens": 126,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e222cd5d-61b9-4f2b-87bb-16c19ae34e13",
+   "total_tokens": 7143,
+   "visual_tokens": 4608,
+   "text_tokens": 2535,
+   "answer_tokens": 146,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e2f66c2c-b45c-4649-8c2d-2a3fcb3791da",
+   "total_tokens": 6915,
+   "visual_tokens": 4608,
+   "text_tokens": 2307,
+   "answer_tokens": 92,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e392d272-544b-471e-890b-4bd8c3378e6f",
+   "total_tokens": 6842,
+   "visual_tokens": 4608,
+   "text_tokens": 2234,
+   "answer_tokens": 108,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e393ea54-a048-4c77-9ab3-d58689d9b42c",
+   "total_tokens": 6872,
+   "visual_tokens": 4608,
+   "text_tokens": 2264,
+   "answer_tokens": 95,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e3a7f3e3-189b-46f6-be1e-0ecb59db021e",
+   "total_tokens": 6837,
+   "visual_tokens": 4608,
+   "text_tokens": 2229,
+   "answer_tokens": 71,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e4809d13-a200-4823-9632-675acc17b107",
+   "total_tokens": 6986,
+   "visual_tokens": 4608,
+   "text_tokens": 2378,
+   "answer_tokens": 147,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e482cc92-dbe4-4532-b7b9-10b1cd212996",
+   "total_tokens": 7490,
+   "visual_tokens": 4608,
+   "text_tokens": 2882,
+   "answer_tokens": 278,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e5157df9-1b46-4c2b-b41f-e6f5502711ac",
+   "total_tokens": 6897,
+   "visual_tokens": 4608,
+   "text_tokens": 2289,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e569d10d-8a74-4d28-ba3b-92e4e28f7e00",
+   "total_tokens": 6934,
+   "visual_tokens": 4608,
+   "text_tokens": 2326,
+   "answer_tokens": 201,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e571d985-6c8f-429f-83d0-a9d2bdf484c7",
+   "total_tokens": 7207,
+   "visual_tokens": 4608,
+   "text_tokens": 2599,
+   "answer_tokens": 347,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e61970e5-68da-4cee-8446-8d267965318e",
+   "total_tokens": 7150,
+   "visual_tokens": 4608,
+   "text_tokens": 2542,
+   "answer_tokens": 195,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e64e7c40-97ed-46ce-8430-a9a38ca49c47",
+   "total_tokens": 6898,
+   "visual_tokens": 4608,
+   "text_tokens": 2290,
+   "answer_tokens": 147,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e671e59d-8020-4ae8-ba08-ba144fe5677b",
+   "total_tokens": 6927,
+   "visual_tokens": 4608,
+   "text_tokens": 2319,
+   "answer_tokens": 96,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e68207be-fd8c-4147-b297-6df5a40ac4dd",
+   "total_tokens": 6978,
+   "visual_tokens": 4608,
+   "text_tokens": 2370,
+   "answer_tokens": 87,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e728110a-9967-4e8a-a4ba-70772fd0bb2d",
+   "total_tokens": 6805,
+   "visual_tokens": 4608,
+   "text_tokens": 2197,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e736766a-b0bb-4821-a682-b2f156dbd2cb",
+   "total_tokens": 5345,
+   "visual_tokens": 2048,
+   "text_tokens": 3297,
+   "answer_tokens": 382,
+   "n_images": 8,
+   "image_sizes": [
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512",
+    "512x512"
+   ],
+   "tokens_per_image": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  {
+   "id": "e77947fb-b724-477f-8b67-f4532cdd8a01",
+   "total_tokens": 7098,
+   "visual_tokens": 4608,
+   "text_tokens": 2490,
+   "answer_tokens": 98,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e8805df1-780a-4721-885b-e0f70029b4bb",
+   "total_tokens": 7328,
+   "visual_tokens": 4608,
+   "text_tokens": 2720,
+   "answer_tokens": 422,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e9642877-17b3-4b5b-90f2-35a393320d24",
+   "total_tokens": 6696,
+   "visual_tokens": 4608,
+   "text_tokens": 2088,
+   "answer_tokens": 58,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e9a4c15f-e120-4ae9-9bdc-028247a76300",
+   "total_tokens": 7198,
+   "visual_tokens": 4608,
+   "text_tokens": 2590,
+   "answer_tokens": 67,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "e9cbe996-4bdb-4e97-98d4-2930c14113c6",
+   "total_tokens": 7961,
+   "visual_tokens": 4608,
+   "text_tokens": 3353,
+   "answer_tokens": 98,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ea0875ab-e5e2-4116-98a7-4fc0e1aa99ac",
+   "total_tokens": 6898,
+   "visual_tokens": 4608,
+   "text_tokens": 2290,
+   "answer_tokens": 84,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "eb58461f-9ad0-48b9-9e23-9087b922e7d0",
+   "total_tokens": 6879,
+   "visual_tokens": 4608,
+   "text_tokens": 2271,
+   "answer_tokens": 93,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ec9691cf-36a4-4e04-8924-b58d8c0f8fd4",
+   "total_tokens": 8496,
+   "visual_tokens": 4608,
+   "text_tokens": 3888,
+   "answer_tokens": 425,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ecc93318-1855-47e5-aeee-81c7ba35f063",
+   "total_tokens": 6915,
+   "visual_tokens": 4608,
+   "text_tokens": 2307,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ed4dbe7b-e11f-4189-96cb-b25161d8e970",
+   "total_tokens": 6942,
+   "visual_tokens": 4608,
+   "text_tokens": 2334,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "edcb4972-9634-477a-9d4d-c3796f536f51",
+   "total_tokens": 7012,
+   "visual_tokens": 4608,
+   "text_tokens": 2404,
+   "answer_tokens": 220,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ee3f6751-95f4-41a3-a3a2-b9716b916b97",
+   "total_tokens": 6763,
+   "visual_tokens": 4608,
+   "text_tokens": 2155,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ef4e7be4-b603-4e50-8bb9-422715db668b",
+   "total_tokens": 6774,
+   "visual_tokens": 4608,
+   "text_tokens": 2166,
+   "answer_tokens": 68,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "efaa5f08-2284-44bf-a850-0d367d765e1c",
+   "total_tokens": 6954,
+   "visual_tokens": 4608,
+   "text_tokens": 2346,
+   "answer_tokens": 128,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "efac0318-83e6-41a3-999b-9311ee2ae919",
+   "total_tokens": 7010,
+   "visual_tokens": 4608,
+   "text_tokens": 2402,
+   "answer_tokens": 175,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "efe09012-c153-439f-a342-93540e947c4e",
+   "total_tokens": 6974,
+   "visual_tokens": 4608,
+   "text_tokens": 2366,
+   "answer_tokens": 210,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f05fa143-eddf-4a1d-8815-fc901749b99e",
+   "total_tokens": 6808,
+   "visual_tokens": 4608,
+   "text_tokens": 2200,
+   "answer_tokens": 116,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f1ec73a5-a23d-4d40-aa35-c43ed6399720",
+   "total_tokens": 6806,
+   "visual_tokens": 4608,
+   "text_tokens": 2198,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f2b2c83a-28e5-4c29-993c-62c2d167c2ba",
+   "total_tokens": 6746,
+   "visual_tokens": 4608,
+   "text_tokens": 2138,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f37ea190-4cf5-48d7-85ef-6a149a8cf76a",
+   "total_tokens": 7258,
+   "visual_tokens": 4608,
+   "text_tokens": 2650,
+   "answer_tokens": 78,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f40ae363-2779-4d6e-b884-01f43bb54c3b",
+   "total_tokens": 7000,
+   "visual_tokens": 4608,
+   "text_tokens": 2392,
+   "answer_tokens": 115,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f41cf09a-3460-4662-af84-30c6b8e986e0",
+   "total_tokens": 7235,
+   "visual_tokens": 4608,
+   "text_tokens": 2627,
+   "answer_tokens": 110,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f4cf6c10-4c37-4f4a-b367-ad9d98c674d3",
+   "total_tokens": 6706,
+   "visual_tokens": 4608,
+   "text_tokens": 2098,
+   "answer_tokens": 69,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f6e6f8a1-26f3-4de4-ad01-cf274b7d4c08",
+   "total_tokens": 6857,
+   "visual_tokens": 4608,
+   "text_tokens": 2249,
+   "answer_tokens": 72,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f71bde1a-f223-4870-8b53-02af9a4997b3",
+   "total_tokens": 6789,
+   "visual_tokens": 4608,
+   "text_tokens": 2181,
+   "answer_tokens": 123,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f7cce377-ac68-48a9-9f15-8daca2681c9a",
+   "total_tokens": 7274,
+   "visual_tokens": 4608,
+   "text_tokens": 2666,
+   "answer_tokens": 592,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f7e52c18-1472-45c6-9801-9c2601b36a2f",
+   "total_tokens": 6985,
+   "visual_tokens": 4608,
+   "text_tokens": 2377,
+   "answer_tokens": 75,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f81e80bf-06ca-4cdb-9b3f-e1c17dcb35c6",
+   "total_tokens": 7296,
+   "visual_tokens": 4608,
+   "text_tokens": 2688,
+   "answer_tokens": 70,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f8bf0979-fb70-42d1-9e7e-3e6fb82729cd",
+   "total_tokens": 6876,
+   "visual_tokens": 4608,
+   "text_tokens": 2268,
+   "answer_tokens": 82,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f8db7e31-088b-44f0-a16a-48c83eb03ebf",
+   "total_tokens": 6817,
+   "visual_tokens": 4608,
+   "text_tokens": 2209,
+   "answer_tokens": 81,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f9a954c5-05a5-4527-855d-c77f8de433ec",
+   "total_tokens": 7162,
+   "visual_tokens": 4608,
+   "text_tokens": 2554,
+   "answer_tokens": 94,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "f9cc7d13-adef-405e-a9a1-5346e4bb01ce",
+   "total_tokens": 7043,
+   "visual_tokens": 4608,
+   "text_tokens": 2435,
+   "answer_tokens": 185,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fb7c0179-699a-4447-8aee-348381741342",
+   "total_tokens": 6939,
+   "visual_tokens": 4608,
+   "text_tokens": 2331,
+   "answer_tokens": 238,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fc1bf112-2f80-4aae-b54b-f8467dd9439a",
+   "total_tokens": 6855,
+   "visual_tokens": 4608,
+   "text_tokens": 2247,
+   "answer_tokens": 77,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fcba3d4e-a0b1-416c-ae74-2131a90853ad",
+   "total_tokens": 7394,
+   "visual_tokens": 4608,
+   "text_tokens": 2786,
+   "answer_tokens": 166,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fcd902e8-2446-4e3e-8ef3-3dd32ec2af20",
+   "total_tokens": 6866,
+   "visual_tokens": 4608,
+   "text_tokens": 2258,
+   "answer_tokens": 107,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fd48a9a2-cf35-48f0-8d17-66dff541248b",
+   "total_tokens": 6976,
+   "visual_tokens": 4608,
+   "text_tokens": 2368,
+   "answer_tokens": 83,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fd8499d3-5999-4521-aaec-6e53868eafee",
+   "total_tokens": 6799,
+   "visual_tokens": 4608,
+   "text_tokens": 2191,
+   "answer_tokens": 125,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "ff6e1169-36d4-4b64-b3b3-3bbd4422781d",
+   "total_tokens": 7707,
+   "visual_tokens": 4608,
+   "text_tokens": 3099,
+   "answer_tokens": 226,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  },
+  {
+   "id": "fff0506a-0da1-4f08-aa6f-8643ea6b51d9",
+   "total_tokens": 6771,
+   "visual_tokens": 4608,
+   "text_tokens": 2163,
+   "answer_tokens": 73,
+   "n_images": 8,
+   "image_sizes": [
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768",
+    "768x768"
+   ],
+   "tokens_per_image": [
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576,
+    576
+   ]
+  }
+ ]
+}
