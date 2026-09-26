@@ -53,4 +53,4 @@ echo "=========================================="
 echo "evaluate.py $*"
 echo "=========================================="
 
-python "$DEMO_DIR/repo/common/evaluate.py" "$@"
+python "$DEMO_DIR/repo/tasks/sql/evaluate.py" "$@"

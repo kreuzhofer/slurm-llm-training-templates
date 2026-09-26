@@ -6,16 +6,17 @@ Build123d model plus the original text request go in; the target is the
 reference judge's verdict as strict JSON (score 1-10, issues, suggestions, and
 a checklist of {question, pass, detail}).
 
-WHY THIS IS A SEPARATE MODULE, NOT A CHANGE TO common/dataset.py
+WHY THIS IS A SEPARATE MODULE, NOT A CHANGE TO tasks/sql/dataset.py
 
-`common/` is named as though it were task-neutral. It is not: it *is* the SQL
-task, and it is what produced the numbers in docs/RESULTS.md. Issue #18 settled
-that the repo moves to `tasks/sql/` + `tasks/judge/`; that rename is a separate
-pure-move commit and had not landed when this was written, which is why this
-file sits at its destination while the SQL task is still at `common/`. Nothing
-here imports from `common/` and nothing there imports from here -- the two
-tasks must be able to drift apart without either one's published numbers
-moving.
+The SQL task used to live in a directory called `common/`, named as though it
+were task-neutral. It never was: it *is* the SQL task, and it is what produced
+the numbers in docs/RESULTS.md. Issue #18 settled the move to `tasks/sql/` +
+`tasks/judge/`, and that has now landed.
+
+Nothing here imports from tasks/sql and nothing there imports from here. That
+is deliberate: the two tasks must be able to drift apart without either one's
+published numbers moving. Shared code between tasks would recreate exactly the
+trap `common/` was.
 
 THINKING IS OFF, DELIBERATELY
 

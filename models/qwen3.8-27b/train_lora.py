@@ -3,8 +3,9 @@ train_lora.py -- LoRA supervised fine-tuning of Qwen3.8-27B for SQL generation.
 
 Run via train_lora.sbatch (torchrun launches one process per GPU).
 
-Shared prompt/masking/FSDP logic lives in sft_common.py -- read the module
-docstring there first, it explains what is Qwen3.8-specific about this pipeline.
+The task -- prompt construction, label masking, the 95/5 split -- lives in
+tasks/sql/; the architecture-shaped parts live in model.py beside this file.
+Read model.py's docstring first: it explains what is Qwen3.8-specific here.
 
 The LoRA-specific concern is target module naming: Qwen3.8's attention is
 hybrid, so the Qwen3-era target list covers only a quarter of the token-mixing
@@ -14,8 +15,8 @@ blocks. See LORA_TARGET_MODULES.
 import os
 import sys
 
-# Make the repo root importable (it is DEMO_DIR on the cluster) so `common`
-# resolves however this script is invoked.
+# Make the repo root importable (it is the workspace root on the cluster) so
+# `tasks.sql` resolves however this script is invoked.
 sys.path.insert(
     0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
@@ -26,7 +27,7 @@ import shutil
 from peft import LoraConfig, TaskType, get_peft_model
 from transformers import DataCollatorForSeq2Seq, Trainer, TrainingArguments
 
-from common.dataset import load_tokenizer, prepare_datasets
+from tasks.sql.dataset import load_tokenizer, prepare_datasets
 from model import env_config, fsdp_config, load_model
 
 # Attention projections for the 16 full-attention layers, the Gated DeltaNet

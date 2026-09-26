@@ -15,8 +15,8 @@ hardcoded that, so pointing it at the full fine-tune produced a report that
 misattributed its own result, and both runs wrote to the same filenames so the
 second silently overwrote the first.
 
-The test split comes from sft_common.load_split and the prompts from
-sft_common.build_prompt, so scoring cannot drift from training. Qwen3.8
+The test split comes from tasks.sql.dataset.load_split and the prompts from
+tasks.sql.dataset.build_prompt, so scoring cannot drift from training. Qwen3.8
 specifics: dtype= rather than the deprecated torch_dtype=, and explicit <think>
 stripping, because thinking is this model's default and a stray reasoning block
 would otherwise be scored as the SQL.
@@ -27,7 +27,7 @@ import json
 import os
 import sys
 
-# Make the repo root importable (it is DEMO_DIR on the cluster), so `common`
+# Make the repo root importable (it is the workspace root on the cluster), so `tasks.sql`
 # resolves whether this runs via evaluate.sbatch, srun, or a bare python call.
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -35,8 +35,8 @@ import matplotlib
 import torch
 from transformers import AutoModelForCausalLM
 
-from common.dataset import build_prompt, load_split, load_tokenizer
-from common.metric import normalize_sql, raw_exact
+from tasks.sql.dataset import build_prompt, load_split, load_tokenizer
+from tasks.sql.metric import normalize_sql, raw_exact
 
 matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
@@ -76,7 +76,7 @@ def evaluate_model(model_path, test_data, label, max_new_tokens):
     print(f"\n{'=' * 60}\nEvaluating: {label}\nPath: {model_path}\n{'=' * 60}")
 
     tokenizer = load_tokenizer(model_path)  # shared pad-token handling
-    # Load exactly as sft_common.load_model does, attn_implementation included:
+    # Load exactly as model.py::load_model does, attn_implementation included:
     # scoring a model under a different attention implementation than it was
     # trained with is a silent way to make the comparison meaningless.
     model = AutoModelForCausalLM.from_pretrained(

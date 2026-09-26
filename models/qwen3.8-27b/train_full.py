@@ -4,7 +4,7 @@ train_full.py -- full-parameter supervised fine-tuning of Qwen3.8-27B for SQL.
 Run via train_full.sbatch (torchrun launches one process per GPU).
 
 All ~26.9B text parameters are trained. The vision tower and MTP head are not
-loaded at all (see sft_common.load_model), so nothing needs freezing.
+loaded at all (see model.py::load_model), so nothing needs freezing.
 
 WHY THIS FITS, when the H100-era version of this demo had to fall back to LoRA
 for a smaller model: with FSDP2 full_shard across 16 ranks the steady-state cost
@@ -26,7 +26,7 @@ CHECKPOINTING IS THE INTERESTING PART -- see the comment on SAVE_STRATEGY below.
 import os
 import sys
 
-# Make the repo root importable (it is DEMO_DIR on the cluster) so `common`
+# Make the repo root importable (it is the workspace root on the cluster) so `tasks.sql`
 # resolves however this script is invoked.
 sys.path.insert(
     0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -34,7 +34,7 @@ sys.path.insert(
 
 from transformers import DataCollatorForSeq2Seq, Trainer, TrainingArguments
 
-from common.dataset import load_tokenizer, prepare_datasets
+from tasks.sql.dataset import load_tokenizer, prepare_datasets
 from model import env_config, fsdp_config, load_model
 
 

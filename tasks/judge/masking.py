@@ -10,7 +10,7 @@ self-test that fails at import time.
 WHY THIS IS ITS OWN TICKET (#22)
 
 The SQL path masks by token arithmetic over text: tokenize the prompt, count,
-mask that many (common/dataset.py::build_example). Carrying that here is the
+mask that many (tasks/sql/dataset.py::build_example). Carrying that here is the
 single most dangerous thing anyone could do to this task, because the prompt
 text contains eight `<|image_pad|>` placeholders that are ONE token each as
 text and 576 tokens each after the image processor runs. Counting the text

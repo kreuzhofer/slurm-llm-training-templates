@@ -138,13 +138,12 @@ bash models/qwen3.8-27b/query.sh
 ```
 
 Re-run `bash scripts/setup.sh` after editing anything in the repo — it re-syncs
-`common/`, `models/`, `scripts/` and `tasks/` to `/mnt/data/qwen38-demo/repo/`, which is
-what the Slurm jobs actually execute. The sync is `rsync -a --delete`, so
-renamed and deleted files are pruned rather than left behind as stale copies.
-It syncs under `repo/` rather than into `$DEMO_DIR` directly because the model
-*weights* live at `$DEMO_DIR/models/Qwen3.8-27B` and the model *code* at
-`models/qwen3.8-27b/` — names that differ only by case. The sync is `rsync -a --delete`, so renamed and deleted
-scripts are pruned rather than left behind as stale copies.
+`models/`, `scripts/` and `tasks/` to `$DEMO_DIR/repo/`, which is what the Slurm
+jobs actually execute. The sync is `rsync -a --delete`, so renamed and deleted
+files are pruned rather than left behind as stale copies. It syncs under `repo/`
+rather than into `$DEMO_DIR` directly because the model *weights* live at
+`$DEMO_DIR/models/Qwen3.8-27B` and the model *code* at `models/qwen3.8-27b/` —
+names that differ only by case.
 
 Downloads run unauthenticated unless you export `HF_TOKEN`, which the Hub warns
 about and which costs you rate limit and speed on both the model fetch and the
@@ -157,29 +156,41 @@ is optional.
 requirements.txt              pinned stack; torch must come from the cu130 index
 scripts/setup.sh              venv on shared NFS + install + GPU smoke test
 
-common/                       THE TASK -- shared by every model, must not diverge
-  dataset.py                  95/5 seed-42 split, prompt building, label masking
-  metric.py                   normalize_sql -- this defines the published number
-  evaluate.py                 N-way base-vs-tuned comparison, chart + JSON + MD
+tasks/                        THE TASK -- what is being measured
+  sql/                        text-to-SQL; produced the numbers in docs/RESULTS.md
+    dataset.py                95/5 seed-42 split, prompt building, label masking
+    metric.py                 normalize_sql -- this defines the published number
+    evaluate.py               N-way base-vs-tuned comparison, chart + JSON + MD
+  judge/                      multimodal CAD judge; 8 renders in, JSON verdict out
+    dataset.py                rows -> tensors, token accounting, the split
+    masking.py                assistant-only loss + the load-time gate
+    collator.py               batches multi-image rows
 
 models/qwen3.8-27b/           THE ARCHITECTURE -- one folder per model
-  model.py                    load_model, FSDP2 wrap class, env knobs
+  model.py                    load_model, load_vision_model, FSDP2 wrap, env knobs
   download.sh                 this model's weights + the shared dataset
-  train_lora.py  train_lora.sbatch    LoRA SFT, 2 nodes x 8 GPUs
-  train_full.py  train_full.sbatch    full-parameter SFT
-  merge_lora.py                       adapter -> standalone checkpoint
+  train_lora.py  train_lora.sbatch          LoRA SFT, 2 nodes x 8 GPUs
+  train_full.py  train_full.sbatch          full-parameter SFT
+  train_judge_lora.py  .sbatch              multimodal LoRA SFT
+  merge_lora.py  merge_judge_lora.py        adapter -> standalone checkpoint
+  judge_step_probe.py  mtp_drift_probe.py   one-GPU measurements
   evaluate.sbatch  serve.sbatch  query.sh
 ```
 
-The split is deliberate. `common/` holds what defines *what is being measured* —
-change it and every model's numbers move together, which is what keeps them
+The split is deliberate. `tasks/<name>/` holds what defines *what is being
+measured* — change it and that task's numbers move, which is what keeps runs
 comparable. `models/<name>/` holds what is *architecture-shaped*: how the model
 loads, how FSDP wraps it, which modules LoRA targets. A second model gets its
 own folder rather than a branch inside these files.
 
-`sft_common.py` holds the prompt construction and label masking. Both training
-scripts and `evaluate.py` import it, so training and scoring cannot drift apart
-— which is exactly how the Qwen3-era `train.py` and `train_lora.py` diverged.
+This used to be a directory called `common/`, which was a misnomer: it *was* the
+SQL task, while its name invited the next person to generalise SQL code into it.
+Issue #18 settled the move to `tasks/sql/` + `tasks/judge/`.
+
+Tasks do not import from each other, deliberately. Within a task, training and
+scoring share one module — `tasks/sql/evaluate.py` imports the same split and
+prompt builder that training uses — so they cannot drift apart, which is exactly
+how the Qwen3-era `train.py` and `train_lora.py` diverged.
 
 ## What is different about Qwen3.8-27B
 

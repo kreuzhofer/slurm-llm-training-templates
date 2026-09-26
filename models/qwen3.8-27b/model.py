@@ -1,10 +1,10 @@
 """
 model.py -- everything about this pipeline that is specific to Qwen3.8-27B.
 
-Split out from the task-level code in `common/` so that a second model can sit
+Split out from the task-level code in `tasks/` so that a second model can sit
 beside this one without either inheriting the other's assumptions. What lives
 here is architecture-shaped: how the model is loaded, how FSDP wraps it, and
-where its weights live. What lives in `common/` is task-shaped -- the dataset
+where its weights live. What lives in `tasks/` is task-shaped -- the dataset
 split, the prompt, the metric -- and MUST stay shared, because that is what
 makes numbers from two models comparable at all.
 
