@@ -4,7 +4,7 @@ __pycache__/
 venv/
 
 # Everything below lives on the cluster's shared filesystem, never in git:
-#   /mnt/data/qwen38-demo/{models,datasets,output,results,logs}
+#   /mnt/data/slurm-llm-templates/{models,datasets,output,results,logs}
 #
 # NOTE: `models/` is deliberately NOT ignored. It used to be, to keep downloaded
 # weights out of git -- but the repo now has models/<name>/ for model *code*,

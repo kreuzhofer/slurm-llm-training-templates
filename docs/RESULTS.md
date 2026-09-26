@@ -296,23 +296,36 @@ three were conservative, so nothing broke — but the pattern is the lesson.
 
 ## Reproducing
 
+Paths below are as they are today. The measurements in this document were taken
+when the workspace root was `/mnt/data/qwen38-demo`, the setup script lived at
+`scripts/setup.sh`, and the SQL task lived in `common/` — the run records in
+`docs/results-three-way-n500.*` still show those paths, deliberately, because
+they are what the jobs actually read.
+
 ```bash
-bash scripts/setup.sh                          # venv on shared NFS + GPU smoke test
-source /mnt/data/qwen38-demo/activate.sh
-bash /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/download.sh # 52 GB model + dataset
+bash cluster/setup.sh                          # venv on shared NFS + GPU smoke test
+source /mnt/data/slurm-llm-templates/activate.sh
+bash "$TEMPLATES_DIR/repo/models/qwen3.8-27b/download.sh"  # 52 GB model + dataset
+
+# check the config before spending an allocation -- seconds, one GPU
+PREFLIGHT=1 srun --nodes=1 --gpus-per-node=1 --partition=main --time=10 \
+    "$TEMPLATES_DIR/venv/bin/torchrun" --nnodes=1 --nproc_per_node=1 \
+    --rdzv_backend=c10d --rdzv_endpoint=localhost:29777 \
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_lora.py"
 
 # smoke first: 25 steps, ~6 min, saves twice
 MAX_STEPS=25 SAVE_STEPS=10 MAX_EVAL_EXAMPLES=200 \
-    sbatch --export=ALL models/qwen3.8-27b/train_lora.sbatch
+    sbatch --export=ALL "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_lora.sbatch"
 
-sbatch models/qwen3.8-27b/train_lora.sbatch                # 1 epoch, 584 steps, ~15 min
-sbatch models/qwen3.8-27b/train_full.sbatch                # 1 epoch, ~12 min
+sbatch "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_lora.sbatch"  # 1 epoch, 584 steps, ~15 min
+sbatch "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_full.sbatch"  # 1 epoch, ~12 min
 
 srun --partition=main --nodes=1 --gpus-per-node=1 --time=01:00:00 \
-    /mnt/data/qwen38-demo/venv/bin/python scripts/merge_lora.py \
+    "$TEMPLATES_DIR/venv/bin/python" \
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/merge_lora.py" \
     <adapter> <base> <merged>                   # LoRA only, ~5 min
 
-sbatch scripts/evaluate.sbatch \
+sbatch "$TEMPLATES_DIR/repo/models/qwen3.8-27b/evaluate.sbatch" \
     --tuned-model <merged-lora> --tuned-model <full> \
     --num-examples 500                          # ~45 min for three models
 ```

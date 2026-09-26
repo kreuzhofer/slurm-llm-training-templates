@@ -77,9 +77,32 @@ mkdir -p "$DEMO_DIR/repo"
 # so a sync that omits it fails on the worker with ModuleNotFoundError long
 # after submission. `common/` is gone -- it was the SQL task under a name that
 # claimed to be task-neutral (#18).
-for d in cluster models tasks; do
+SYNC_DIRS=(cluster models tasks)
+for d in "${SYNC_DIRS[@]}"; do
     rsync -a --delete --exclude='__pycache__' \
-        "$REPO_DIR/$d/" "$DEMO_DIR/repo/$d/"
+        "$REPO_DIR/$d/" "$TEMPLATES_DIR/repo/$d/"
+done
+
+# Prune top-level directories that are no longer part of the repo.
+#
+# --delete above only prunes WITHIN each synced directory, so a directory that
+# is renamed or removed in git survives under repo/ forever. That is not
+# cosmetic: the Slurm jobs execute from this copy, so a stale directory is
+# executable old code sitting beside the new tree. The common/ -> tasks/sql/
+# move left repo/common/evaluate.py here, and evaluate.sbatch used to run
+# exactly that path -- so a hand-run, or an older doc, could have scored with
+# the pre-move task definition and reported the number as current.
+for existing in "$TEMPLATES_DIR/repo"/*/; do
+    [ -d "$existing" ] || continue
+    name=$(basename "$existing")
+    keep=no
+    for d in "${SYNC_DIRS[@]}"; do
+        [ "$name" = "$d" ] && keep=yes
+    done
+    if [ "$keep" = no ]; then
+        echo "  pruning stale repo/$name (no longer in the repo)"
+        rm -rf "$existing"
+    fi
 done
 
 # --- Step 4: activation helper ---------------------------------------------
