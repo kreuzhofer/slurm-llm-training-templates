@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Issues and specs for this repo live as GitHub issues in `kreuzhofer/nebius-slurm-qwen38-demo`. Use the `gh` CLI for all operations.
+Issues and specs for this repo live as GitHub issues in `kreuzhofer/slurm-llm-training-templates`. Use the `gh` CLI for all operations.
 
 ## Conventions
 

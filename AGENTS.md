@@ -1,10 +1,10 @@
-# nebius-slurm-qwen38-demo
+# slurm-llm-training-templates
 
 ## Agent skills
 
 ### Issue tracker
 
-Issues live as GitHub issues in `kreuzhofer/nebius-slurm-qwen38-demo`, managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Issues live as GitHub issues in `kreuzhofer/slurm-llm-training-templates`, managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
