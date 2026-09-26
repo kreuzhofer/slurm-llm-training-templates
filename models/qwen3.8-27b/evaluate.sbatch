@@ -14,18 +14,18 @@
 #
 # HOW TO USE:
 #   # base vs merged LoRA, 500 examples (the default):
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/evaluate.sbatch
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/evaluate.sbatch
 #
 #   # three-way: base vs merged LoRA vs full fine-tune, one chart, base
 #   # generated once:
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/evaluate.sbatch \
-#       --tuned-model /mnt/data/qwen38-demo/output/qwen3.8-27b-sql \
-#       --tuned-model /mnt/data/qwen38-demo/output/qwen3.8-27b-sql-full
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/evaluate.sbatch \
+#       --tuned-model /mnt/data/slurm-llm-templates/output/qwen3.8-27b-sql \
+#       --tuned-model /mnt/data/slurm-llm-templates/output/qwen3.8-27b-sql-full
 #
 #   # cheap smoke:
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/evaluate.sbatch --num-examples 100
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/evaluate.sbatch --num-examples 100
 #
-# Results land in /mnt/data/qwen38-demo/results/, under a filename prefix
+# Results land in /mnt/data/slurm-llm-templates/results/, under a filename prefix
 # derived from the tuned model names unless --prefix says otherwise.
 # =============================================================================
 
@@ -34,23 +34,25 @@
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=main
-#SBATCH --output=/mnt/data/qwen38-demo/logs/evaluate_%j.out
-#SBATCH --error=/mnt/data/qwen38-demo/logs/evaluate_%j.err
+#SBATCH --output=/mnt/data/slurm-llm-templates/logs/evaluate_%j.out
+#SBATCH --error=/mnt/data/slurm-llm-templates/logs/evaluate_%j.err
 
 set -euo pipefail
 
-export DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
-source "$DEMO_DIR/venv/bin/activate"
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+# shellcheck source=../../cluster/env.sh
+source "$TEMPLATES_DIR/repo/cluster/env.sh"
+cluster_activate_venv
 
 # With no arguments, score the base model against the merged LoRA checkpoint.
 # evaluate.py owns every other default, including --num-examples.
 if [ "$#" -eq 0 ]; then
-    set -- --base-model "$DEMO_DIR/models/Qwen3.8-27B" \
-           --tuned-model "$DEMO_DIR/output/qwen3.8-27b-sql"
+    set -- --base-model "$TEMPLATES_DIR/models/Qwen3.8-27B" \
+           --tuned-model "$TEMPLATES_DIR/output/qwen3.8-27b-sql"
 fi
 
 echo "=========================================="
 echo "evaluate.py $*"
 echo "=========================================="
 
-python "$DEMO_DIR/repo/tasks/sql/evaluate.py" "$@"
+python "$TEMPLATES_DIR/repo/tasks/sql/evaluate.py" "$@"

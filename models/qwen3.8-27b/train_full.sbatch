@@ -8,15 +8,24 @@
 # weights, gradients and optimizer state).
 #
 # HOW TO USE:
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/train_full.sbatch
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/train_full.sbatch
+#
+# CHECK THE CONFIG FIRST -- one GPU, seconds, no checkpoint load. Must be
+# torchrun, not bare python: fsdp=True cannot be validated outside a distributed
+# context. This reproduces job 1001's failure in seconds instead of 90s into an
+# 8-GPU allocation.
+#   PREFLIGHT=1 srun --nodes=1 --gpus-per-node=1 --partition=main --time=10 \
+#       "$TEMPLATES_DIR/venv/bin/torchrun" --nnodes=1 --nproc_per_node=1 \
+#       --rdzv_backend=c10d --rdzv_endpoint=localhost:29777 \
+#       "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_full.py"
 #
 #   # with mid-run checkpoints (costs a ~54GB gather+write each time):
 #   SAVE_STRATEGY=steps SAVE_STEPS=200 sbatch --export=ALL \
-#       /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/train_full.sbatch
+#       /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/train_full.sbatch
 #
 # MONITORING:
 #   squeue --me
-#   tail -f /mnt/data/qwen38-demo/logs/train_full_<JOBID>.out
+#   tail -f /mnt/data/slurm-llm-templates/logs/train_full_<JOBID>.out
 #   sacct -j <JOBID> --format=JobID,JobName,State,Elapsed,ExitCode
 #
 # The output checkpoint is directly usable -- no LoRA merge step:
@@ -30,18 +39,20 @@
 #SBATCH --gpus-per-node=8
 #SBATCH --exclusive
 #SBATCH --partition=main
-#SBATCH --output=/mnt/data/qwen38-demo/logs/train_full_%j.out
-#SBATCH --error=/mnt/data/qwen38-demo/logs/train_full_%j.err
+#SBATCH --output=/mnt/data/slurm-llm-templates/logs/train_full_%j.out
+#SBATCH --error=/mnt/data/slurm-llm-templates/logs/train_full_%j.err
 
 set -euo pipefail
 
-export DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
-source "$DEMO_DIR/venv/bin/activate"
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+# shellcheck source=../../cluster/env.sh
+source "$TEMPLATES_DIR/repo/cluster/env.sh"
+cluster_setup
 
 # --- What to train -----------------------------------------------------------
-export MODEL_PATH="$DEMO_DIR/models/Qwen3.8-27B"
-export OUTPUT_DIR="$DEMO_DIR/output/qwen3.8-27b-sql-full"
-export DATASET_PATH="$DEMO_DIR/datasets/sql-create-context"
+export MODEL_PATH="$TEMPLATES_DIR/models/Qwen3.8-27B"
+export OUTPUT_DIR="$TEMPLATES_DIR/output/qwen3.8-27b-sql-full"
+export DATASET_PATH="$TEMPLATES_DIR/datasets/sql-create-context"
 
 # 8 per GPU x 16 GPUs x 1 accum = effective batch 128, the same as
 # train_lora.sbatch and as the Qwen3-era runs, so accuracy stays comparable.
@@ -66,50 +77,26 @@ export SAVE_STEPS="${SAVE_STEPS:-500}"
 export EVAL_STEPS="${EVAL_STEPS:-$SAVE_STEPS}"
 export MAX_EVAL_EXAMPLES="${MAX_EVAL_EXAMPLES:--1}"   # -1 = all 3,929
 
-# Every rank imports sft_common from shared NFS, so without this all 16 race to
-# write .pyc files into $DEMO_DIR/**/__pycache__. Same class of problem as
-# TRITON_CACHE_DIR above and disable_caching() in prepare_datasets.
-export PYTHONDONTWRITEBYTECODE=1
-
 export SAVE_STRATEGY="${SAVE_STRATEGY:-no}"
 # SAVE_STEPS is defined with the short-run knobs above; only SAVE_STRATEGY is
 # full-FT-specific, because a 54GB FULL_STATE_DICT gather is not something you
 # want happening every few hundred steps by default.
 
-# --- Interconnect ------------------------------------------------------------
-export NCCL_DEBUG=WARN               # INFO if you need to debug IB reachability
-export NCCL_IB_DISABLE=0             # InfiniBand between nodes
-export NCCL_NET_GDR_LEVEL=5          # GPUDirect RDMA
-# The final state-dict gather is a long collective. Raise the NCCL watchdog to
-# match ddp_timeout=7200 in train_full.py so it is not killed mid-save.
-export NCCL_TIMEOUT=7200
+# FULL-FT-SPECIFIC: the final FULL_STATE_DICT gather of a 54GB model is a long
+# collective and the NCCL watchdog kills it mid-save. cluster/env.sh sets the
+# timeout; only disabling the monitor is specific to this path.
 export TORCH_NCCL_ENABLE_MONITORING=0
-
-# Triton compiles kernels per rank; point its cache at node-local scratch so 16
-# ranks are not writing into the same directory on shared NFS. serve.sbatch
-# already does this.
-export TRITON_CACHE_DIR="${TMPDIR:-/tmp}/triton-$SLURM_JOB_ID"
-mkdir -p "$TRITON_CACHE_DIR"
 
 
 # Sequence packing is unavailable for this architecture (the Gated DeltaNet
 # recurrent state cannot be reset mid-sequence), so expect lower tokens/s per
 # GPU than an equivalent dense Qwen3 run.
 
-# --- Rendezvous --------------------------------------------------------------
-MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n1)
-MASTER_PORT=29500
-
-echo "=========================================="
-echo "Job ID     : $SLURM_JOB_ID"
-echo "Nodes      : $SLURM_JOB_NODELIST"
-echo "Master     : $MASTER_ADDR:$MASTER_PORT"
-echo "GPUs/node  : $SLURM_GPUS_ON_NODE"
-echo "Total GPUs : $(( SLURM_NNODES * SLURM_GPUS_ON_NODE ))"
+cluster_rendezvous 29500
+cluster_banner
 echo "Model      : $MODEL_PATH (full fine-tune)"
 echo "Output     : $OUTPUT_DIR"
 echo "Save       : $SAVE_STRATEGY"
-echo "=========================================="
 
 srun torchrun \
     --nnodes="$SLURM_NNODES" \
@@ -117,4 +104,4 @@ srun torchrun \
     --rdzv_id="$SLURM_JOB_ID" \
     --rdzv_backend=c10d \
     --rdzv_endpoint="$MASTER_ADDR:$MASTER_PORT" \
-    "$DEMO_DIR/repo/models/qwen3.8-27b/train_full.py"
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_full.py"

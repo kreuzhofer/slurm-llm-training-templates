@@ -116,10 +116,14 @@ def pick_mixed_batch(rows, per_device_bs):
 
 
 def main():
-    demo_dir = os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo")
-    model_path = os.environ.get("MODEL_PATH", f"{demo_dir}/models/Qwen3.8-27B")
+    templates_dir = (
+        os.environ.get("TEMPLATES_DIR")
+        or os.environ.get("DEMO_DIR")
+        or "/mnt/data/slurm-llm-templates"
+    )
+    model_path = os.environ.get("MODEL_PATH", f"{templates_dir}/models/Qwen3.8-27B")
     dataset_dir = os.environ.get(
-        "JUDGE_DATASET_DIR", f"{demo_dir}/datasets/judge-sft-rc0-54df8b59"
+        "JUDGE_DATASET_DIR", f"{templates_dir}/datasets/judge-sft-rc0-54df8b59"
     )
     steps = int(os.environ.get("PROBE_STEPS", "10"))
     per_device_bs = int(os.environ.get("PER_DEVICE_BATCH_SIZE", "2"))

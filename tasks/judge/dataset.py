@@ -48,8 +48,8 @@ import json
 import os
 import statistics
 
-DEFAULT_DATASET_DIR = "/mnt/data/qwen38-demo/datasets/judge-sft-rc0"
-DEFAULT_MODEL_PATH = "/mnt/data/qwen38-demo/models/Qwen3.8-27B"
+DEFAULT_DATASET_DIR = "/mnt/data/slurm-llm-templates/datasets/judge-sft-rc0"
+DEFAULT_MODEL_PATH = "/mnt/data/slurm-llm-templates/models/Qwen3.8-27B"
 
 # Never /tmp: it is node-local, so a worker rank cannot see what the launcher
 # wrote there. Shared artifacts live under /mnt/data.

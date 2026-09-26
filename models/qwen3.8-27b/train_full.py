@@ -42,7 +42,7 @@ def main():
     cfg = env_config()
     is_main = cfg["is_main"]
     output_dir = os.environ.get(
-        "OUTPUT_DIR", f"{cfg['demo_dir']}/output/qwen3.8-27b-sql-full"
+        "OUTPUT_DIR", f"{cfg['templates_dir']}/output/qwen3.8-27b-sql-full"
     )
     learning_rate = float(os.environ.get("LEARNING_RATE", "1e-5"))
 
@@ -72,9 +72,6 @@ def main():
         else:
             print(f"Steps      : {cfg['num_epochs']} epoch(s), no cap")
         print(f"Save       : strategy={save_strategy} steps={save_steps}")
-
-    tokenizer = load_tokenizer(cfg["model_path"])
-    model = load_model(cfg["model_path"])
 
     training_args = TrainingArguments(
         output_dir=output_dir,
@@ -117,6 +114,19 @@ def main():
         dataloader_num_workers=4,
         report_to="none",
     )
+
+    # Built before the checkpoint load on purpose, so PREFLIGHT=1 validates the
+    # real config in seconds instead of after a 52GB load. See
+    # cluster/preflight.py -- it must run under torchrun, because fsdp=True
+    # cannot be validated outside a distributed context.
+    if os.environ.get("PREFLIGHT"):
+        from cluster.preflight import validate
+
+        sys.exit(validate(training_args, note=__file__.rsplit('/', 1)[-1]))
+
+    tokenizer = load_tokenizer(cfg["model_path"])
+    model = load_model(cfg["model_path"])
+
 
     train_ds, eval_ds = prepare_datasets(
         cfg["dataset_path"],

@@ -112,13 +112,17 @@ def compare(a, b, mask):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
-    demo = os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo")
-    parser.add_argument("--base", default=f"{demo}/models/Qwen3.8-27B")
+    templates_dir = (
+        os.environ.get("TEMPLATES_DIR")
+        or os.environ.get("DEMO_DIR")
+        or "/mnt/data/slurm-llm-templates"
+    )
+    parser.add_argument("--base", default=f"{templates_dir}/models/Qwen3.8-27B")
     parser.add_argument(
-        "--merged", default=f"{demo}/output/qwen3.8-27b-judge-rc0-merged-complete"
+        "--merged", default=f"{templates_dir}/output/qwen3.8-27b-judge-rc0-merged-complete"
     )
     parser.add_argument(
-        "--dataset-dir", default=f"{demo}/datasets/judge-sft-rc0-54df8b59"
+        "--dataset-dir", default=f"{templates_dir}/datasets/judge-sft-rc0-54df8b59"
     )
     parser.add_argument("--rows", type=int, default=6)
     args = parser.parse_args()

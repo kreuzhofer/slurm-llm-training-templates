@@ -15,10 +15,10 @@ Usage:
 
 Example (needs 1 GPU or plenty of host RAM; ~56GB is written out):
   srun --partition=main --nodes=1 --gpus-per-node=1 --time=01:00:00 \
-      python /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/merge_lora.py \
-      /mnt/data/qwen38-demo/output/qwen3.8-27b-sql-lora \
-      /mnt/data/qwen38-demo/models/Qwen3.8-27B \
-      /mnt/data/qwen38-demo/output/qwen3.8-27b-sql
+      python /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/merge_lora.py \
+      /mnt/data/slurm-llm-templates/output/qwen3.8-27b-sql-lora \
+      /mnt/data/slurm-llm-templates/models/Qwen3.8-27B \
+      /mnt/data/slurm-llm-templates/output/qwen3.8-27b-sql
 """
 
 import argparse

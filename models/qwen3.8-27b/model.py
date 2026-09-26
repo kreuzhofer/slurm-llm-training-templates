@@ -236,13 +236,17 @@ def fsdp_config(state_dict_type="FULL_STATE_DICT", wrap_vision=False):
 
 def env_config():
     """Read the knobs the .sbatch files set, with defaults."""
-    demo_dir = os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo")
+    templates_dir = (
+        os.environ.get("TEMPLATES_DIR")
+        or os.environ.get("DEMO_DIR")
+        or "/mnt/data/slurm-llm-templates"
+    )
     rank = int(os.environ.get("RANK", os.environ.get("LOCAL_RANK", "0")))
     return {
-        "demo_dir": demo_dir,
-        "model_path": os.environ.get("MODEL_PATH", f"{demo_dir}/models/Qwen3.8-27B"),
+        "templates_dir": templates_dir,
+        "model_path": os.environ.get("MODEL_PATH", f"{templates_dir}/models/Qwen3.8-27B"),
         "dataset_path": os.environ.get(
-            "DATASET_PATH", f"{demo_dir}/datasets/sql-create-context"
+            "DATASET_PATH", f"{templates_dir}/datasets/sql-create-context"
         ),
         "per_device_bs": int(os.environ.get("PER_DEVICE_BATCH_SIZE", "8")),
         "grad_accum": int(os.environ.get("GRADIENT_ACCUMULATION_STEPS", "1")),

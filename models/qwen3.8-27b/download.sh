@@ -9,12 +9,13 @@
 # includes a vision tower and an MTP head we do not train -- see README).
 #
 # Usage:
-#   source /mnt/data/qwen38-demo/activate.sh
-#   bash /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/download.sh
+#   source /mnt/data/slurm-llm-templates/activate.sh
+#   bash /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/download.sh
 # =============================================================================
 set -euo pipefail
 
-DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+DEMO_DIR="$TEMPLATES_DIR"
 MODELS_DIR="$DEMO_DIR/models"
 DATASETS_DIR="$DEMO_DIR/datasets"
 MODEL_ID="${MODEL_ID:-Qwen/Qwen3.8-27B}"

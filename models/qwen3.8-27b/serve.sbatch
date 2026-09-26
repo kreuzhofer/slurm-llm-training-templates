@@ -4,11 +4,11 @@
 #
 # HOW TO USE:
 #   # serve the merged fine-tuned model (1 GPU, port 8000):
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/serve.sbatch
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/serve.sbatch
 #
 #   # serve the base model alongside it for A/B comparison:
-#   sbatch /mnt/data/qwen38-demo/repo/models/qwen3.8-27b/serve.sbatch \
-#       /mnt/data/qwen38-demo/models/Qwen3.8-27B 8001
+#   sbatch /mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/serve.sbatch \
+#       /mnt/data/slurm-llm-templates/models/Qwen3.8-27B 8001
 #
 # TP=1 is the default and is sufficient: ~50GB of bf16 weights on a 268.6 GiB B300.
 # The KV cache is unusually cheap for a 27B model because only 16 of the 64
@@ -38,22 +38,23 @@
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=main
-#SBATCH --output=/mnt/data/qwen38-demo/logs/serve_%j.out
-#SBATCH --error=/mnt/data/qwen38-demo/logs/serve_%j.err
+#SBATCH --output=/mnt/data/slurm-llm-templates/logs/serve_%j.out
+#SBATCH --error=/mnt/data/slurm-llm-templates/logs/serve_%j.err
 
 set -euo pipefail
 
-export DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
-source "$DEMO_DIR/venv/bin/activate"
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+# shellcheck source=../../cluster/env.sh
+source "$TEMPLATES_DIR/repo/cluster/env.sh"
+cluster_activate_venv
+cluster_triton_cache
 
-MODEL_PATH=${1:-$DEMO_DIR/output/qwen3.8-27b-sql}
+MODEL_PATH=${1:-$TEMPLATES_DIR/output/qwen3.8-27b-sql}
 PORT=${2:-8000}
 TP_SIZE=${3:-1}
 MAX_MODEL_LEN=${4:-8192}   # native is 262144; 8192 is ample for SQL and starts faster
 
 # Triton/torch.compile caches on shared NFS race between concurrent jobs.
-export TRITON_CACHE_DIR="${TMPDIR:-/tmp}/triton-$SLURM_JOB_ID"
-mkdir -p "$TRITON_CACHE_DIR"
 
 echo "=========================================="
 echo "Model     : $MODEL_PATH"

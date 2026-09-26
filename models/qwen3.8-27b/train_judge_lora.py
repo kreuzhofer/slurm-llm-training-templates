@@ -97,13 +97,17 @@ class EpochLossRecorder(TrainerCallback):
 
 
 def main():
-    demo_dir = os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo")
-    model_path = os.environ.get("MODEL_PATH", f"{demo_dir}/models/Qwen3.8-27B")
+    templates_dir = (
+        os.environ.get("TEMPLATES_DIR")
+        or os.environ.get("DEMO_DIR")
+        or "/mnt/data/slurm-llm-templates"
+    )
+    model_path = os.environ.get("MODEL_PATH", f"{templates_dir}/models/Qwen3.8-27B")
     dataset_dir = os.environ.get(
-        "JUDGE_DATASET_DIR", f"{demo_dir}/datasets/judge-sft-rc0-54df8b59"
+        "JUDGE_DATASET_DIR", f"{templates_dir}/datasets/judge-sft-rc0-54df8b59"
     )
     output_dir = os.environ.get(
-        "OUTPUT_DIR", f"{demo_dir}/output/qwen3.8-27b-judge-rc0-lora"
+        "OUTPUT_DIR", f"{templates_dir}/output/qwen3.8-27b-judge-rc0-lora"
     )
     rank = int(os.environ.get("RANK", os.environ.get("LOCAL_RANK", "0")))
     is_main = rank == 0
@@ -136,6 +140,65 @@ def main():
         print(f"LR          : {learning_rate} cosine, warmup 0.1")
         print(f"Max seq len : {max_seq_len}")
         print(f"Eval rows   : {[r['id'][:8] for r in eval_rows]}")
+
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        num_train_epochs=num_epochs,
+        per_device_train_batch_size=per_device_bs,
+        per_device_eval_batch_size=per_device_bs,
+        gradient_accumulation_steps=grad_accum,
+        learning_rate=learning_rate,
+        weight_decay=0.01,
+        # transformers v5: a value in [0, 1) is a ratio of total steps, so this
+        # is exactly the old warmup_ratio=0.1. See train_lora.py.
+        warmup_steps=0.1,
+        lr_scheduler_type="cosine",
+        max_grad_norm=1.0,
+        bf16=True,
+        # NO gradient_checkpointing here. Activation checkpointing comes from
+        # fsdp_config(), which sets activation_checkpointing=True, and
+        # transformers refuses both at once (trainer.py:845, job 1001):
+        #     "The activation_checkpointing in FSDP config and the
+        #      gradient_checkpointing in training arg can't be set to True
+        #      simultaneously."
+        #
+        # The FSDP path is also the proven one on this stack, not merely the
+        # recommended one: train_lora.py has always run LoRA under exactly this
+        # fsdp_config, and that is what produced the 87.4% SQL result. So the
+        # frozen-base adapters do receive gradients through it.
+        #
+        # judge_step_probe.py still sets gradient_checkpointing with
+        # use_reentrant=False, and correctly: it runs on ONE GPU with no FSDP,
+        # so there is no activation_checkpointing to conflict with, and under
+        # the reentrant implementation the adapters would get no gradient at
+        # all. The two paths differ because their parallelism differs.
+        ddp_timeout=7200,
+        fsdp=True,
+        fsdp_config=fsdp_config(state_dict_type="FULL_STATE_DICT"),
+        # ~75 optimizer steps in total, so every one of them is worth a line.
+        logging_steps=1,
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        save_total_limit=3,
+        # The features are dicts of tensors the collator understands, not
+        # columns Trainer should be pruning against the model signature.
+        remove_unused_columns=False,
+        label_names=["labels"],
+        dataloader_num_workers=4,
+        report_to="none",
+    )
+
+    # Validate the config before anything expensive. TrainingArguments(bf16=True)
+    # cannot be constructed on the login node, so this is the only place a
+    # config error can be caught cheaply -- and it is built BEFORE the 52GB
+    # load deliberately, so PREFLIGHT=1 costs seconds on one GPU. Job 1001 died
+    # 90s in on a conflict between gradient_checkpointing and fsdp_config's
+    # activation_checkpointing, which TrainingArguments accepts and Trainer
+    # rejects one layer deeper.
+    if os.environ.get("PREFLIGHT"):
+        from cluster.preflight import validate
+
+        sys.exit(validate(training_args, note="judge LoRA"))
 
     processor = judge_dataset.load_processor(model_path)
 
@@ -184,52 +247,6 @@ def main():
         model.print_trainable_parameters()
         print("vision tower: 0 adapters (asserted)")
 
-    training_args = TrainingArguments(
-        output_dir=output_dir,
-        num_train_epochs=num_epochs,
-        per_device_train_batch_size=per_device_bs,
-        per_device_eval_batch_size=per_device_bs,
-        gradient_accumulation_steps=grad_accum,
-        learning_rate=learning_rate,
-        weight_decay=0.01,
-        # transformers v5: a value in [0, 1) is a ratio of total steps, so this
-        # is exactly the old warmup_ratio=0.1. See train_lora.py.
-        warmup_steps=0.1,
-        lr_scheduler_type="cosine",
-        max_grad_norm=1.0,
-        bf16=True,
-        # NO gradient_checkpointing here. Activation checkpointing comes from
-        # fsdp_config(), which sets activation_checkpointing=True, and
-        # transformers refuses both at once (trainer.py:845, job 1001):
-        #     "The activation_checkpointing in FSDP config and the
-        #      gradient_checkpointing in training arg can't be set to True
-        #      simultaneously."
-        #
-        # The FSDP path is also the proven one on this stack, not merely the
-        # recommended one: train_lora.py has always run LoRA under exactly this
-        # fsdp_config, and that is what produced the 87.4% SQL result. So the
-        # frozen-base adapters do receive gradients through it.
-        #
-        # judge_step_probe.py still sets gradient_checkpointing with
-        # use_reentrant=False, and correctly: it runs on ONE GPU with no FSDP,
-        # so there is no activation_checkpointing to conflict with, and under
-        # the reentrant implementation the adapters would get no gradient at
-        # all. The two paths differ because their parallelism differs.
-        ddp_timeout=7200,
-        fsdp=True,
-        fsdp_config=fsdp_config(state_dict_type="FULL_STATE_DICT"),
-        # ~75 optimizer steps in total, so every one of them is worth a line.
-        logging_steps=1,
-        eval_strategy="epoch",
-        save_strategy="epoch",
-        save_total_limit=3,
-        # The features are dicts of tensors the collator understands, not
-        # columns Trainer should be pruning against the model signature.
-        remove_unused_columns=False,
-        label_names=["labels"],
-        dataloader_num_workers=4,
-        report_to="none",
-    )
 
     recorder = EpochLossRecorder()
     trainer = Trainer(

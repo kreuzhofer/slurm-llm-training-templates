@@ -89,7 +89,7 @@ def main():
     cfg = env_config()
     is_main = cfg["is_main"]
     output_dir = os.environ.get(
-        "OUTPUT_DIR", f"{cfg['demo_dir']}/output/qwen3.8-27b-sql-lora"
+        "OUTPUT_DIR", f"{cfg['templates_dir']}/output/qwen3.8-27b-sql-lora"
     )
     learning_rate = float(os.environ.get("LEARNING_RATE", "2e-4"))
 
@@ -114,25 +114,6 @@ def main():
         else:
             print(f"Steps      : {cfg['num_epochs']} epoch(s), no cap")
         print(f"Save/eval  : every {cfg['save_steps']}/{cfg['eval_steps']} steps")
-
-    tokenizer = load_tokenizer(cfg["model_path"])
-    model = load_model(cfg["model_path"])
-
-    # peft ships no default target-module mapping for qwen3_5, so an explicit
-    # list is mandatory (target_modules=None would raise).
-    model = get_peft_model(
-        model,
-        LoraConfig(
-            task_type=TaskType.CAUSAL_LM,
-            r=lora_r,
-            lora_alpha=lora_alpha,
-            lora_dropout=lora_dropout,
-            target_modules=target_modules,
-            bias="none",
-        ),
-    )
-    if is_main:
-        model.print_trainable_parameters()
 
     training_args = TrainingArguments(
         output_dir=output_dir,
@@ -173,6 +154,35 @@ def main():
         dataloader_num_workers=4,
         report_to="none",
     )
+
+    # Built before the checkpoint load on purpose, so PREFLIGHT=1 validates the
+    # real config in seconds instead of after a 52GB load. See
+    # cluster/preflight.py -- it must run under torchrun, because fsdp=True
+    # cannot be validated outside a distributed context.
+    if os.environ.get("PREFLIGHT"):
+        from cluster.preflight import validate
+
+        sys.exit(validate(training_args, note=__file__.rsplit('/', 1)[-1]))
+
+    tokenizer = load_tokenizer(cfg["model_path"])
+    model = load_model(cfg["model_path"])
+
+    # peft ships no default target-module mapping for qwen3_5, so an explicit
+    # list is mandatory (target_modules=None would raise).
+    model = get_peft_model(
+        model,
+        LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
+            r=lora_r,
+            lora_alpha=lora_alpha,
+            lora_dropout=lora_dropout,
+            target_modules=target_modules,
+            bias="none",
+        ),
+    )
+    if is_main:
+        model.print_trainable_parameters()
+
 
     train_ds, eval_ds = prepare_datasets(
         cfg["dataset_path"],

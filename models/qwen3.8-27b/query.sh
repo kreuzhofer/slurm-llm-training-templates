@@ -16,7 +16,8 @@
 # =============================================================================
 set -euo pipefail
 
-DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+DEMO_DIR="$TEMPLATES_DIR"
 VENV_PY="${VENV_PY:-$DEMO_DIR/venv/bin/python}"
 
 SCHEMA=${1:-"CREATE TABLE employees (id INT, department TEXT, salary DECIMAL)"}
@@ -59,13 +60,18 @@ echo ""
 # backslash -- and `DEFAULT "x"` is ordinary SQL. Measured before this fix:
 # the server returned 400 json_invalid "Expecting ',' delimiter".
 #
-# The system prompt is imported from sft_common rather than copied, so serving
-# uses the same prompt as training and evaluation. That import needs the venv
-# interpreter, because sft_common imports transformers at module scope.
+# The system prompt is imported from the task module rather than copied, so
+# serving uses the same prompt as training and evaluation. That import needs
+# the venv interpreter, because the module imports transformers at scope.
+#
+# It used to import `sft_common` from $DEMO_DIR/scripts -- a module that has
+# not existed since the Qwen3 era and never lived in scripts/. This script
+# could not have worked; the restructure surfaced it.
 BODY=$("$VENV_PY" - "$MODEL" "$SCHEMA" "$QUESTION" <<'PYEOF'
 import json, os, sys
-sys.path.insert(0, os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo") + "/scripts")
-from sft_common import SYSTEM_PROMPT
+ROOT = os.environ.get("TEMPLATES_DIR") or os.environ.get("DEMO_DIR") or "/mnt/data/slurm-llm-templates"
+sys.path.insert(0, ROOT + "/repo")
+from tasks.sql.dataset import SYSTEM_PROMPT
 
 model, schema, question = sys.argv[1], sys.argv[2], sys.argv[3]
 print(json.dumps({

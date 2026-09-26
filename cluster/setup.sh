@@ -10,17 +10,20 @@
 # fewer moving parts than a conda install on NFS.
 #
 # Usage:
-#   bash scripts/setup.sh
-#   source /mnt/data/qwen38-demo/activate.sh
+#   bash cluster/setup.sh
+#   source $TEMPLATES_DIR/activate.sh
 # =============================================================================
 set -euo pipefail
 
-DEMO_DIR="${DEMO_DIR:-/mnt/data/qwen38-demo}"
-VENV_DIR="$DEMO_DIR/venv"
+# TEMPLATES_DIR is the workspace root on the shared filesystem. DEMO_DIR is
+# the old name, still accepted so nothing in flight breaks.
+TEMPLATES_DIR="${TEMPLATES_DIR:-${DEMO_DIR:-/mnt/data/slurm-llm-templates}}"
+DEMO_DIR="$TEMPLATES_DIR"
+VENV_DIR="$TEMPLATES_DIR/venv"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-echo "=== Qwen3.8-27B demo setup ==="
-echo "DEMO_DIR: $DEMO_DIR"
+echo "=== slurm-llm-training-templates setup ==="
+echo "TEMPLATES_DIR: $TEMPLATES_DIR"
 
 mkdir -p "$DEMO_DIR"/{models,datasets,output,results,logs,repo}
 
@@ -61,12 +64,12 @@ echo "Syncing repo to $DEMO_DIR/repo ..."
 # rsync, not `cp scripts/*`, for two reasons that both bit in practice:
 #   * cp without -r exits 1 on any subdirectory, and `set -e` then aborts this
 #     script before the activate.sh and GPU-verification steps below. A
-#     __pycache__ appears the moment anyone imports sft_common from the repo,
+#     __pycache__ appears the moment anyone imports a task module from the repo,
 #     so this is a normal state, not an exotic one.
 #   * cp never removes anything, so a renamed or deleted script lingers in
 #     $DEMO_DIR forever and the Slurm jobs keep executing the stale copy.
 # Sync into $DEMO_DIR/repo, NOT $DEMO_DIR directly: the weights live in
-# $DEMO_DIR/models/Qwen3.8-27B and the code in models/qwen3.8-27b/, which differ
+# $TEMPLATES_DIR/models/<Name> and the code in models/<name>/, which can differ
 # only by case. Keeping the repo under its own prefix keeps code and data apart
 # and makes "what do the Slurm jobs actually execute" answerable with one path.
 mkdir -p "$DEMO_DIR/repo"
@@ -74,7 +77,7 @@ mkdir -p "$DEMO_DIR/repo"
 # so a sync that omits it fails on the worker with ModuleNotFoundError long
 # after submission. `common/` is gone -- it was the SQL task under a name that
 # claimed to be task-neutral (#18).
-for d in models scripts tasks; do
+for d in cluster models tasks; do
     rsync -a --delete --exclude='__pycache__' \
         "$REPO_DIR/$d/" "$DEMO_DIR/repo/$d/"
 done
@@ -82,10 +85,11 @@ done
 # --- Step 4: activation helper ---------------------------------------------
 cat > "$DEMO_DIR/activate.sh" << ACTIVATE
 #!/bin/bash
-# source /mnt/data/qwen38-demo/activate.sh
-export DEMO_DIR="$DEMO_DIR"
+# source $TEMPLATES_DIR/activate.sh
+export TEMPLATES_DIR="$TEMPLATES_DIR"
+export DEMO_DIR="$TEMPLATES_DIR"   # old name, still accepted
 source "$VENV_DIR/bin/activate"
-echo "Qwen3.8 demo env active. DEMO_DIR=\$DEMO_DIR"
+echo "templates env active. TEMPLATES_DIR=\$TEMPLATES_DIR"
 ACTIVATE
 chmod +x "$DEMO_DIR/activate.sh"
 
@@ -120,5 +124,5 @@ print('peft           :', peft.__version__)
 
 echo ""
 echo "=== Setup complete ==="
-echo "Next:  source $DEMO_DIR/activate.sh"
-echo "       bash $DEMO_DIR/repo/models/qwen3.8-27b/download.sh"
+echo "Next:  source $TEMPLATES_DIR/activate.sh"
+echo "       bash $TEMPLATES_DIR/repo/models/qwen3.8-27b/download.sh"

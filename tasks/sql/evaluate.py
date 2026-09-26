@@ -136,11 +136,15 @@ def resolve_labels(models, explicit):
 
 
 def main():
-    demo_dir = os.environ.get("DEMO_DIR", "/mnt/data/qwen38-demo")
+    templates_dir = (
+        os.environ.get("TEMPLATES_DIR")
+        or os.environ.get("DEMO_DIR")
+        or "/mnt/data/slurm-llm-templates"
+    )
     parser = argparse.ArgumentParser(
         description="Base vs one or more fine-tuned models, exact-match SQL."
     )
-    parser.add_argument("--base-model", default=f"{demo_dir}/models/Qwen3.8-27B")
+    parser.add_argument("--base-model", default=f"{templates_dir}/models/Qwen3.8-27B")
     parser.add_argument(
         "--tuned-model",
         action="append",
@@ -155,12 +159,12 @@ def main():
         help="Optional display label, once per model, base first. Derived from "
         "the paths if omitted.",
     )
-    parser.add_argument("--dataset", default=f"{demo_dir}/datasets/sql-create-context")
+    parser.add_argument("--dataset", default=f"{templates_dir}/datasets/sql-create-context")
     parser.add_argument("--num-examples", type=int, default=500)
     # 512 to match the reference DGX Spark runs, so numbers are comparable.
     # Measured here: answers never exceed ~230 chars, so this is slack, not need.
     parser.add_argument("--max-new-tokens", type=int, default=512)
-    parser.add_argument("--results-dir", default=f"{demo_dir}/results")
+    parser.add_argument("--results-dir", default=f"{templates_dir}/results")
     parser.add_argument(
         "--prefix",
         default=None,
@@ -169,7 +173,7 @@ def main():
     )
     args = parser.parse_args()
 
-    tuned = args.tuned_model or [f"{demo_dir}/output/qwen3.8-27b-sql"]
+    tuned = args.tuned_model or [f"{templates_dir}/output/qwen3.8-27b-sql"]
     paths = [args.base_model] + tuned
     labels = resolve_labels(paths, args.label)
     prefix = args.prefix if args.prefix is not None else "_".join(
