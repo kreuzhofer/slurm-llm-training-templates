@@ -1,9 +1,15 @@
-# Results: fine-tuning Qwen3.8-27B for SQL on 16× B300
+# Results: fine-tuning Qwen3.8-27B on 16× B300
 
-Everything here was measured on the cluster described below, between 2026-09-07
-and 2026-09-08. Where a number was previously estimated and later measured, the
-measured value is given and the estimate is called out — several of the
-estimates were wrong.
+Two tasks on one architecture. **Text-to-SQL** was measured 2026-09-07 to
+2026-09-08 and leads with an accuracy table. The **multimodal judge** was
+measured 2026-09-24 to 2026-09-26 and deliberately publishes no accuracy number
+at all — see that section for why, before drawing any comparison between them.
+
+Where a number was previously estimated and later measured, the measured value is
+given and the estimate is called out. Several of the estimates were wrong, and
+one that held is identified as such.
+
+**Text-to-SQL**
 
 - [Headline](#headline)
 - [The cluster](#the-cluster)
@@ -14,7 +20,22 @@ estimates were wrong.
 - [Performance and memory](#performance-and-memory)
 - [Defects found by running it](#defects-found-by-running-it)
 - [What was not measured](#what-was-not-measured)
-- [Reproducing](#reproducing)
+- [Reproducing the SQL path](#reproducing-the-sql-path)
+
+**The multimodal judge**
+
+- [The visual task: a multimodal judge](#the-visual-task-a-multimodal-judge)
+- [There is no accuracy number here, deliberately](#there-is-no-accuracy-number-here-deliberately)
+- [The data](#the-data)
+- [What the vision tower costs](#what-the-vision-tower-costs)
+- [Training health](#training-health)
+- [The masking gate](#the-masking-gate)
+- [Artifact and publishing costs](#artifact-and-publishing-costs)
+- [The transplanted speculative-decoding head](#the-transplanted-speculative-decoding-head)
+- [Defects found by running it](#defects-found-by-running-it-1)
+- [One projection that finally held](#one-projection-that-finally-held)
+- [What was not measured](#what-was-not-measured-1)
+- [Reproducing the judge path](#reproducing-the-judge-path)
 
 ---
 
@@ -294,7 +315,232 @@ three were conservative, so nothing broke — but the pattern is the lesson.
 
 ---
 
-## Reproducing
+---
+
+## The visual task: a multimodal judge
+
+A second task on the same architecture, run 2026-09-24 to 2026-09-26. Eight
+orthographic renders of a CAD model plus the original text request go in; a
+structured verdict comes out (`score` 1-10, `issues`, `suggestions`, and a
+`checklist` of `{question, pass, detail}`). Code in
+[`tasks/judge/`](../tasks/judge), trained by
+[`models/qwen3.8-27b/train_judge_lora.py`](../models/qwen3.8-27b/train_judge_lora.py).
+
+### There is no accuracy number here, deliberately
+
+The SQL half of this document leads with an accuracy table. This half cannot,
+and the reason is worth stating rather than leaving as an absence.
+
+The training set is **enriched on disagreements** — it was built by sampling
+where two judges disputed a verdict — so a base-vs-tuned comparison drawn from
+it would be inflated by construction. The honest evaluation is a screen on a
+**held-out 125** examples that carry human adjudication, and that set and its
+harness live on the consuming project's side, not here. So this repo publishes
+**training health and cost**, and no agreement or accuracy figure at all.
+
+Majority-class baselines, for anyone who later reports a number from this
+dataset: always answering "9" scores **39%** exact on score, and the checklist
+pass rate is **0.794**. A number below those is worse than a constant.
+
+### The data
+
+402 samples / 589 checklist items — 98 human-adjudicated, 38 rule-labelled, 453
+agreed. Of the 589, **68 overturn** the incumbent judge and 521 confirm it, and
+of those 68, **84% say "too harsh"**. The correction signal is small and
+directional, which is what sized the recipe.
+
+Token accounting, measured over all 402 rows through the real processor:
+
+| tokens | min | median | p95 | max |
+|---|---|---|---|---|
+| **total** | 4,621 | 6,960 | 7,740 | **8,496** |
+| visual | 2,048 | 4,608 | 4,608 | 4,608 |
+| text | 2,020 | 2,356 | 3,135 | 3,888 |
+| answer | 55 | 110 | 356 | 592 |
+
+Image cost is exactly determined, not estimated: patch 16 with merge 2 gives one
+token per 32×32 px and no resize happens at these sizes, so a 768×768 render is
+**576 tokens** and a 512×512 is **256**. Eight views at 768 is 4,608 tokens, and
+all the variance is text.
+
+**`max_seq_len` is 10240, not the 8192 originally specified.** At 8192 two of the
+402 rows truncate — and because the assistant turn is last, they lose the
+**verdict**, not padding. One drops all 354 of its answer tokens. The original
+figure was an outside estimate of ~7.5K that matched the median and missed the
+tail.
+
+### What the vision tower costs
+
+| | |
+|---|---|
+| params, `ForConditionalGeneration` vs `ForCausalLM` | +0.4607 B (+0.86 GiB) |
+| training step | **+1.01 GiB (+3.5%), −8.0% throughput** |
+| peak, LoRA / full FT, 16 GPUs | 30.10 / 36.63 GiB of 268.6 |
+| serving, tower built vs not | +0.97 GiB at load, −0.71% of the KV budget |
+
+FSDP-wrapping `Qwen3_5VisionBlock` was measured and **rejected**: it saved
+0.79 GiB for +9.7% step time. The tower is frozen by default with the patch
+merger trainable, which is the usual VLM SFT arrangement.
+
+### Training health
+
+LoRA r=16, alpha=32, dropout 0.05 on `q/k/v/o + gate/up/down` of the text stack
+only — **79,691,776 trainable, 0.2905%**, and zero adapters on the vision tower,
+asserted at build time rather than assumed. lr 1e-4 cosine, warmup 0.1, 3
+epochs, effective batch 16, bf16, FSDP2. Job 1002, one node × 8 B300, **14.1
+minutes** for 75 optimizer steps.
+
+| epoch | train loss | drift guard |
+|---|---|---|
+| step 1 | 0.6862 | — |
+| 1 | 0.3064 | 0.3561 |
+| 2 | 0.3502 | 0.3364 |
+| 3 | **0.2567** | 0.3461 |
+
+The **drift guard** is 10 rows held out from the 314 whose checklist items are
+*all* agreed. It is not a holdout and not a measure of learning: it asks whether
+the adapter is walking away from what the base already got right, so **near-flat
+is the desired result**. It stayed inside 0.02 and ended below its epoch-1 value.
+All 136 correction items remained in training, so the carve cost no correction
+signal. The epoch-2-to-3 rise is noise at n=10 and is not read as overfitting.
+
+Step cost: ~6.5 s per optimizer step, rising to ~22 s on the three checkpointing
+epochs. Peak 55.18 GiB allocated / 108.89 GiB reserved per GPU.
+
+### The masking gate
+
+Loss is computed on the assistant turn and nothing else, and this is the single
+most dangerous step in the task. The SQL path masks by token arithmetic over
+text; carried here, that undercounts the prompt by **~4,600 positions per row**
+once the eight image placeholders expand, so the supervised span would begin in
+the middle of the rendered views and the labels would be visual tokens. Nothing
+about that crashes: the run completes and the loss curve looks plausible.
+
+So the boundary is defined as the exact length of the **inference-time prompt**
+after expansion — the same processor over both renders with the same images, so
+the expansion cancels — and five checks run over every row: token-prefix, think
+block, no `<|image_pad|>` inside the span, exactly one `<|im_end|>` at its end,
+and the decoded span equalling the verdict text.
+
+**402/402 pass in 1 m 48 s**, and the checks are demonstrated to bite rather than
+asserted to: +1 loses the opening brace, −1 swallows the think block's newlines,
+and −576 — one image block — puts **566 visual tokens under loss** and trips
+three checks at once.
+
+### Artifact and publishing costs
+
+| | |
+|---|---|
+| merge | 25.4 s; 307.2 s including load and save |
+| merged size | 51.77 GiB, 3 shards, **1,199 tensors** — full parity with the base |
+| adapter push | 31 s |
+| merged push | **11 m 18.9 s ≈ 80.6 MB/s** |
+| re-push after adding one shard | 1 m 6.8 s (the Hub dedupes unchanged shards by content) |
+
+Three Hub transfer regimes are now measured from this cluster and they span about
+830×, decided by the **shape** of the transfer rather than by bandwidth: 44 MB as
+1,216 loose files runs at ~97 KB/s, 102.6 MB as one tarball at ~19 MB/s, and
+54.7 GB as large safetensors shards at ~80.6 MB/s.
+
+### The transplanted speculative-decoding head
+
+The merged checkpoint carries the **base** multi-token-prediction head, copied
+verbatim, because transformers has no MTP implementation for this architecture at
+all — the only mentions of `mtp` in the modeling file are two ignore-regexes, so
+no adapter can attach to a module that is never instantiated. The drafter
+therefore learned "given *base* hidden state h, predict two ahead" and is fed
+hidden states from a LoRA-merged trunk.
+
+Measured, comparing the trunk's final hidden state — the exact tensor the head
+consumes — over 40,418 positions: **cosine 0.7876** mean (0.8948 on the assistant
+span), relative L2 0.5276. The base-against-itself control was **exactly
+0.000000**, which is what makes that number trustworthy rather than arguable.
+
+Downstream, on a live deployment: acceptance length **2.93 against 4.39** for a
+matched head, acceptance rate 42.9% against 68.3%, with a much steeper decay — per
+draft token the acceptance runs 70.4 / 57.4 / 31.8 / 20.7 / 13.1%, so by the
+fourth it retains 20.7%. Worth roughly 7.5 vs ~11
+tok/s. It costs throughput and **cannot** cost quality, because verification is
+done by the target model.
+
+Deferred to rc1 rather than retrofitted, since a head must be aligned to whatever
+trunk finally ships.
+
+### Defects found by running it
+
+Every one of these completes successfully and returns a wrong or degraded result.
+None of them raises at the point of the mistake.
+
+| | |
+|---|---|
+| `model.config.use_cache = False` is a **silent no-op** on the multimodal class | the real flag is `config.text_config.use_cache`; the failure surfaces in *backward*, as a key length exactly 2× the query length. Cost a 16-GPU job. |
+| `apply_chat_template` **mutates the row in place**, rewriting `image_url` parts | a row survives exactly one render and then has no images. Invisible to a one-pass measurement; fatal on epoch 2, six frames deep in `image_transforms.py`. |
+| The merge **dropped the 15 `mtp.*` tensors** | `^mtp.*` is ignored by the *shared* base class, so neither model class instantiates it. Found only when vLLM's drafter failed to load downstream. |
+| `serve.sbatch` passed `--language-model-only` unconditionally | its own comment said "ANY VISUAL SERVING MUST DROP IT" in capitals, and the script dropped it for nobody. Serving the judge produced a model that could not see. |
+| `query.sh` imported `SYSTEM_PROMPT` from `sft_common` | a module gone since the Qwen3 era. Serving could not have worked. |
+| Under FSDP, `gradient_checkpointing` conflicts with `fsdp_config`'s `activation_checkpointing` | transformers refuses, from `Trainer.__init__` rather than from `TrainingArguments`. Without FSDP the reverse holds: `use_reentrant=False` is mandatory or a frozen-base LoRA gets no gradient and the loss sits flat. |
+
+The lesson the vision-tower verification taught is the general one: **a check that
+names the part you were worried about is blind to the part nobody was worried
+about.** That check passed at 333 of 333 while the same merge lost the MTP head.
+The replacement compares the tensor *name set* against the base, which has no
+such blind spot.
+
+### One projection that finally held
+
+Three projections on the SQL half of this document were refuted by measurement.
+The step-time projection here was not: a one-GPU probe measured 6.01 s for 2 rows
+and projected ~6 s per optimizer step and ~8 minutes of stepping; the real run
+came in at ~6.5 s and ~8 minutes. The difference is that it was measured on the
+real data path rather than inferred from a different one.
+
+### What was not measured
+
+- **Any accuracy or agreement figure.** See above — by design.
+- **`TRAIN_TOWER=1`.** Every arm ran with the tower frozen, so unfreezing it is
+  one submission away and its cost is unknown.
+- **Vision LoRA targets.** The SQL result that the Gated DeltaNet projections
+  earn nothing does not transfer, and the tower adds a whole set of candidates.
+- **Inference-side image throughput.** vLLM does not compile or CUDA-graph the
+  vision encoder by default, and the sdpa path runs one attention call per image
+  rather than one varlen kernel.
+- **Thinking on.** Forced off with a stated reason — no target contains a think
+  block, and both label sources were produced thinking-off — but never compared.
+- **No charts.** The SQL half has three; this half has none.
+
+### Reproducing the judge path
+
+```bash
+# the dataset is private; place it at $TEMPLATES_DIR/datasets/judge-sft-rc0-<rev>
+PREFLIGHT=1 srun --nodes=1 --gpus-per-node=1 --partition=main --time=10 \
+    "$TEMPLATES_DIR/venv/bin/torchrun" --nnodes=1 --nproc_per_node=1 \
+    --rdzv_backend=c10d --rdzv_endpoint=localhost:29777 \
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_judge_lora.py"
+
+# masking gate on its own, login node, no GPU
+PYTHONPATH="$TEMPLATES_DIR/repo" "$TEMPLATES_DIR/venv/bin/python" \
+    "$TEMPLATES_DIR/repo/tasks/judge/masking.py" --dataset-dir <dir>
+
+# one real step on one GPU: collator, LoRA, step time, overfit check
+sbatch "$TEMPLATES_DIR/repo/models/qwen3.8-27b/judge_step_probe.sbatch"
+
+sbatch "$TEMPLATES_DIR/repo/models/qwen3.8-27b/train_judge_lora.sbatch"
+
+# merge KEEPING the vision tower and the MTP head, with parity asserted
+srun --partition=main --nodes=1 --gpus-per-node=1 --time=01:00:00 \
+    "$TEMPLATES_DIR/venv/bin/python" \
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/merge_judge_lora.py" \
+    <adapter> <base> <merged>
+
+# how stale is a transplanted drafter, against a base-vs-base control
+srun --partition=main --nodes=1 --gpus-per-node=1 --time=01:00:00 \
+    "$TEMPLATES_DIR/venv/bin/python" \
+    "$TEMPLATES_DIR/repo/models/qwen3.8-27b/mtp_drift_probe.py"
+```
+
+---
+
+## Reproducing the SQL path
 
 Paths below are as they are today. The measurements in this document were taken
 when the workspace root was `/mnt/data/qwen38-demo`, the setup script lived at
