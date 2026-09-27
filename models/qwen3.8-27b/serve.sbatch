@@ -101,6 +101,63 @@ echo "=========================================="
 #       almost nothing -- model load 51.1 GiB vs 50.13 GiB text-only (+0.97
 #       GiB), and GPU KV cache 1,885,605 vs 1,899,098 tokens (-0.71%).
 #       --skip-mm-profiling is confirmed present in vllm 0.28.0.
+# --- Decide the vision flag FROM THE CHECKPOINT ------------------------------
+# The comment above said "ANY VISUAL SERVING MUST DROP IT" and then the script
+# dropped it for nobody: --language-model-only was passed unconditionally, and
+# MODEL_PATH is just a positional argument. Serving the multimodal judge through
+# this script therefore produced a judge that could not see the renders it
+# exists to judge, with nothing in the log saying so.
+#
+# A comment cannot enforce that. The checkpoint already carries the answer --
+# vision_config is present iff the tower is there, which is the same signal
+# merge_judge_lora.py asserts on -- so read it instead of trusting the caller.
+#
+# The detection answers "can this checkpoint see", not "does this task want
+# images", and it deliberately fails toward omitting the flag. The two mistakes
+# are not symmetric: omitting it on a text workload costs 0.97 GiB and 0.71% of
+# the KV budget (measured, #17) and changes no output, while passing it on a
+# vision workload makes the model blind and says nothing. So the cheap mistake
+# is the default.
+#
+# SERVE_MULTIMODAL=0 forces the flag back on -- worth it to reclaim that memory
+# when serving a vision-capable checkpoint for a text-only task, e.g. scoring
+# the base model on SQL. SERVE_MULTIMODAL=1 forces it off. Either is also the
+# escape hatch when config.json cannot be read, e.g. a Hub id rather than a
+# local directory.
+LM_ONLY=()
+if [ -n "${SERVE_MULTIMODAL:-}" ]; then
+    mm="$SERVE_MULTIMODAL"
+    echo "Multimodal  : $mm (forced via SERVE_MULTIMODAL)"
+else
+    set +e
+    "$TEMPLATES_DIR/venv/bin/python" - "$MODEL_PATH" <<'PYEOF'
+import json, os, sys
+try:
+    cfg = json.load(open(os.path.join(sys.argv[1], "config.json")))
+except Exception as exc:
+    print(f"cannot read config.json: {exc}", file=sys.stderr)
+    sys.exit(2)
+sys.exit(0 if "vision_config" in cfg else 1)
+PYEOF
+    rc=$?
+    set -e
+    case "$rc" in
+        0) mm=1 ;;
+        1) mm=0 ;;
+        *) echo "" >&2
+           echo "Refusing to guess whether $MODEL_PATH is multimodal." >&2
+           echo "Serving a vision model with --language-model-only silently" >&2
+           echo "disables image input. Set SERVE_MULTIMODAL=1 or 0." >&2
+           exit 1 ;;
+    esac
+    echo "Multimodal  : $mm (from config.json: vision_config $([ "$mm" = 1 ] && echo present || echo absent))"
+fi
+if [ "$mm" = 0 ]; then
+    LM_ONLY=(--language-model-only)
+else
+    echo "              omitting --language-model-only so image input works"
+fi
+
 vllm serve "$MODEL_PATH" \
     --served-model-name "$(basename "$MODEL_PATH")" \
     --host 0.0.0.0 \
@@ -108,6 +165,6 @@ vllm serve "$MODEL_PATH" \
     --tensor-parallel-size "$TP_SIZE" \
     --max-model-len "$MAX_MODEL_LEN" \
     --dtype bfloat16 \
-    --language-model-only \
+    "${LM_ONLY[@]}" \
     --reasoning-parser qwen3 \
     --default-chat-template-kwargs '{"enable_thinking": false}'
