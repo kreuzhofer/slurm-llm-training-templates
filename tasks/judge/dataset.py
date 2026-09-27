@@ -115,6 +115,73 @@ def load_images(row, dataset_dir=DEFAULT_DATASET_DIR):
     return images
 
 
+# The item-source taxonomy, held as data the code checks rather than a string
+# buried in a comprehension. This is the ONE place a manifest change can silently
+# alter what gets held out, and it has already changed once: `auto-C` did not
+# exist in the first export and appeared in the second.
+#
+# The failure it guards against is not hypothetical. With the source compared
+# against a bare literal, renaming or respelling "agreed" upstream empties the
+# eligible pool, sample(..., min(n_eval, 0)) picks nothing, and train_eval_split
+# returns every row as training with ZERO drift-guard rows. The run then
+# completes, reports no preservation signal, and says nothing about why.
+KNOWN_ITEM_SOURCES = {
+    "agreed": "both judges agreed; carries no correction signal",
+    "adjudicated": "a human overturned or confirmed the incumbent",
+    "auto-C": "the one-sided rule confirmed the incumbent",
+}
+
+# The per-item decision codes. `R` reverses the incumbent's verdict, `C` confirms
+# it, and an agreed item carries no decision at all. This is the field that
+# separates the items which actually teach something from the ones that only say
+# "you were already right": on the rc0 export, 68 items are R and 521 are C or
+# agreed, which is 12% correcting -- NOT the 136 you get by counting everything
+# that is merely ineligible for the carve.
+KNOWN_ITEM_DECISIONS = {
+    "R": "reversed -- the incumbent's verdict was overturned",
+    "C": "confirmed -- the incumbent's verdict stood",
+    None: "no adjudication; the judges agreed",
+}
+CORRECTING_DECISIONS = {"R"}
+
+
+def item_decision_census(dataset_dir=DEFAULT_DATASET_DIR):
+    """
+    {decision: count} over every item, refusing to guess about a new code.
+
+    Guarded the same way as the source vocabulary and for the same reason: the
+    correcting-item count is what sizes rank and epochs, so a decision code this
+    code does not understand must stop the run rather than be silently bucketed.
+    """
+    counts = {}
+    for sample in load_manifest(dataset_dir)["samples"]:
+        for item in sample.get("items", []):
+            counts[item.get("decision")] = counts.get(item.get("decision"), 0) + 1
+    unknown = sorted(str(k) for k in set(counts) - set(KNOWN_ITEM_DECISIONS))
+    if unknown:
+        raise ValueError(
+            f"manifest.json in {dataset_dir} contains item decision code(s) this "
+            f"code does not recognise: {unknown}.\n"
+            f"Known: {sorted(str(k) for k in KNOWN_ITEM_DECISIONS)}.\n"
+            "Add each to KNOWN_ITEM_DECISIONS, and to CORRECTING_DECISIONS if it "
+            "means the incumbent was overturned. The correcting count sizes rank "
+            "and epochs, so mis-bucketing one inflates or deflates the recipe."
+        )
+    return counts
+
+
+def correcting_item_count(dataset_dir=DEFAULT_DATASET_DIR):
+    """How many items actually overturn the incumbent. 68 on the rc0 export."""
+    census = item_decision_census(dataset_dir)
+    return sum(v for k, v in census.items() if k in CORRECTING_DECISIONS)
+
+
+# Only all-agreed rows may be held out. A row carrying an adjudicated or auto-C
+# item is one where a human (or the rule) ruled on the incumbent, and those items
+# ARE the training signal -- holding one back spends correction signal to measure
+# something a held-out loss cannot see anyway.
+HELD_OUT_ELIGIBLE_SOURCES = {"agreed"}
+
 # The drift-guard carve is defined exactly once, here, so a training run and
 # anything that later inspects the split cannot disagree about which rows were
 # held back.
@@ -122,25 +189,56 @@ SPLIT_SEED = 42
 DEFAULT_N_EVAL = 10
 
 
+def load_manifest(dataset_dir=DEFAULT_DATASET_DIR):
+    """The export's manifest.json."""
+    with open(os.path.join(dataset_dir, "manifest.json")) as handle:
+        return json.load(handle)
+
+
+def item_source_census(dataset_dir=DEFAULT_DATASET_DIR):
+    """
+    {source: count} over every checklist item, refusing to guess about a new one.
+
+    An unknown source is fatal rather than silently treated as non-agreed,
+    because "silently treated as" is how the drift guard disappears. If an
+    export introduces a source, decide whether it is eligible for the carve and
+    add it to KNOWN_ITEM_SOURCES -- the decision is cheap, the silence is not.
+    """
+    counts = {}
+    for sample in load_manifest(dataset_dir)["samples"]:
+        for item in sample.get("items", []):
+            counts[item.get("source")] = counts.get(item.get("source"), 0) + 1
+
+    unknown = sorted(str(k) for k in set(counts) - set(KNOWN_ITEM_SOURCES))
+    if unknown:
+        raise ValueError(
+            f"manifest.json in {dataset_dir} contains item source(s) this code "
+            f"does not recognise: {unknown}.\n"
+            f"Known: {sorted(KNOWN_ITEM_SOURCES)}.\n"
+            "Decide whether each new source is eligible for the agreed-only "
+            "drift-guard carve and add it to KNOWN_ITEM_SOURCES (and to "
+            "HELD_OUT_ELIGIBLE_SOURCES if it carries no correction signal). "
+            "Refusing rather than guessing: treating an unknown source as "
+            "non-agreed shrinks the carve silently, and a renamed 'agreed' "
+            "would empty it entirely."
+        )
+    return counts
+
+
 def agreed_only_ids(dataset_dir=DEFAULT_DATASET_DIR):
     """
-    Rows whose every checklist item is `agreed` -- 314 of the 402.
+    Row ids whose every checklist item is eligible to be held out.
 
-    These are the only rows that may be held out. A row carrying an
-    `adjudicated` or `auto-C` item is one where a human (or #108's rule)
-    overturned or confirmed the incumbent, and those 136 items ARE the training
-    signal: 68 of them overturn it. Holding one back spends correction signal
-    to measure something a held-out loss cannot see anyway.
-
-    An all-agreed row costs nothing to hold back, which is exactly why the
-    recipe specifies agreed-only.
+    On the rc0 export that is 314 of the 402 rows. The census runs first, so a
+    manifest carrying an unseen source fails here rather than quietly changing
+    what this returns.
     """
-    with open(os.path.join(dataset_dir, "manifest.json")) as handle:
-        manifest = json.load(handle)
+    item_source_census(dataset_dir)  # raises on an unrecognised source
     return [
         s["id"]
-        for s in manifest["samples"]
-        if s.get("items") and all(i.get("source") == "agreed" for i in s["items"])
+        for s in load_manifest(dataset_dir)["samples"]
+        if s.get("items")
+        and all(i.get("source") in HELD_OUT_ELIGIBLE_SOURCES for i in s["items"])
     ]
 
 
@@ -149,22 +247,42 @@ def train_eval_split(rows, dataset_dir=DEFAULT_DATASET_DIR, n_eval=DEFAULT_N_EVA
     (train_rows, eval_rows) -- every row trains except a small agreed-only carve.
 
     This is a DRIFT GUARD, not a holdout, and the difference matters enough to
-    say twice. The real evaluation of rc0 is the qualification screen on the
-    held-out 125, which lives on chat3d's side and is disjoint from this export
-    by example id and by prompt. Nothing measured here is an accuracy, and a
-    loss computed on agreed-only rows measures PRESERVATION: it should sit
-    near-flat, and a rise means the adapter is drifting off what the base
-    already agreed with. The per-epoch TRAIN loss is the one expected to move.
+    say twice. The real evaluation lives on the consuming side, on a held-out set
+    disjoint from this export by example id and by prompt. Nothing measured here
+    is an accuracy, and a loss computed on agreed-only rows measures
+    PRESERVATION: it should sit near-flat, and a rise means the adapter is
+    drifting off what the base already agreed with. The per-epoch TRAIN loss is
+    the one expected to move.
 
     Deterministic: sorted ids, then a seeded shuffle, so two runs of the same
     export carve the same rows without writing a split file.
+
+    Asserts that it carved what it was asked for. Silently returning an empty
+    carve would leave the run with no preservation signal and nothing in the log
+    saying so.
     """
     import random
 
-    eligible = sorted(agreed_only_ids(dataset_dir))
-    picked = set(random.Random(SPLIT_SEED).sample(eligible, min(n_eval, len(eligible))))
+    eligible = sorted(set(agreed_only_ids(dataset_dir)) & {r["id"] for r in rows})
+    want = min(n_eval, len(eligible))
+    picked = set(random.Random(SPLIT_SEED).sample(eligible, want))
     train = [r for r in rows if r["id"] not in picked]
     evaluation = [r for r in rows if r["id"] in picked]
+
+    if n_eval > 0 and not evaluation:
+        raise ValueError(
+            f"asked for {n_eval} drift-guard rows and carved none. "
+            f"{len(eligible)} of {len(rows)} rows are eligible "
+            f"({sorted(HELD_OUT_ELIGIBLE_SOURCES)} items only). Either the "
+            "manifest and samples.jsonl disagree about ids, or no row is "
+            "all-agreed. Training without a preservation signal is a decision, "
+            "not a default -- pass n_eval=0 to make it one."
+        )
+    if len(evaluation) != want:
+        raise ValueError(
+            f"carve is {len(evaluation)} rows, expected {want}; manifest ids and "
+            "samples.jsonl ids disagree"
+        )
     return train, evaluation
 
 
