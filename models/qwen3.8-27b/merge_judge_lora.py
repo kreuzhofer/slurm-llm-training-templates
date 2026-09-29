@@ -32,7 +32,7 @@ import os
 import time
 
 
-def restore_dropped_tensors(output_path, base_model_path):
+def restore_dropped_tensors(output_path, base_model_path, mtp_head_path=None):
     """
     Copy back every tensor the loading class dropped. Returns the names copied.
 
@@ -89,6 +89,30 @@ def restore_dropped_tensors(output_path, base_model_path):
         with safe_open(os.path.join(base_model_path, shard), framework="pt") as f:
             for name in names:
                 tensors[name] = f.get_tensor(name)
+
+    # A head trained by train_judge_mtp.py replaces the base one. Without this,
+    # aligning the drafter produces a file nothing installs, and the checkpoint
+    # ships the base head while a recipe says otherwise.
+    if mtp_head_path:
+        with safe_open(mtp_head_path, framework="pt") as f:
+            override = {name: f.get_tensor(name) for name in f.keys()}
+        wanted = {n for n in missing if n.startswith("mtp.")}
+        if set(override) != wanted:
+            raise ValueError(
+                f"{mtp_head_path} does not match the checkpoint's MTP tensors.\n"
+                f"  in the head but not needed: {sorted(set(override) - wanted)}\n"
+                f"  needed but not in the head: {sorted(wanted - set(override))}\n"
+                "Refusing to install a partial head: half the base drafter and "
+                "half a trained one is worse than either."
+            )
+        for name, tensor in override.items():
+            if tensors[name].shape != tensor.shape:
+                raise ValueError(
+                    f"{name}: head has {tuple(tensor.shape)}, checkpoint expects "
+                    f"{tuple(tensors[name].shape)}"
+                )
+            tensors[name] = tensor
+        print(f"  installing {len(override)} trained MTP tensors from {mtp_head_path}")
 
     # Renumber the existing shards so the "of-N" suffix stays honest rather
     # than leaving two files claiming "of-00002" beside a third.
@@ -201,6 +225,12 @@ def main():
     parser.add_argument("adapter_path")
     parser.add_argument("base_model_path")
     parser.add_argument("output_path")
+    parser.add_argument(
+        "--mtp-head",
+        default=None,
+        help="an mtp_head.safetensors from train_judge_mtp.py; its tensors "
+        "replace the base drafter, which is the point of training one",
+    )
     args = parser.parse_args()
 
     t0 = time.perf_counter()
@@ -227,7 +257,9 @@ def main():
     # train_judge_lora.py saved it beside the adapter.
     AutoProcessor.from_pretrained(args.adapter_path).save_pretrained(args.output_path)
 
-    restored = restore_dropped_tensors(args.output_path, args.base_model_path)
+    restored = restore_dropped_tensors(
+        args.output_path, args.base_model_path, mtp_head_path=args.mtp_head
+    )
     n_tensors = assert_tensor_parity(args.output_path, args.base_model_path)
     print(f"  tensor parity: {n_tensors} names, exactly matching the base")
 
@@ -235,6 +267,7 @@ def main():
     facts = verify_multimodal(args.output_path)
     facts["restored_tensors"] = restored
     facts["tensor_parity"] = n_tensors
+    facts["mtp_head"] = args.mtp_head or "base (untrained)"
     size = sum(
         os.path.getsize(os.path.join(args.output_path, f))
         for f in os.listdir(args.output_path)
