@@ -38,6 +38,12 @@
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=main
+# Both partitions have TIMELIMIT=infinite, so WITHOUT this a forgotten serve job
+# holds a B300 until someone notices and scancels it -- and the symptom is a
+# training job queueing behind a server nobody is using. A limit turns that into
+# "my server died", which is loud, recoverable, and blames the right thing.
+# Override for a longer session:  sbatch --time=12:00:00 serve.sbatch ...
+#SBATCH --time=04:00:00
 #SBATCH --output=/mnt/data/slurm-llm-templates/logs/serve_%j.out
 #SBATCH --error=/mnt/data/slurm-llm-templates/logs/serve_%j.err
 

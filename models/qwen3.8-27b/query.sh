@@ -6,6 +6,12 @@
 #   bash models/qwen3.8-27b/query.sh
 #   bash models/qwen3.8-27b/query.sh "<schema>" "<question>"
 #   bash models/qwen3.8-27b/query.sh "<schema>" "<question>" <host> <port> <served-model-name>
+#   SERVE_JOBID=<jobid> bash models/qwen3.8-27b/query.sh ...
+#
+# The host is auto-detected from a single running qwen38-serve job. With SEVERAL
+# running -- which serve.sbatch's own header documents, for A/B against the base
+# -- it refuses to guess and lists them; pass the host as the 3rd argument or set
+# SERVE_JOBID.
 #
 # All five arguments are optional and positional. The 5th matters when you are
 # not serving the default merged checkpoint: serve.sbatch derives
@@ -22,7 +28,32 @@ VENV_PY="${VENV_PY:-$DEMO_DIR/venv/bin/python}"
 
 SCHEMA=${1:-"CREATE TABLE employees (id INT, department TEXT, salary DECIMAL)"}
 QUESTION=${2:-"What is the average salary per department?"}
-HOST=${3:-$(squeue --noheader -n qwen38-serve -o "%N" 2>/dev/null | head -1)}
+# Auto-detect the serving node, but REFUSE to guess between several.
+#
+# This used to be `squeue -n qwen38-serve -o "%N" | head -1`, which silently
+# picked whichever job Slurm happened to list first. serve.sbatch's own header
+# documents running two servers at once (a base model alongside the tuned one for
+# A/B), so "several" is a supported state, not an exotic one.
+#
+# The old failure was not a wrong answer -- the model name travels in the request
+# body and curl runs with --fail-with-body, so querying the wrong server returns
+# a 404. It was a CONFUSING one: a "model not found" that says nothing about
+# having reached the wrong host. Listing the candidates costs one squeue call.
+if [ -n "${3:-}" ]; then
+    HOST=$3
+elif [ -n "${SERVE_JOBID:-}" ]; then
+    HOST=$(squeue --noheader -j "$SERVE_JOBID" -o "%N" 2>/dev/null | head -1)
+    [ -n "$HOST" ] || { echo "SERVE_JOBID=$SERVE_JOBID is not a running job" >&2; exit 1; }
+else
+    mapfile -t SERVE_JOBS < <(squeue --noheader -n qwen38-serve -t RUNNING -o "%i %N" 2>/dev/null)
+    if [ "${#SERVE_JOBS[@]}" -gt 1 ]; then
+        echo "Several qwen38-serve jobs are running; refusing to pick one:" >&2
+        printf '  job %s on %s\n' $(printf '%s\n' "${SERVE_JOBS[@]}") >&2
+        echo "Pass the host as the 3rd argument, or set SERVE_JOBID=<jobid>." >&2
+        exit 1
+    fi
+    HOST=$(printf '%s\n' "${SERVE_JOBS[0]:-}" | awk '{print $2}')
+fi
 PORT=${4:-8000}
 MODEL=${5:-"qwen3.8-27b-sql"}   # = basename of serve.sbatch's MODEL_PATH
 
