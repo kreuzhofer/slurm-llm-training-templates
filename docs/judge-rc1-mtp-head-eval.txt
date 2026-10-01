@@ -1,0 +1,6 @@
+trunk   : /mnt/data/slurm-llm-templates/output/qwen3.8-27b-judge-rc1-merged
+rows    : 30 drift-guard + 30 training sample
+  base           drift-guard +2 loss 0.5080   training-sample 0.4870
+  trained_ep3    drift-guard +2 loss 0.6192   training-sample 0.1322
+
+trained_ep3 vs base on the drift guard: +0.1112 (WORSE by 21.9%)

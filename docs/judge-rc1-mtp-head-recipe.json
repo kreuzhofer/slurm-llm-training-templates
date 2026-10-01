@@ -1,0 +1,86 @@
+{
+ "trunk": "/mnt/data/slurm-llm-templates/output/qwen3.8-27b-judge-rc1-merged",
+ "dataset_dir": "/mnt/data/slurm-llm-templates/datasets/judge-sft-rc1-2456edfb",
+ "rows_train": 849,
+ "rows_drift_guard": 30,
+ "drift_guard_ids": [
+  "043006a2-aa03-4d16-aa9a-4752ac7a02f7",
+  "08d67c87-f825-4151-82e8-8452427fbd11",
+  "09063a43-1cfe-4898-b02d-671d3726e7ec",
+  "0a0b45a8-ce4b-4706-b96e-342589715972",
+  "0ab74c8d-2104-486b-bfc6-346519d37786",
+  "222088c5-1973-4741-ba52-89442a08e915",
+  "237ec812-9b83-47a4-93c5-f3bd6b22cb90",
+  "25f37953-3e7e-4540-8d9f-6df42dba01c7",
+  "275dd77a-512e-4695-bec8-8fc9effb3968",
+  "33e6164d-e1c9-4410-b365-4ec6f9153c2f",
+  "41afbc5f-104a-430f-bf08-f24ee88fa377",
+  "47d30841-0891-46c4-ab4d-034b05ac808d",
+  "48ddec46-7af3-4f7d-8bb6-6ee7c66421ff",
+  "49a58858-9192-4685-a22e-e31985a793f3",
+  "4c1e062d-0bc7-4db9-9e03-50af5e6f8003",
+  "511bfbfb-55b3-42f5-9f9a-473179158645",
+  "5995e8ff-a766-40db-bade-c60a967c0f41",
+  "5ae1c782-2266-4ad4-8cec-497c8ddf929a",
+  "9a4ce197-7cce-4a50-9d8b-f45fac6f6ed8",
+  "9ba4c1ee-6df3-4de1-bf2f-a7438a447002",
+  "a433d87c-4b2b-4820-8b1f-721dfc9eb396",
+  "b99c6af0-9703-472b-a28e-0f69726c581a",
+  "c67b7769-8947-403b-ac64-7792230d3e13",
+  "cc9200ca-c483-48e3-a127-e664aefd714c",
+  "d7b15508-114f-4b0f-9c54-0869877a2d49",
+  "d95dc07c-60ff-4fce-99d0-61b8ae530d82",
+  "def999d6-cc6b-4fbf-83b0-f826fc8fd1c2",
+  "ecf67632-9e44-44ec-89e8-06785da3f935",
+  "f121a75c-8853-4fb7-ab83-748daf5d24ea",
+  "fbb142e3-25cc-4ceb-abc3-304bc28559eb"
+ ],
+ "epochs": 3,
+ "lr": 0.0001,
+ "warmup_ratio": 0.1,
+ "max_seq_len": 10240,
+ "head_params": 424699392,
+ "tensors": [
+  "mtp.fc.weight",
+  "mtp.layers.0.input_layernorm.weight",
+  "mtp.layers.0.mlp.down_proj.weight",
+  "mtp.layers.0.mlp.gate_proj.weight",
+  "mtp.layers.0.mlp.up_proj.weight",
+  "mtp.layers.0.post_attention_layernorm.weight",
+  "mtp.layers.0.self_attn.k_norm.weight",
+  "mtp.layers.0.self_attn.k_proj.weight",
+  "mtp.layers.0.self_attn.o_proj.weight",
+  "mtp.layers.0.self_attn.q_norm.weight",
+  "mtp.layers.0.self_attn.q_proj.weight",
+  "mtp.layers.0.self_attn.v_proj.weight",
+  "mtp.norm.weight",
+  "mtp.pre_fc_norm_embedding.weight",
+  "mtp.pre_fc_norm_hidden.weight"
+ ],
+ "alignment_losses": {
+  "1": 18.567052841186523,
+  "2": 0.6265532970428467,
+  "3": 14.930218696594238,
+  "chance": 12.422473515976991
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.8576406378241955,
+   "drift_guard": 0.74501231610775
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.4437921778622519,
+   "drift_guard": 0.6008446062604587
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.16421196572877492,
+   "drift_guard": 0.6180986419320107
+  }
+ ],
+ "train_seconds": 2569.5,
+ "peak_gib_allocated": 85.46,
+ "peak_gib_reserved": 237.93
+}

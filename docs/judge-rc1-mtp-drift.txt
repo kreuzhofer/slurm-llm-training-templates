@@ -1,0 +1,18 @@
+       row  positions   cos mean    cos min  relL2 mean  relL2 max
+  dac780aa       4621   0.857772   0.054365    0.412838   1.405117
+  00f589a5       6877   0.766790   0.037801    0.568377   1.423599
+  01a27016       7127   0.743421   0.033366    0.600421   1.445040
+  024ffd52       7652   0.778239   0.036210    0.547765   1.407641
+  02516622       7320   0.782096   0.031980    0.538879   1.469192
+  027f1fea       6821   0.762853   0.055073    0.579576   1.487105
+
+ALL POSITIONS  n=40418
+  cosine   mean 0.777346  min 0.031980  p1 0.120722
+  rel L2   mean 0.548890  max 1.487105  p99 1.326991
+  positions with cosine < 0.9999: 40418 (100.00%)
+  positions with cosine < 0.999: 40387 (99.92%)
+  positions with cosine < 0.99: 33590 (83.11%)
+  positions with cosine < 0.95: 26249 (64.94%)
+
+ASSISTANT SPAN ONLY (where decoding happens)  n=781
+  cosine   mean 0.908662  min 0.485797
