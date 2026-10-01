@@ -107,6 +107,9 @@ def main():
 
     rows = judge_dataset.load_rows(dataset_dir)
     train_rows, eval_rows = judge_dataset.train_eval_split(rows, dataset_dir, n_eval)
+    if os.environ.get("DROP_AUTO_C", "0") not in ("0", "false", "False"):
+        train_rows, dropped = judge_dataset.drop_auto_c_rows(train_rows, dataset_dir)
+        print(f"DROP_AUTO_C : dropped {len(dropped)} auto-C-only rows; {len(train_rows)} train rows remain")
     # MAX_ROWS caps the training rows for a smoke run. Deliberately AFTER the
     # split, so a smoke run exercises the same carve the real run will use
     # rather than a different one -- the repo's standing rule that short runs

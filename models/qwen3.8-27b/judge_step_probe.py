@@ -62,6 +62,17 @@ LORA_TARGET_MODULES = [
     "gate_proj", "up_proj", "down_proj",
 ]
 
+# Guard against adapting the MTP drafter, requested on chat3d #45. mtp.layers.0
+# carries q/k/v/o_proj and gate/up/down_proj, so a suffix-matched target list
+# adapts it as if it were part of the judge stack on ANY class that instantiates
+# the head. Today's training class does not, which is why this is a guard and
+# not a fix -- but it is tested on a class that does, and the result decides the
+# form: exclude_modules=["mtp"] silently does NOTHING (list entries match by
+# suffix, 7 adapters still land on the head), and r"^.*\\.mtp\\..*" also does
+# nothing (the name starts with "mtp.", no leading dot). Only a regex that
+# accepts the start of the name works: 256 modules, 0 on the head.
+LORA_EXCLUDE_MODULES = r".*(^|\.)mtp\..*"
+
 
 def assert_vision_is_unadapted(model):
     """
@@ -176,6 +187,7 @@ def main():
             lora_alpha=lora_alpha,
             lora_dropout=lora_dropout,
             target_modules=LORA_TARGET_MODULES,
+            exclude_modules=LORA_EXCLUDE_MODULES,
             bias="none",
         ),
     )

@@ -138,6 +138,27 @@ def check_manifest(dataset_dir, rows, report):
         "row count, is what should size rank and epochs"
     )
 
+    # The manifest lists the ids this export must never train on -- the
+    # qualification set and every spot check. Asserted here because "absent
+    # from the samples" is a property of the export that a re-export can break
+    # silently, and training on a held-out row invalidates the number that
+    # qualifies the release.
+    manifest = judge_dataset.load_manifest(dataset_dir)
+    held = manifest.get("heldOut") or {}
+    held_ids = set(held.get("exampleIds") or [])
+    sample_ids = {r["id"] for r in rows}
+    leak = sorted(held_ids & sample_ids)
+    report.check(
+        bool(held_ids), "manifest lists held-out ids",
+        f"{len(held_ids)} listed" if held_ids else "none listed -- cannot prove disjointness",
+    )
+    report.check(not leak, "no held-out id appears in the samples",
+                 f"{len(leak)} LEAKED, e.g. {leak[:3]}" if leak else f"0 of {len(held_ids)}")
+    manifest_ids = {s["id"] for s in manifest["samples"]}
+    report.check(manifest_ids == sample_ids, "manifest sample ids match samples.jsonl",
+                 "" if manifest_ids == sample_ids else
+                 f"{len(manifest_ids ^ sample_ids)} ids differ")
+
     eligible = judge_dataset.agreed_only_ids(dataset_dir)
     report.check(bool(eligible), "rows are eligible for the carve", f"{len(eligible)} eligible")
     try:
@@ -224,6 +245,10 @@ def diff_reference(summary, per_row, reference, report):
 
 
 def main():
+    # Line-buffer stdout so progress shows up when redirected to a log. The rc1
+    # run sat at 0 logged bytes for its whole six minutes with block buffering,
+    # which reads as a hang from outside.
+    sys.stdout.reconfigure(line_buffering=True)
     parser = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     parser.add_argument("--dataset-dir", required=True)
     parser.add_argument("--model-path", default=judge_dataset.DEFAULT_MODEL_PATH)

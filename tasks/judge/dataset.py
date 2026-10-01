@@ -242,6 +242,32 @@ def agreed_only_ids(dataset_dir=DEFAULT_DATASET_DIR):
     ]
 
 
+def drop_auto_c_rows(rows, dataset_dir=DEFAULT_DATASET_DIR):
+    """
+    (kept_rows, dropped_ids) -- remove rows whose only non-agreed items are auto-C.
+
+    auto-C items are confirmations of the incumbent made by a triage model at
+    high confidence and never seen by a human. They teach nothing the 892
+    agreed items do not, and if the triage model shares the incumbent's
+    false-pass tendency they reinforce it. Dropping them is defensible; so is
+    keeping them. This makes the choice one environment variable.
+
+    Rows that carry BOTH an auto-C item and a human adjudication are KEPT: the
+    loss is on the whole verdict, there is no per-item weighting, and dropping
+    such a row would throw away the human label to avoid the machine one. On
+    the rc1 export that is 51 rows dropped and 6 kept, costing 0 human items.
+    """
+    manifest = load_manifest(dataset_dir)
+    by_id = {s["id"]: s for s in manifest["samples"]}
+    dropped = set()
+    for row in rows:
+        items = by_id.get(row["id"], {}).get("items", [])
+        sources = {i.get("source") for i in items}
+        if "auto-C" in sources and sources <= {"auto-C", "agreed"}:
+            dropped.add(row["id"])
+    return [r for r in rows if r["id"] not in dropped], sorted(dropped)
+
+
 def train_eval_split(rows, dataset_dir=DEFAULT_DATASET_DIR, n_eval=DEFAULT_N_EVAL):
     """
     (train_rows, eval_rows) -- every row trains except a small agreed-only carve.
