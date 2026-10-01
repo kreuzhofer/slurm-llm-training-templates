@@ -1,0 +1,20 @@
+{
+ "source": "/mnt/data/slurm-llm-templates/output/qwen3.8-27b-judge-rc0-merged-complete",
+ "recipe": "/mnt/data/slurm-llm-templates/repo/models/qwen3.8-27b/nvfp4_reference_recipe.json",
+ "calibration": {
+  "dataset_dir": "/mnt/data/slurm-llm-templates/datasets/judge-sft-rc0-54df8b59",
+  "rows": 128,
+  "max_seq_len": 10240
+ },
+ "quantize_seconds": 242.5,
+ "total_seconds": 537.8,
+ "output_bytes": 23437817115,
+ "mtp_sidecar_bytes": 849400424,
+ "verification": {
+  "mtp_identical": "15/15",
+  "vision_identical": "333/333",
+  "fp4_modules": 168,
+  "fp8_modules": 233,
+  "untargeted_identical": "450/450"
+ }
+}
