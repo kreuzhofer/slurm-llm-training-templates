@@ -154,6 +154,15 @@ def check_manifest(dataset_dir, rows, report):
     )
     report.check(not leak, "no held-out id appears in the samples",
                  f"{len(leak)} LEAKED, e.g. {leak[:3]}" if leak else f"0 of {len(held_ids)}")
+    # The cut is by PROMPT, not just by example id: other generations of a
+    # held-out prompt are listed as siblingExampleIds and must be absent too,
+    # or a training row shares its prompt and checklist with a measurement
+    # row. rc0's first export had exactly this leak -- 12 rows -- before the
+    # exporter was taught to cut by prompt.
+    sibling_ids = set(held.get("siblingExampleIds") or [])
+    sleak = sorted(sibling_ids & sample_ids)
+    report.check(not sleak, "no held-out prompt SIBLING appears in the samples",
+                 f"{len(sleak)} LEAKED, e.g. {sleak[:3]}" if sleak else f"0 of {len(sibling_ids)}")
     manifest_ids = {s["id"] for s in manifest["samples"]}
     report.check(manifest_ids == sample_ids, "manifest sample ids match samples.jsonl",
                  "" if manifest_ids == sample_ids else
