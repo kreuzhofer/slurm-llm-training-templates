@@ -84,6 +84,44 @@ LORA_TARGET_MODULES = [
 LORA_EXCLUDE_MODULES = r".*(^|\.)mtp\..*"
 
 
+# What the local base checkpoint IS on the Hub. peft records the path the trunk
+# was loaded from as the adapter's base_model, and the Hub rejects a filesystem
+# path as card metadata -- so the push fails at the LAST step, after the 51 GiB
+# merge is already up. It happened to rc0's adapter and then to rc1's; from now
+# on the adapter is written publishable.
+BASE_MODEL_HUB_ID = "Qwen/Qwen3.8-27B"
+
+
+def publishable_adapter_metadata(output_dir, model_path):
+    """
+    Rewrite the saved adapter's base_model from the local path to its Hub id.
+
+    Touches adapter_config.json (base_model_name_or_path) and the README's
+    frontmatter (base_model, and the pipeline_tag peft guesses as
+    text-generation for a vision model). The exact base revision is pinned in
+    recipe.json, so nothing is lost by naming the Hub id instead. Only applies
+    to an adapter trained on the base checkpoint; one trained from a merged rc
+    keeps the path it was given, since that has no Hub id.
+    """
+    if os.path.basename(os.path.normpath(model_path)) != "Qwen3.8-27B":
+        return
+    cfg_path = os.path.join(output_dir, "adapter_config.json")
+    with open(cfg_path) as handle:
+        cfg = json.load(handle)
+    cfg["base_model_name_or_path"] = BASE_MODEL_HUB_ID
+    with open(cfg_path, "w") as handle:
+        json.dump(cfg, handle, indent=2, sort_keys=True)
+    readme = os.path.join(output_dir, "README.md")
+    if os.path.exists(readme):
+        with open(readme) as handle:
+            text = handle.read()
+        text = text.replace(model_path, BASE_MODEL_HUB_ID).replace(
+            "pipeline_tag: text-generation", "pipeline_tag: image-text-to-text")
+        with open(readme, "w") as handle:
+            handle.write(text)
+    print(f"adapter metadata: base_model -> {BASE_MODEL_HUB_ID} (publishable as-is)")
+
+
 class EpochLossRecorder(TrainerCallback):
     """
     Keep per-epoch train and eval loss, because the run is asked to report them.
@@ -285,6 +323,7 @@ def main():
 
     if trainer.is_world_process_zero():
         processor.save_pretrained(output_dir)
+        publishable_adapter_metadata(output_dir, model_path)
 
         # Provenance the cluster's own records do not carry (chat3d #95).
         record = {
