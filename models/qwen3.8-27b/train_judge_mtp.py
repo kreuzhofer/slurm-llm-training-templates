@@ -171,9 +171,18 @@ def main():
         trainer.train()
         return total / max(n, 1)
 
+    # The base head's loss on the guard rows, BEFORE any step. Without this the
+    # per-epoch guard losses have nothing to be compared against, and rc1's run
+    # ended with a head whose held-out loss had risen at the last epoch and no
+    # way to tell whether it still beat the head it replaces.
+    guard0 = loss_over(eval_rows) if eval_rows else None
+    history = [{"epoch": 0, "train_loss": None, "drift_guard": guard0}]
+    if guard0 is not None:
+        print(f"  epoch 0: base head on the drift guard {guard0:.4f}")
+
     print(f"\nTraining {total_steps} steps ({epochs} epochs x {len(train_rows)} rows)")
     torch.cuda.reset_peak_memory_stats()
-    history, step, t_start = [], 0, time.perf_counter()
+    step, t_start = 0, time.perf_counter()
     trainer.train()
     for epoch in range(1, epochs + 1):
         running, seen = 0.0, 0
@@ -196,6 +205,10 @@ def main():
                         "drift_guard": guard})
         print(f"  epoch {epoch}: train {history[-1]['train_loss']:.4f}"
               + (f"  drift guard {guard:.4f}" if guard is not None else ""))
+        # Keep every epoch's head. The final one is not necessarily the best:
+        # rc1's train loss kept falling while its guard loss rose at epoch 3.
+        ep_path, _ = save_head(head, os.path.join(output_dir, f"epoch-{epoch}"))
+        print(f"           saved {ep_path}")
 
     seconds = time.perf_counter() - t_start
     path, state = save_head(head, output_dir)
@@ -211,6 +224,10 @@ def main():
         "tensors": sorted(state),
         "alignment_losses": {str(k): v for k, v in res.items()} | {"chance": chance},
         "history": history,
+        "best_epoch_by_drift_guard": (
+            min((h for h in history if h["drift_guard"] is not None and h["epoch"] > 0),
+                key=lambda h: h["drift_guard"], default={"epoch": None})["epoch"]
+        ),
         "train_seconds": round(seconds, 1),
         "peak_gib_allocated": round(torch.cuda.max_memory_allocated() / 2**30, 2),
         "peak_gib_reserved": round(torch.cuda.max_memory_reserved() / 2**30, 2),
