@@ -113,8 +113,12 @@ local port through the login node. On your laptop:
 
 ```bash
 # <head-node> is the EXEC_HOST from step 3, e.g. worker-b300-1
-ssh -N -L 8000:<head-node>:8000 <user>@<login-node-address>
+ssh -i ~/.ssh/<your-private-key> -N -L 8000:<head-node>:8000 <user>@<login-node-address>
 ```
+
+The login node accepts SSH key authentication only. Pass the private key that
+belongs to your cluster account with `-i`. You can leave `-i` out if that key
+is already your default or is configured for this host in `~/.ssh/config`.
 
 Leave that running. In a second terminal on your laptop:
 
