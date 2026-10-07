@@ -14,8 +14,10 @@
 #     Measured on this cluster: torch 2.13.0+cu130 reports sm_103, cuda
 #     available, and a finite bf16 matmul. So "+cu130" is NOT a useful
 #     discriminator when diagnosing an sm_103 failure.
-#   * vllm==0.28.0 does hard-pin `torch==2.13.0`, and 2.13.0+cu130 satisfies it
-#     under the PyPA local-version rule.
+#   * vllm==0.31.0 hard-pins `torch==2.13.0` (as 0.28.0 did), and 2.13.0+cu130
+#     satisfies it under the PyPA local-version rule. 0.31.0 replaced 0.28.0
+#     because 0.30.0 added MTP speculative decoding under pipeline parallelism
+#     (vllm-project/vllm#46994), which GLM-5.3 needs on two nodes.
 #
 # Installed size: the resulting venv is ~8.1 GB, not the ~3 GB of wheels this
 # file used to claim.
@@ -24,7 +26,7 @@
 
 torch==2.13.0+cu130
 
-vllm==0.28.0
+vllm==0.31.0
 transformers==5.16.1
 peft==0.20.0
 datasets==4.6.0

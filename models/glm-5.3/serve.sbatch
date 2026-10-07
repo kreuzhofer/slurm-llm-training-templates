@@ -29,20 +29,21 @@
 #   PORT           default 8000, on the head node only
 #   TP_SIZE        default = GPUs per node (8)
 #   PP_SIZE        default = number of nodes. TP_SIZE*PP_SIZE must equal all GPUs.
-#                  Keep TP inside a node: TP_SIZE=16 PP_SIZE=1 on two nodes hangs
-#                  in vllm 0.28.0 during all-reduce setup (14 of 16 ranks never
-#                  return), with nothing in the log after 20 minutes. Stage
+#                  Keep TP inside a node: TP_SIZE=16 PP_SIZE=1 on two nodes hung
+#                  with vllm 0.28.0 during all-reduce setup (14 of 16 ranks never
+#                  returned), with nothing in the log after 20 minutes. Stage
 #                  boundaries are set from config.json, see "Pipeline stage
 #                  boundaries" below.
 #   MAX_MODEL_LEN  default 131072; the model supports up to 1048576
 #   MTP_TOKENS     default 5 (the vLLM recipe value); 0 disables MTP drafting.
-#                  Forced to 0 when PP_SIZE > 1 (see below).
+#                  Works with PP from vllm 0.30 on (vllm-project/vllm#46994);
+#                  0.28.0 refused it at startup.
 #   LOAD_FORMAT    default auto; "dummy" for the no-weights smoke test
 #   SERVED_NAME    default glm-5.3-<variant> -- what clients put in "model"
 #   EXTRA_ARGS     appended verbatim to `vllm serve`
 #
 # WHY vLLM's OWN MULTI-NODE LAUNCHER AND NOT RAY:
-#   vllm 0.28.0 (the shared venv) runs multi-node TP/PP with its multiprocessing
+#   vllm (the shared venv) runs multi-node TP/PP with its multiprocessing
 #   backend: the same `vllm serve` on every node with --nnodes/--node-rank/
 #   --master-addr, the head node serving HTTP and the others --headless. Ray is
 #   not installed in the venv, and this needs nothing beyond one srun task per
@@ -112,10 +113,11 @@ fi
 # vLLM's default even split puts layer 39, a shared layer, first on stage 1.
 # Its source, layer 38, is on stage 0, so stage 1 attends with whatever the
 # buffer still holds from the previous step -- another batch's token indices.
-# Measured on FP8, TP=8 x PP=2: the first request after 16 concurrent ones
-# answered a question nobody asked in 5 of 16 trials (0 of 16 without the
-# burst, 0 of 8 on one node). NVFP4 with PP returned runs of "!" for 17 of 56
-# prompts. Starting every stage on a "full" layer removes the stale read.
+# Measured with vllm 0.28.0 on FP8, TP=8 x PP=2: the first request after 16
+# concurrent ones answered a question nobody asked in 5 of 16 trials (0 of 16
+# without the burst, 0 of 8 on one node). NVFP4 with PP returned runs of "!"
+# for 17 of 56 prompts. Starting every stage on a "full" layer removes the
+# stale read.
 if [ "$PP_SIZE" -gt 1 ]; then
     VLLM_PP_LAYER_PARTITION=$("$TEMPLATES_DIR/venv/bin/python" - "$MODEL_PATH" "$PP_SIZE" <<'PYEOF'
 import json, os, sys
@@ -147,16 +149,6 @@ fi
 if [ "$PP_SIZE" -gt 1 ] && [ "$VARIANT" = nvfp4 ]; then
     echo "Note       : NVFP4 with PP_SIZE=$PP_SIZE, so FlashInfer autotuning is off."
     VARIANT_ARGS="$VARIANT_ARGS --no-enable-flashinfer-autotune"
-fi
-
-# vLLM 0.28.0 refuses MTP drafting together with pipeline parallelism: the
-# GLM-5.3 model supports PP, its MTP draft model (DeepSeekMTPModel) does not,
-# and startup fails with "Pipeline parallelism is not supported for this
-# model". With PP > 1, MTP is switched off rather than failing the job.
-if [ "$PP_SIZE" -gt 1 ] && [ "$MTP_TOKENS" -gt 0 ]; then
-    echo "Note       : PP_SIZE=$PP_SIZE, so MTP speculative decoding is off" \
-         "(not supported with pipeline parallelism)."
-    MTP_TOKENS=0
 fi
 
 # --- Refuse a half-downloaded checkpoint -------------------------------------

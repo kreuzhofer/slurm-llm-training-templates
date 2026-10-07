@@ -68,8 +68,8 @@ fi
 # the server. Wait for the endpoint rather than failing with a misleading
 # "no job found".
 if ! curl -sf -m 5 "http://${HOST}:${PORT}/v1/models" >/dev/null 2>&1; then
-    echo "Waiting for http://${HOST}:${PORT} to answer (vLLM load + compile takes ~5 min)..." >&2
-    for _ in $(seq 1 60); do
+    echo "Waiting for http://${HOST}:${PORT} to answer (vLLM load + compile takes ~5 min, longer on the first start after a vLLM upgrade)..." >&2
+    for _ in $(seq 1 180); do
         sleep 10
         curl -sf -m 5 "http://${HOST}:${PORT}/v1/models" >/dev/null 2>&1 && break
     done

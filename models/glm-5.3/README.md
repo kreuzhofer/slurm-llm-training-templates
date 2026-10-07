@@ -36,7 +36,7 @@ the login node unless stated otherwise.
 ```bash
 git clone https://github.com/kreuzhofer/slurm-llm-training-templates.git
 cd slurm-llm-training-templates
-bash cluster/setup.sh                       # venv (vLLM 0.28.0) + copy of the repo on shared storage
+bash cluster/setup.sh                       # venv (vLLM 0.31.0) + copy of the repo on shared storage
 source /mnt/data/slurm-llm-templates/activate.sh
 cd $TEMPLATES_DIR/repo/models/glm-5.3
 ```
@@ -164,20 +164,18 @@ sbatch --nodes=2 serve.sbatch fp8          # or: nvfp4
 ```
 
 GLM-5.3 already fits on one node, so the second node adds KV cache, not room
-for a bigger model. Each node holds only half of the weights, which leaves
-more memory for the KV cache. Speculative decoding is off in this layout, so
-a single request is slower than on one node.
+for a bigger model or speed for a single request. Each node holds only half of
+the weights, which leaves more memory for the KV cache.
 
 | layout | KV cache, FP8 | KV cache, NVFP4 |
 |---|---|---|
 | one node | 3.2M tokens | 3.9M tokens |
-| one server across two nodes | 8.7M tokens | 9.4M tokens |
+| one server across two nodes | 7.9M tokens | 8.6M tokens |
 
 Another option is two separate one-node servers behind a load balancer of
 your choice: submit `sbatch serve.sbatch fp8` twice and point the load
-balancer at both endpoints. Each server keeps speculative decoding, and a
-failed node takes only one server down. Together they hold 2 × 3.2M (FP8) or
-2 × 3.9M (NVFP4) KV cache tokens.
+balancer at both endpoints. A failed node then takes only one server down.
+Together they hold 2 × 3.2M (FP8) or 2 × 3.9M (NVFP4) KV cache tokens.
 
 ## Context length
 
@@ -208,7 +206,7 @@ Set these as environment variables in front of `sbatch`:
 |---|---|---|
 | `PORT` | `8000` | HTTP port on the head node |
 | `MAX_MODEL_LEN` | `131072` | maximum tokens per request, prompt plus output; up to 1048576 |
-| `MTP_TOKENS` | `5` | tokens drafted per step by the built-in MTP head; `0` turns speculative decoding off. Always off for one server across two nodes |
+| `MTP_TOKENS` | `5` | tokens drafted per step by the built-in MTP head; `0` turns speculative decoding off |
 | `SERVED_NAME` | `glm-5.3-<variant>` | model name clients send |
 | `EXTRA_ARGS` | empty | extra `vllm serve` flags, passed through as-is |
 
