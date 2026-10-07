@@ -1,86 +1,92 @@
-# Contributing
+# Contributing to slurm-llm-training-templates
 
-## Three axes, on purpose
+Contributions are welcome: new templates, fixes to existing ones, and
+measurements from other clusters. Please follow the
+[Contributing Guidelines](#contributing-guidelines) below.
 
-```
-cluster/          THE CLUSTER -- shared by every model and task
-  env.sh          every env setting and the defect that justifies it
-  preflight.py    validate a training config in seconds, not 16 GPU-minutes
-  setup.sh        venv on shared NFS, repo sync, GPU smoke test
+### Setup
 
-tasks/            THE TASK -- what is being measured
-  sql/            text-to-SQL; exact match after normalisation
-  judge/          multimodal CAD judge; 8 renders in, JSON verdict out
-
-models/           THE ARCHITECTURE -- how a model loads, wraps, adapts and serves
-  qwen3.8-27b/    hybrid attention + vision tower + MTP head
-  glm-5.3/        inference only: vLLM on 1 or 2 nodes, FP8 or NVFP4
-
-docs/             results, measurements, agent conventions
+```bash
+bash cluster/setup.sh
+source /mnt/data/slurm-llm-templates/activate.sh
 ```
 
-A task defines **what is being measured**; change it and that task's numbers
-move, which is what keeps runs comparable. A model directory holds what is
-**architecture-shaped**: how weights load, how FSDP wraps them, which modules
-LoRA targets, how the model is served. The cluster layer holds what is true of
-the **machine**.
+Slurm jobs run the copy of the repo under `/mnt/data/slurm-llm-templates/repo/`,
+not your checkout. Run `bash cluster/setup.sh` again after every change before
+you submit a job.
 
-Tasks never import from each other. Shared "convenience" code between tasks
-ends up as one task wearing a neutral name.
+### Pull Requests
 
-## Working on the cluster
+1. Create your branch from `main`.
+2. Run every job you changed on the cluster, on each layout it supports.
+3. Update the template's README if the steps or the numbers changed.
+4. Put the measured results in the PR description: job IDs, what you ran, and
+   what came out.
 
-Slurm jobs execute `$TEMPLATES_DIR/repo/`, not your checkout. Re-run
-`bash cluster/setup.sh` after editing anything: it rsyncs `cluster/`, `models/`
-and `tasks/` there. Submitting without re-syncing runs the old code.
+### Issues
 
-## Adding a template
+We use GitHub issues to track bugs. Include the `sbatch` command, the job ID,
+the relevant part of the job log, and the cluster you ran on.
 
-Copy `models/<nearest>/` and change what is architecture-shaped.
+### License
 
-Every template:
+By contributing, you agree that your contributions will be licensed under the
+[LICENSE](LICENSE) file in the root of this repository.
 
-1. **`README.md`** -- a walkthrough for the person running it: download,
-   start, check, use, stop. Measured numbers belong here; the story of how a
-   setting was found belongs in a comment next to the setting.
-2. **`download.sh` / `download.sbatch`** -- fetch weights to
-   `$TEMPLATES_DIR/models/`, never into the repo.
-3. **`*.sbatch`** -- source `cluster/env.sh` and call `cluster_setup`. Do not
-   re-declare NCCL, Triton or bytecode settings; if one needs to change, it
-   changes for every model at once, which is the entire reason that file
-   exists.
+---
 
-Training templates also need:
+## Contributing Guidelines
 
-4. **`model.py`** -- the load path, the FSDP wrap classes, which modules LoRA
-   targets. Do not guess the target module names; enumerate them from the
-   checkpoint. A suffix-matched list from an older model generation can
-   silently miss modules or catch the wrong ones, e.g. a vision tower that uses
-   `qkv`/`proj` rather than `q_proj`/`k_proj`.
-5. **`train_*.py`** -- build `TrainingArguments` **before** loading the
-   checkpoint and hand them to `cluster.preflight.validate` under `PREFLIGHT`.
-   A config error then costs seconds instead of a full allocation.
-6. **Verify what the merge writes.** Compare the merged checkpoint's tensor
-   **name set** against the base, not its count and not the part you were
-   worried about.
+### Principles of contribution
 
-## Adding a task
+- Keep the three layers separate:
+  - `cluster/` holds what is true of the machine: environment, NCCL settings,
+    paths.
+  - `models/<template>/` holds what depends on the model: how it loads, how it
+    is sharded or served, its Slurm jobs and its README.
+  - `tasks/<task>/` holds what is being measured: data loading, prompt, label
+    masking, metric.
+- Every Slurm job sources `cluster/env.sh` and calls `cluster_setup`. Do not
+  redefine NCCL, Triton or Python settings in a job; change them in `env.sh`
+  for every template at once.
+- Tasks do not import from each other.
+- Weights, datasets, outputs and logs live under `$TEMPLATES_DIR` on the shared
+  filesystem, never in the repo.
+- Explain every non-obvious setting in a comment next to it, with the symptom
+  that made it necessary.
+- A template README is a walkthrough for the person running it. Keep the
+  history of how a setting was found in the code comment, not in the README.
 
-Create `tasks/<name>/`. It owns its data loading, its prompt, its label masking
-and its metric, and it imports from no other task.
+### Proof of Value
 
-If the task is multimodal, assume the masking is wrong until proven otherwise.
-Token arithmetic over text undercounts a prompt by ~4,600 positions per row once
-image placeholders expand, and nothing about that crashes -- the run completes,
-the loss curve looks plausible, and the adapter learned on the wrong positions.
-`tasks/judge/masking.py` shows the shape of a fix: define the boundary as the
-inference-time prompt's own length, then verify every row and prove the check
-fails on a deliberately wrong offset.
+It is the contributor's responsibility to show that a change works. Numbers in
+this repo are measured, not estimated.
 
-## The rule this repo keeps relearning
+#### Training templates
 
-**A check that names the part you were worried about is blind to the part nobody
-was worried about.** The vision-tower verification passed at 333 of 333 while
-the same merge dropped the MTP head. A set difference has no such blind spot.
-Prefer checks that compare against a reference wholesale over checks that assert
-a specific expectation.
+- Validate the config with `cluster/preflight.py` before using a full
+  allocation. Build `TrainingArguments` before loading the checkpoint and pass
+  them to `cluster.preflight.validate` under `PREFLIGHT`.
+- Report the metric on held-out data, next to the base model on the same rows.
+- After a merge, compare the merged checkpoint's tensor names against the base
+  checkpoint as a set. Checking only the part you changed misses tensors that
+  were dropped elsewhere.
+- For multimodal tasks, check the label masking on every row, and show that
+  the check fails on a deliberately wrong offset.
+
+#### Inference templates
+
+- Start the server on every layout the template supports, for example one node
+  and two nodes, and with every weight variant.
+- Check answers at temperature 0, tool calls, streaming, a long prompt, and a
+  burst of concurrent requests followed by a single request.
+- Report startup time and KV cache size from the server log.
+
+### Best practices
+
+- Start a new template by copying the nearest one in `models/`.
+- Enumerate LoRA target modules from the checkpoint instead of reusing a list
+  from another model.
+- Give long-running jobs, especially servers, a `--time` limit.
+- Prefer checks that compare against a reference as a whole over checks that
+  assert one expected detail.
