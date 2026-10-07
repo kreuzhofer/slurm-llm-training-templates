@@ -148,4 +148,7 @@ print('peft           :', peft.__version__)
 echo ""
 echo "=== Setup complete ==="
 echo "Next:  source $TEMPLATES_DIR/activate.sh"
-echo "       bash $TEMPLATES_DIR/repo/models/qwen3.8-27b/download.sh"
+echo "       then follow the README of a template:"
+for readme in "$REPO_DIR"/models/*/README.md; do
+    echo "         $TEMPLATES_DIR/repo/models/$(basename "$(dirname "$readme")")/README.md"
+done
