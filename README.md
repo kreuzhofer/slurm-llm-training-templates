@@ -29,6 +29,7 @@ tasks/            THE TASK -- what is being measured
 
 models/           THE ARCHITECTURE -- how a model loads, wraps, and adapts
   qwen3.8-27b/    hybrid attention + vision tower + MTP head
+  glm-5.3/        inference only: vLLM on 1 or 2 nodes, FP8 or NVFP4
 
 docs/             results, measurements, agent conventions
 ```
@@ -48,6 +49,7 @@ and removed.
 | | |
 |---|---|
 | **Qwen3.8-27B** | [`models/qwen3.8-27b/README.md`](models/qwen3.8-27b/README.md) — SQL LoRA vs full fine-tune (87.4% vs 55.4% base), and a multimodal judge |
+| **GLM-5.3 inference** | [`models/glm-5.3/README.md`](models/glm-5.3/README.md) — serve GLM-5.3 (FP8 or NVFP4) on 1 or 2 nodes, reach it through an SSH tunnel |
 | **Full results** | [`docs/RESULTS.md`](docs/RESULTS.md) — every measurement, the charts, and the defects that running it exposed |
 | **Cluster facts and lessons** | [`cluster/env.sh`](cluster/env.sh) |
 
