@@ -40,9 +40,13 @@ cluster_assert_shared() {
 # The venv lives on shared NFS so every worker node sees the same interpreter.
 # Note `python` on a bare worker is /usr/bin/python with no torch and no peft;
 # anything not launched through this file must use the venv interpreter by path.
+#
+# An optional argument names another venv under $TEMPLATES_DIR, for a template
+# whose pins conflict with the shared one: `cluster_setup venv-ltx` (LTX-2.5
+# needs transformers<5.15, the shared venv has 5.16.1 for vLLM).
 cluster_activate_venv() {
     # shellcheck disable=SC1091
-    source "$TEMPLATES_DIR/venv/bin/activate"
+    source "$TEMPLATES_DIR/${1:-venv}/bin/activate"
 }
 
 # Without this, every rank races to write .pyc files into the same
@@ -86,7 +90,7 @@ cluster_rendezvous() {
 # --- The standard preamble ---------------------------------------------------
 # What almost every job wants, in one call.
 cluster_setup() {
-    cluster_activate_venv
+    cluster_activate_venv "$@"
     cluster_triton_cache
     cluster_nccl_env
 }

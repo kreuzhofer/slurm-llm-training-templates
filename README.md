@@ -1,9 +1,9 @@
 # slurm-llm-training-templates
 
-Working templates for large language models on a Slurm cluster: fine-tuning,
-evaluation and serving, on one node or several. Each template lives in its own
-directory under `models/` and comes with a README that walks through it end to
-end.
+Working templates for large language and video models on a Slurm cluster:
+fine-tuning, evaluation, serving and generation, on one node or several. Each
+template lives in its own directory under `models/` and comes with a README
+that walks through it end to end.
 
 Every number in this repo is measured on real hardware, and every non-obvious
 setting carries a comment saying why it is there.
@@ -14,6 +14,7 @@ setting carries a comment saying why it is there.
 |---|---|---|
 | [Qwen3.8-27B](models/qwen3.8-27b/README.md) | LoRA and full fine-tuning for text-to-SQL and a multimodal judge, merge, evaluation, serving | 2 for training, 1 for evaluation and serving |
 | [GLM-5.3](models/glm-5.3/README.md) | serving with vLLM, FP8 or NVFP4 weights, access through an SSH tunnel | 1 or 2 |
+| [LTX-2.5](models/ltx-2.5/README.md) | text- and image-to-video with synchronized audio, one video per job | 1 |
 
 Measured results for the Qwen3.8-27B template are in
 [`docs/RESULTS.md`](docs/RESULTS.md).
