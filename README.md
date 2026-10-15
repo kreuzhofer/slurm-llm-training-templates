@@ -21,7 +21,9 @@ Measured results for the Qwen3.8-27B template are in
 [`docs/RESULTS.md`](docs/RESULTS.md).
 Research notes and measurements for LTX-2.5 (weights, hardware, limits,
 German speech, consistency options) are in
-[`docs/ltx-2.5-research.md`](docs/ltx-2.5-research.md).
+[`docs/ltx-2.5-research.md`](docs/ltx-2.5-research.md), those for MiniMax H3
+(job times, limits, references, scenes of several clips) in
+[`docs/minimax-h3-research.md`](docs/minimax-h3-research.md).
 
 ## Requirements
 
