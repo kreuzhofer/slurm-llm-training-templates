@@ -1,0 +1,5 @@
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium shot frames an elderly lighthouse keeper with a short white beard, a dark navy wool sweater and a knitted cap, standing on the iron gallery of a red-and-white lighthouse at dusk. Behind him the grey sea heaves under a low, bruised sky, and the lighthouse lamp begins to turn, sweeping a pale beam over the water. Wind tugs at his collar as he rests both hands on the railing. The camera pushes in with small amplitude at slow speed. The weathered keeper with a deep, calm, slightly hoarse voice (S1) looks out to sea and says: <d>[English] Forty years I've kept this light, and the sea has never once said thank you.</d> He closes his lips and lets out a short laugh through his nose.
+
+overall_soundscape: Strong gusts of wind buffet the gallery and flap the keeper's sweater, while waves crash on the rocks far below. A gull cries once in the distance.
+
+non_diegetic_music: A low, sustained cello note at a slow tempo, joined by sparse piano notes that fade out at the end.

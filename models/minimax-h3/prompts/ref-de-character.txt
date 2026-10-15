@@ -1,0 +1,20 @@
+subject_definitions:
+<Subject 1> is the woman in <Picture 1>, with her face, hair, clothing and build as shown there.
+<Audio 1> is the voice-timbre reference for <Subject 1> (S1), containing her spoken German voice.
+
+summary:
+[reference generation + audio reference] The target video shows <Subject 1> in a new place, a dim underground car park at night, where she phones a colleague. Her appearance follows <Picture 1> and her voice follows the timbre of <Audio 1>.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - her identity, face, hair and clothing from <Picture 1> are retained.
+<Audio 1>: reference - its vocal timbre guides the delivery of <Subject 1> without copying the original signal or its words.
+
+detailed_description:
+The target video is in realistic photographic style with cool, low fluorescent light.
+[Shot 1] A medium close-up frames <Subject 1> (S1) standing between parked cars in an underground car park at night, a phone pressed to her ear, concrete pillars and a flickering ceiling light behind her. The camera pushes in with small amplitude at slow speed. She glances over her shoulder, then, using the voice timbre referenced from <Audio 1>, says quietly and urgently, <d>[German] Ich bin in der Tiefgarage. Wenn ich in zehn Minuten nicht zurückrufe, holst du Hilfe.</d> She closes her lips, lowers the phone and listens to the silence.
+
+overall_soundscape:
+A low ventilation hum and the buzz of the flickering light fill the concrete space. A distant car door slams once and echoes.
+
+non_diegetic_music:
+N/A

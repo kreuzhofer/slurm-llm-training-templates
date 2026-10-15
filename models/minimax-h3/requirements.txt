@@ -1,0 +1,30 @@
+# Pinned stack for MiniMax H3 video generation on NVIDIA B300 (sm_103),
+# installed by models/minimax-h3/setup.sh into its own venv,
+# $TEMPLATES_DIR/venv-h3.
+#
+# Why not the shared venv: H3 runs on diffusers 0.41.0, which was released
+# against transformers 5.18. The shared venv pins transformers 5.16.1 for vLLM
+# 0.31.0. Kept apart, either side can move without breaking the other.
+#
+# torch 2.13.0+cu130 is the build the other venvs already run on B300 with
+# driver 580.159.04 (CUDA 13.0).
+
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+torch==2.13.0+cu130
+torchvision==0.28.0+cu130
+# There is no torchaudio 2.13 on any index. 2.11 ships stable-ABI (abi3)
+# libraries and declares no torch requirement. diffusers uses it only to
+# resample a reference soundtrack that is not at the audio VAE's 32 kHz.
+torchaudio==2.11.0+cu130
+
+# MiniMax H3 is in diffusers from 0.40.0 (modular pipeline only). 0.41.0 keeps
+# only the video VAE's precision-sensitive layers in float32, so a bfloat16 load
+# reaches its decoder; 0.40.0 kept the whole 10 GB VAE in float32.
+diffusers==0.41.0
+transformers==5.18.0
+accelerate==1.15.0
+
+# PyAV: diffusers writes the mp4 (H.264 + AAC) with it and decodes reference
+# images, videos and audio through it.
+av==19.0.1

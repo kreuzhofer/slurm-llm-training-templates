@@ -1,0 +1,24 @@
+subject_definitions:
+<Subject 1> is the man in <Picture 1>, in his late twenties with short curly dark hair, a short dark beard and a dark green rain jacket.
+<Subject 2> is the woman in <Picture 2>, in her forties with short grey hair, flour on her cheek and a dark blue linen apron.
+<Audio 1> is the voice-timbre reference for <Subject 1> (S1).
+<Audio 2> is the voice-timbre reference for <Subject 2> (S2).
+
+summary:
+[reference generation + audio reference] The target video shows <Subject 2> handing <Subject 1> the last rye loaf across the counter of her small bakery, and he learns why she kept it for him.
+
+retention_analysis:
+<Subject 1>: fully_preserved - his identity, face, hair and clothing are retained.
+<Subject 2>: fully_preserved - her identity, face, hair and clothing are retained.
+<Audio 1>: reference - its vocal timbre guides the voice of <Subject 1> without copying the original signal or its words.
+<Audio 2>: reference - its vocal timbre guides the voice of <Subject 2> without copying the original signal or its words.
+
+detailed_description:
+The target video is in realistic photographic style with warm evening light.
+[Shot 1] From the very first frame, a medium close-up shows <Subject 1> (S1) already standing at the wooden counter of a small bakery in the left half of the frame, looking right, raindrops on his jacket. Nobody enters or leaves the frame, and the camera holds a static shot. Right at the start, <Subject 1> (S1) asks, surprised, at a natural conversational pace, in the friendly, slightly husky voice referenced from <Audio 1>: <d>[German] Woher wussten Sie, dass ich komme?</d> He closes his lips. [Shot 2] At 00:03.000, the camera cuts to a medium shot across the counter: <Subject 2> (S2) in the right half of the frame puts a round rye loaf into a paper bag and holds it out to <Subject 1> in the left half of the frame. Immediately, <Subject 2> (S2) says with a smile, in the warm, clear voice referenced from <Audio 2>: <d>[German] Sie kommen seit zehn Jahren jeden Freitag.</d> She closes her lips, and he takes the bag.
+
+overall_soundscape:
+The low hum of a cooling oven and soft rain against the shop window fill the quiet bakery. Paper rustles as the loaf goes into the bag.
+
+non_diegetic_music:
+N/A

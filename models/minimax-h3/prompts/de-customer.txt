@@ -1,0 +1,5 @@
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium close-up frames a man in his late twenties with short curly dark hair, a short dark beard and a dark green rain jacket with raindrops on its shoulders, standing in front of a plain light grey wall in soft, even daylight. The camera holds a static shot. The young man with a friendly, slightly husky tenor voice (S1) looks straight into the camera and says at a natural conversational pace: <d>[German] Ich komme jeden Freitag hierher, immer kurz vor Ladenschluss, und nehme das letzte Roggenbrot mit, seit fast zehn Jahren.</d> He closes his lips and smiles briefly.
+
+overall_soundscape: A quiet room with the faint hum of a ventilation system. No other sounds.
+
+non_diegetic_music: N/A

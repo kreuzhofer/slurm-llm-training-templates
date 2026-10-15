@@ -1,0 +1,24 @@
+subject_definitions:
+<Subject 1> is the man in <Picture 1>, in his late twenties with short curly dark hair, a short dark beard and a dark green rain jacket.
+<Subject 2> is the woman in <Picture 2>, in her forties with short grey hair, flour on her cheek and a dark blue linen apron.
+<Audio 1> is the voice-timbre reference for <Subject 1> (S1).
+<Audio 2> is the voice-timbre reference for <Subject 2> (S2).
+
+summary:
+[reference generation + audio reference] The target video shows <Subject 1> asking <Subject 2> for bread at the counter of her small bakery shortly before closing time.
+
+retention_analysis:
+<Subject 1>: fully_preserved - his identity, face, hair and clothing are retained.
+<Subject 2>: fully_preserved - her identity, face, hair and clothing are retained.
+<Audio 1>: reference - its vocal timbre guides the voice of <Subject 1> without copying the original signal or its words.
+<Audio 2>: reference - its vocal timbre guides the voice of <Subject 2> without copying the original signal or its words.
+
+detailed_description:
+The target video is in realistic photographic style with warm evening light.
+[Shot 1] From the very first frame, a medium shot across the wooden counter of a small bakery in the evening shows <Subject 1> (S1) already standing at the counter in the left half of the frame, looking right, and <Subject 2> (S2) already standing behind the counter in the right half of the frame, looking left, with nearly empty bread shelves behind her. Nobody enters or leaves the frame, and the camera holds a static shot. Right at the start, <Subject 1> (S1) asks at a natural conversational pace, in the friendly, slightly husky voice referenced from <Audio 1>: <d>[German] Haben Sie noch ein Roggenbrot?</d> He closes his lips. [Shot 2] At 00:02.800, the camera cuts to a medium close-up of <Subject 2> (S2) behind the counter in the right half of the frame, looking left toward him. Immediately, <Subject 2> (S2) says with a warm smile, in the warm, clear voice referenced from <Audio 2>: <d>[German] Das letzte. Ich habe es für Sie zurückgelegt.</d> She closes her lips and reaches under the counter.
+
+overall_soundscape:
+The low hum of a cooling oven and soft rain against the shop window fill the quiet bakery.
+
+non_diegetic_music:
+N/A
