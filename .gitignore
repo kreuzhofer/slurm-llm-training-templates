@@ -16,3 +16,6 @@ output/
 datasets/
 *.out
 *.err
+
+# Claude Code worktrees
+.claude/worktrees/
